@@ -2309,17 +2309,43 @@
             } catch (error) { console.error(error); toast(error.message || 'Unable to update status'); }
             finally { button.disabled = false; button.textContent = 'Save status'; }
         }
+
         async function openApplicantResume() {
             if (!currentApplicant || !currentApplicant.id) return;
+
+            // Open a blank tab immediately to avoid Chrome popup blocking.
+            const resumeWindow = window.open("about:blank", "_blank");
+
+            if (!resumeWindow) {
+                toast("Please allow pop-ups for this website and try again.");
+                return;
+            }
+
             try {
-                const response = await fetch(`${API_BASE_URL}/api/applicants/${encodeURIComponent(currentApplicant.id)}/resume`, {
-                    headers: { Authorization: `Bearer ${adminAccessToken}` }
-                });
-                const result = await response.json().catch(() => ({}));
-                if (!response.ok || !result.success || !result.resumeUrl) throw new Error(result.message || 'Resume is not available.');
-                window.open(result.resumeUrl, '_blank', 'noopener,noreferrer');
-            } catch (error) { console.error(error); toast(error.message || 'Unable to open resume'); }
+                const response = await fetch(
+                    `${API_BASE_URL}/api/applicants/${encodeURIComponent(currentApplicant.id)}/resume`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${adminAccessToken}`
+                        }
+                    }
+                );
+
+                const result = await response.json();
+
+                if (!response.ok || !result.success || !result.resumeUrl) {
+                    throw new Error(result.message || "Resume is not available.");
+                }
+
+                resumeWindow.location.href = result.resumeUrl;
+
+            } catch (error) {
+                console.error("Resume error:", error);
+                resumeWindow.close();
+                toast(error.message || "Unable to open resume.");
+            }
         }
+
         function closeModal() { document.getElementById('modal').classList.remove('show'); currentApplicant = null; }
         function showPage(id, role) {
             if (id === 'admin') {
