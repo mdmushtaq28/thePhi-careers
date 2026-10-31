@@ -1,61 +1,2360 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="theme-color" content="#080b13"/>
-<title>ThePhi Careers | Build what moves the future</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#080b13;--panel:#101522;--panel2:#141b2b;--line:rgba(255,255,255,.09);--text:#f4f6fb;--muted:#929bad;--lime:#c5f36b;--cyan:#75d9d0;--purple:#a99aff;--radius:20px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.55}button,input,select,textarea{font:inherit}button,a{cursor:pointer}a{color:inherit;text-decoration:none}.shell{width:min(1180px,calc(100% - 44px));margin:auto}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font:800 21px Manrope}.brandmark{width:34px;height:34px;border-radius:11px;background:var(--lime);color:#11170a;display:grid;place-items:center;font:900 19px Manrope;box-shadow:0 0 30px #c5f36335}.navlinks{display:flex;gap:30px;color:#aeb6c5;font-size:14px}.navlinks a:hover{color:var(--lime)}.navright{display:flex;gap:12px;align-items:center}.btn{border:0;border-radius:999px;padding:12px 20px;font-weight:700;font-size:14px;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{transform:translateY(-2px)}.primary{background:var(--lime);color:#10150b;box-shadow:0 8px 30px #c5f36320}.secondary{background:#ffffff0a;border:1px solid var(--line);color:#f2f4f9}.textbtn{background:none;color:#c8d0dc;padding:10px}.hero{padding:86px 0 76px;display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center;min-height:610px}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #c5f36345;background:#c5f3630c;color:var(--lime);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.pulse{width:7px;height:7px;background:var(--lime);border-radius:50%;box-shadow:0 0 12px var(--lime)}h1,h2,h3,p{margin-top:0}h1{font:800 clamp(46px,6vw,76px)/1.04 Manrope;letter-spacing:-.055em;margin:24px 0}.gradient{background:linear-gradient(100deg,#fff 15%,#c5f36b 70%,#75d9d0);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:17px;color:#a6afc0;max-width:550px;line-height:1.8}.heroactions{display:flex;gap:13px;margin-top:30px}.trust{display:flex;align-items:center;gap:18px;margin-top:42px;color:#8993a5;font-size:12px}.avatars{display:flex}.avatars span{width:27px;height:27px;border-radius:50%;border:2px solid var(--bg);margin-left:-7px;background:linear-gradient(140deg,#c5f36b,#638b7e)}.avatars span:first-child{margin:0;background:linear-gradient(140deg,#9e8bff,#5062a0)}.avatars span:nth-child(2){background:linear-gradient(140deg,#ffb87d,#8b587b)}.heroart{height:430px;position:relative;border:1px solid #ffffff14;border-radius:30px;background:radial-gradient(circle at 50% 42%,#253149 0,#141d2d 35%,#0c111c 72%);overflow:hidden;box-shadow:0 30px 90px #0008}.orb{position:absolute;width:245px;height:245px;border-radius:50%;left:50%;top:45%;transform:translate(-50%,-50%);background:radial-gradient(circle at 34% 28%,#efffc5,#c5f36b 18%,#739a45 48%,#253c2b 72%,#121d20);box-shadow:inset -25px -20px 45px #0008,0 0 80px #c5f3632d}.ring{position:absolute;border:1px solid #c5f36342;border-radius:50%;left:50%;top:45%;transform:translate(-50%,-50%) rotate(-22deg);width:360px;height:125px}.ring.two{transform:translate(-50%,-50%) rotate(52deg);width:390px;height:140px;border-color:#75d9d04c}.orbitdot{position:absolute;width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 20px var(--cyan);left:77%;top:28%}.floatcard{position:absolute;padding:14px 16px;background:#101827dd;backdrop-filter:blur(15px);border:1px solid #ffffff1b;border-radius:15px;box-shadow:0 15px 35px #0005}.floatcard small{color:#8e9aab;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.floatcard strong{display:block;font:700 19px Manrope;margin-top:4px}.fc1{top:35px;left:25px}.fc2{right:22px;bottom:42px}.fc2 strong{color:var(--lime)}.artlabel{position:absolute;bottom:20px;left:25px;color:#8f9aac;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.section{padding:86px 0}.sectionhead{display:flex;justify-content:space-between;align-items:end;margin-bottom:32px}.kicker{color:var(--lime);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em}.section h2{font:750 clamp(30px,4vw,44px)/1.15 Manrope;letter-spacing:-.04em;margin:12px 0}.sectionhead p{max-width:420px;color:var(--muted);margin:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:linear-gradient(145deg,#141b2a,#0e1420);border:1px solid var(--line);border-radius:var(--radius);padding:25px;transition:.25s}.card:hover{border-color:#c5f36355;transform:translateY(-4px)}.icon{width:43px;height:43px;border-radius:13px;background:#c5f36317;color:var(--lime);display:grid;place-items:center;font-size:20px;margin-bottom:23px}.card h3{font:700 18px Manrope;margin-bottom:9px}.card p{color:var(--muted);font-size:14px;margin:0}.role{display:flex;flex-direction:column;min-height:215px}.role .tag{font-size:11px;color:var(--cyan);background:#75d9d015;border-radius:999px;padding:5px 9px;align-self:flex-start;margin-bottom:18px}.rolefoot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:24px;color:#aab4c4;font-size:12px}.arrow{color:var(--lime);font-size:20px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:22px 18px;border-top:1px solid #c5f3636b;background:linear-gradient(180deg,#c5f3630a,transparent);border-radius:0 0 15px 15px}.step b{color:var(--lime);font:700 13px Manrope}.step h3{font:700 16px Manrope;margin:18px 0 7px}.step p{font-size:13px;color:var(--muted);margin:0}.cta{padding:50px;border-radius:28px;background:radial-gradient(circle at 80% 0,#c5f3632b,transparent 35%),linear-gradient(120deg,#182333,#101722);border:1px solid #ffffff15;display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{font:750 34px Manrope;margin:0 0 10px}.cta p{color:var(--muted);margin:0}.footer{padding:38px 0;border-top:1px solid var(--line);margin-top:80px;color:#778294;font-size:12px;display:flex;justify-content:space-between}.footer b{color:#dce2ec}.page{display:none;min-height:75vh;padding:46px 0 80px}.page.active{display:block}.pagehead{margin-bottom:30px}.pagehead h1{font-size:42px;margin:8px 0}.pagehead p{color:var(--muted)}.formlayout{display:grid;grid-template-columns:260px 1fr;gap:22px}.progressbox,.formbox,.dashcard{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}.progressstep{display:flex;gap:12px;align-items:center;padding:13px 0;color:#778294;font-size:13px}.progressstep .num{width:28px;height:28px;border:1px solid #ffffff25;border-radius:50%;display:grid;place-items:center;font-size:11px}.progressstep.current{color:#fff}.progressstep.current .num,.progressstep.done .num{background:var(--lime);border-color:var(--lime);color:#10150b}.formbox h2{font:700 23px Manrope}.formbox>p{color:var(--muted);font-size:13px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:25px}.field.full{grid-column:1/-1}.field label{display:block;font-size:12px;color:#c4ccda;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;background:#090e18;border:1px solid #ffffff18;border-radius:10px;padding:12px 13px;color:#f3f5f9;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#c5f36388;box-shadow:0 0 0 3px #c5f36312}.field textarea{min-height:95px;resize:vertical}.field small{color:#758196;font-size:11px}.formactions{display:flex;justify-content:space-between;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}.notice{padding:14px;border:1px solid #c5f36335;background:#c5f3630b;border-radius:12px;color:#c9d4b3;font-size:12px;margin-top:18px}.dashgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}.metric{padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:16px}.metric small{color:var(--muted);font-size:12px}.metric strong{display:block;font:750 29px Manrope;margin-top:8px}.metric em{font-style:normal;color:var(--lime);font-size:11px}.tablewrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:650px}.table th,.table td{text-align:left;padding:15px 12px;border-bottom:1px solid var(--line);font-size:12px}.table th{color:#7f8a9d;font-weight:600}.table td{color:#d6dce6}.status{display:inline-flex;padding:5px 9px;border-radius:999px;background:#c5f36313;color:var(--lime);font-size:10px}.status.review{background:#a99aff16;color:#b9aaff}.status.rejected{background:#ff797916;color:#ff9a9a}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.tab{padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:transparent;color:#9ca7b8;font-size:12px}.tab.active{background:#c5f36318;color:var(--lime);border-color:#c5f36355}.toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:18px}.toolbar input{background:#0a101b;border:1px solid var(--line);border-radius:10px;padding:10px 13px;color:#fff;min-width:220px}.empty{text-align:center;padding:60px 20px;color:var(--muted)}.agreement{max-width:800px;margin:auto;background:#f7f6f1;color:#20252b;padding:55px;border-radius:4px;box-shadow:0 20px 70px #0005;font-family:Georgia,serif}.agreement h2{text-align:center;font-size:22px}.agreement p{font-size:14px;line-height:1.8}.agreement .signrow{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:50px}.signbox{border-top:1px solid #999;padding-top:10px;font-size:12px}.device{background:#111a28;border:1px dashed #65748b;border-radius:16px;padding:25px;text-align:center;color:#9eabba}.device .finger{font-size:38px;color:#6e7b90}.device strong{display:block;color:#fff;margin:10px}.modalback{display:none;position:fixed;inset:0;background:#000a;z-index:10;align-items:center;justify-content:center;padding:20px}.modalback.show{display:flex}.modal{background:#131b29;border:1px solid var(--line);border-radius:20px;padding:26px;max-width:470px;width:100%}.modal h3{font:700 21px Manrope}.modal p{color:var(--muted);font-size:13px}.modalactions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}.toast{position:fixed;bottom:24px;right:24px;background:#d6f99a;color:#15200b;padding:13px 18px;border-radius:12px;font-weight:700;font-size:13px;box-shadow:0 10px 40px #0008;display:none;z-index:20}.toast.show{display:block;animation:up .3s}@keyframes up{from{transform:translateY(15px);opacity:0}to{transform:none;opacity:1}}.mobilemenu{display:none}
-@media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding:60px 0;gap:40px}.heroart{height:350px}.grid3{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.formlayout{grid-template-columns:1fr}.progressbox{display:flex;overflow:auto;gap:14px;padding:12px}.progressstep{white-space:nowrap;padding:5px}.dashgrid{grid-template-columns:1fr 1fr}.cta{padding:32px;align-items:flex-start;flex-direction:column}.sectionhead{display:block}.sectionhead p{margin-top:10px}}
-@media(max-width:560px){.shell{width:min(100% - 28px,1180px)}.nav{height:68px}.navright .secondary{display:none}.hero{min-height:0;padding:55px 0}.heroactions{flex-direction:column;align-items:stretch}.trust{flex-wrap:wrap}.heroart{height:300px}.orb{width:190px;height:190px}.ring{width:280px}.ring.two{width:300px}.floatcard{padding:10px}.fc1{left:12px}.fc2{right:12px}.section{padding:60px 0}.grid3,.steps{grid-template-columns:1fr}.dashgrid{grid-template-columns:1fr 1fr}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.toolbar{align-items:stretch;flex-direction:column}.toolbar input{width:100%}.pagehead h1{font-size:34px}.agreement{padding:25px}.footer{gap:15px;flex-direction:column}.cta h2{font-size:27px}}
 
-/* ThePhi final workspace extensions */
-.workspace-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.workspace-card{position:relative;overflow:hidden;min-height:190px}.workspace-card:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-50px;bottom:-65px;background:#c5f36312}.workspace-card .launch{display:inline-flex;margin-top:20px;color:var(--lime);font-size:12px;font-weight:700}.panelhead{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:20px}.panelhead p{color:var(--muted);font-size:13px;margin:5px 0 0}.split{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.mini-list{display:grid;gap:10px}.mini-row{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}.mini-row:last-child{border:0}.progressbar{height:7px;border-radius:99px;background:#ffffff12;overflow:hidden;margin-top:9px}.progressbar span{display:block;height:100%;background:linear-gradient(90deg,var(--lime),var(--cyan));border-radius:99px}.chartbars{height:180px;display:flex;align-items:end;gap:12px;padding:15px 8px 0;border-bottom:1px solid var(--line)}.chartbars span{flex:1;min-width:12px;border-radius:7px 7px 0 0;background:linear-gradient(180deg,var(--lime),#75d9d055);position:relative}.chartbars span small{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:10px}.assistantbox{background:radial-gradient(circle at 90% 0,#a99aff20,transparent 40%),#111827;border:1px solid #a99aff33;border-radius:20px;padding:24px}.assistantreply{background:#ffffff08;border:1px solid var(--line);padding:15px;border-radius:14px;color:#cbd4e2;font-size:13px;line-height:1.7;margin:16px 0}.assistantinput{display:flex;gap:10px}.assistantinput input{flex:1;min-width:0;background:#090e18;border:1px solid var(--line);border-radius:10px;padding:12px;color:white}.checkline{display:flex;gap:10px;align-items:flex-start;color:#aab4c4;font-size:12px;margin:12px 0}.checkline input{accent-color:var(--lime);margin-top:3px}.pill{display:inline-flex;padding:5px 9px;border-radius:999px;background:#75d9d015;color:var(--cyan);font-size:10px}.muted{color:var(--muted)}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.kpi-note{font-size:11px;color:var(--muted);margin-top:6px}.security-item{display:flex;gap:13px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line)}.security-item:last-child{border:0}.security-icon{width:34px;height:34px;display:grid;place-items:center;background:#c5f36313;color:var(--lime);border-radius:10px;flex-shrink:0}.security-item strong{font-size:13px}.security-item p{font-size:12px;color:var(--muted);margin:4px 0 0}.filterinput{background:#0a101b;border:1px solid var(--line);border-radius:10px;padding:10px 13px;color:#fff}.toast{max-width:calc(100% - 30px)}
-@media(max-width:850px){.workspace-grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.navlinks{display:none}.dashgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.workspace-grid{grid-template-columns:1fr}.panelhead,.toolbar{align-items:flex-start;flex-direction:column}.assistantinput{flex-direction:column}.pagehead h1{font-size:34px}.dashgrid{grid-template-columns:1fr 1fr}}
-</style></head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#080b13" />
+    <title>ThePhi Careers | Build what moves the future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #080b13;
+            --panel: #101522;
+            --panel2: #141b2b;
+            --line: rgba(255, 255, 255, .09);
+            --text: #f4f6fb;
+            --muted: #929bad;
+            --lime: #c5f36b;
+            --cyan: #75d9d0;
+            --purple: #a99aff;
+            --radius: 20px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.55
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit
+        }
+
+        button,
+        a {
+            cursor: pointer
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .shell {
+            width: min(1180px, calc(100% - 44px));
+            margin: auto
+        }
+
+        .nav {
+            height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font: 800 21px Manrope
+        }
+
+        .brandmark {
+            width: 34px;
+            height: 34px;
+            border-radius: 11px;
+            background: var(--lime);
+            color: #11170a;
+            display: grid;
+            place-items: center;
+            font: 900 19px Manrope;
+            box-shadow: 0 0 30px #c5f36335
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 30px;
+            color: #aeb6c5;
+            font-size: 14px
+        }
+
+        .navlinks a:hover {
+            color: var(--lime)
+        }
+
+        .navright {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .btn {
+            border: 0;
+            border-radius: 999px;
+            padding: 12px 20px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: .2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px
+        }
+
+        .btn:hover {
+            transform: translateY(-2px)
+        }
+
+        .primary {
+            background: var(--lime);
+            color: #10150b;
+            box-shadow: 0 8px 30px #c5f36320
+        }
+
+        .secondary {
+            background: #ffffff0a;
+            border: 1px solid var(--line);
+            color: #f2f4f9
+        }
+
+        .textbtn {
+            background: none;
+            color: #c8d0dc;
+            padding: 10px
+        }
+
+        .hero {
+            padding: 86px 0 76px;
+            display: grid;
+            grid-template-columns: 1.08fr .92fr;
+            gap: 60px;
+            align-items: center;
+            min-height: 610px
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            border: 1px solid #c5f36345;
+            background: #c5f3630c;
+            color: var(--lime);
+            border-radius: 999px;
+            padding: 7px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase
+        }
+
+        .pulse {
+            width: 7px;
+            height: 7px;
+            background: var(--lime);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--lime)
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0
+        }
+
+        h1 {
+            font: 800 clamp(46px, 6vw, 76px)/1.04 Manrope;
+            letter-spacing: -.055em;
+            margin: 24px 0
+        }
+
+        .gradient {
+            background: linear-gradient(100deg, #fff 15%, #c5f36b 70%, #75d9d0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #a6afc0;
+            max-width: 550px;
+            line-height: 1.8
+        }
+
+        .heroactions {
+            display: flex;
+            gap: 13px;
+            margin-top: 30px
+        }
+
+        .trust {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 42px;
+            color: #8993a5;
+            font-size: 12px
+        }
+
+        .avatars {
+            display: flex
+        }
+
+        .avatars span {
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            border: 2px solid var(--bg);
+            margin-left: -7px;
+            background: linear-gradient(140deg, #c5f36b, #638b7e)
+        }
+
+        .avatars span:first-child {
+            margin: 0;
+            background: linear-gradient(140deg, #9e8bff, #5062a0)
+        }
+
+        .avatars span:nth-child(2) {
+            background: linear-gradient(140deg, #ffb87d, #8b587b)
+        }
+
+        .heroart {
+            height: 430px;
+            position: relative;
+            border: 1px solid #ffffff14;
+            border-radius: 30px;
+            background: radial-gradient(circle at 50% 42%, #253149 0, #141d2d 35%, #0c111c 72%);
+            overflow: hidden;
+            box-shadow: 0 30px 90px #0008
+        }
+
+        .orb {
+            position: absolute;
+            width: 245px;
+            height: 245px;
+            border-radius: 50%;
+            left: 50%;
+            top: 45%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle at 34% 28%, #efffc5, #c5f36b 18%, #739a45 48%, #253c2b 72%, #121d20);
+            box-shadow: inset -25px -20px 45px #0008, 0 0 80px #c5f3632d
+        }
+
+        .ring {
+            position: absolute;
+            border: 1px solid #c5f36342;
+            border-radius: 50%;
+            left: 50%;
+            top: 45%;
+            transform: translate(-50%, -50%) rotate(-22deg);
+            width: 360px;
+            height: 125px
+        }
+
+        .ring.two {
+            transform: translate(-50%, -50%) rotate(52deg);
+            width: 390px;
+            height: 140px;
+            border-color: #75d9d04c
+        }
+
+        .orbitdot {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 20px var(--cyan);
+            left: 77%;
+            top: 28%
+        }
+
+        .floatcard {
+            position: absolute;
+            padding: 14px 16px;
+            background: #101827dd;
+            backdrop-filter: blur(15px);
+            border: 1px solid #ffffff1b;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px #0005
+        }
+
+        .floatcard small {
+            color: #8e9aab;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .1em
+        }
+
+        .floatcard strong {
+            display: block;
+            font: 700 19px Manrope;
+            margin-top: 4px
+        }
+
+        .fc1 {
+            top: 35px;
+            left: 25px
+        }
+
+        .fc2 {
+            right: 22px;
+            bottom: 42px
+        }
+
+        .fc2 strong {
+            color: var(--lime)
+        }
+
+        .artlabel {
+            position: absolute;
+            bottom: 20px;
+            left: 25px;
+            color: #8f9aac;
+            font-size: 11px;
+            letter-spacing: .14em;
+            text-transform: uppercase
+        }
+
+        .section {
+            padding: 86px 0
+        }
+
+        .sectionhead {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 32px
+        }
+
+        .kicker {
+            color: var(--lime);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .14em
+        }
+
+        .section h2 {
+            font: 750 clamp(30px, 4vw, 44px)/1.15 Manrope;
+            letter-spacing: -.04em;
+            margin: 12px 0
+        }
+
+        .sectionhead p {
+            max-width: 420px;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px
+        }
+
+        .card {
+            background: linear-gradient(145deg, #141b2a, #0e1420);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 25px;
+            transition: .25s
+        }
+
+        .card:hover {
+            border-color: #c5f36355;
+            transform: translateY(-4px)
+        }
+
+        .icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 13px;
+            background: #c5f36317;
+            color: var(--lime);
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+            margin-bottom: 23px
+        }
+
+        .card h3 {
+            font: 700 18px Manrope;
+            margin-bottom: 9px
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 0
+        }
+
+        .role {
+            display: flex;
+            flex-direction: column;
+            min-height: 215px
+        }
+
+        .role .tag {
+            font-size: 11px;
+            color: var(--cyan);
+            background: #75d9d015;
+            border-radius: 999px;
+            padding: 5px 9px;
+            align-self: flex-start;
+            margin-bottom: 18px
+        }
+
+        .rolefoot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 24px;
+            color: #aab4c4;
+            font-size: 12px
+        }
+
+        .arrow {
+            color: var(--lime);
+            font-size: 20px
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px
+        }
+
+        .step {
+            padding: 22px 18px;
+            border-top: 1px solid #c5f3636b;
+            background: linear-gradient(180deg, #c5f3630a, transparent);
+            border-radius: 0 0 15px 15px
+        }
+
+        .step b {
+            color: var(--lime);
+            font: 700 13px Manrope
+        }
+
+        .step h3 {
+            font: 700 16px Manrope;
+            margin: 18px 0 7px
+        }
+
+        .step p {
+            font-size: 13px;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .cta {
+            padding: 50px;
+            border-radius: 28px;
+            background: radial-gradient(circle at 80% 0, #c5f3632b, transparent 35%), linear-gradient(120deg, #182333, #101722);
+            border: 1px solid #ffffff15;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px
+        }
+
+        .cta h2 {
+            font: 750 34px Manrope;
+            margin: 0 0 10px
+        }
+
+        .cta p {
+            color: var(--muted);
+            margin: 0
+        }
+
+        .footer {
+            padding: 38px 0;
+            border-top: 1px solid var(--line);
+            margin-top: 80px;
+            color: #778294;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between
+        }
+
+        .footer b {
+            color: #dce2ec
+        }
+
+        .page {
+            display: none;
+            min-height: 75vh;
+            padding: 46px 0 80px
+        }
+
+        .page.active {
+            display: block
+        }
+
+        .pagehead {
+            margin-bottom: 30px
+        }
+
+        .pagehead h1 {
+            font-size: 42px;
+            margin: 8px 0
+        }
+
+        .pagehead p {
+            color: var(--muted)
+        }
+
+        .formlayout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 22px
+        }
+
+        .progressbox,
+        .formbox,
+        .dashcard {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 24px
+        }
+
+        .progressstep {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            padding: 13px 0;
+            color: #778294;
+            font-size: 13px
+        }
+
+        .progressstep .num {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #ffffff25;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 11px
+        }
+
+        .progressstep.current {
+            color: #fff
+        }
+
+        .progressstep.current .num,
+        .progressstep.done .num {
+            background: var(--lime);
+            border-color: var(--lime);
+            color: #10150b
+        }
+
+        .formbox h2 {
+            font: 700 23px Manrope
+        }
+
+        .formbox>p {
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px;
+            margin-top: 25px
+        }
+
+        .field.full {
+            grid-column: 1/-1
+        }
+
+        .field label {
+            display: block;
+            font-size: 12px;
+            color: #c4ccda;
+            margin-bottom: 7px
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            background: #090e18;
+            border: 1px solid #ffffff18;
+            border-radius: 10px;
+            padding: 12px 13px;
+            color: #f3f5f9;
+            outline: none
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            border-color: #c5f36388;
+            box-shadow: 0 0 0 3px #c5f36312
+        }
+
+        .field textarea {
+            min-height: 95px;
+            resize: vertical
+        }
+
+        .field small {
+            color: #758196;
+            font-size: 11px
+        }
+
+        .formactions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 28px;
+            padding-top: 22px;
+            border-top: 1px solid var(--line)
+        }
+
+        .notice {
+            padding: 14px;
+            border: 1px solid #c5f36335;
+            background: #c5f3630b;
+            border-radius: 12px;
+            color: #c9d4b3;
+            font-size: 12px;
+            margin-top: 18px
+        }
+
+        .dashgrid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 20px
+        }
+
+        .metric {
+            padding: 20px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px
+        }
+
+        .metric small {
+            color: var(--muted);
+            font-size: 12px
+        }
+
+        .metric strong {
+            display: block;
+            font: 750 29px Manrope;
+            margin-top: 8px
+        }
+
+        .metric em {
+            font-style: normal;
+            color: var(--lime);
+            font-size: 11px
+        }
+
+        .tablewrap {
+            overflow: auto
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px
+        }
+
+        .table th,
+        .table td {
+            text-align: left;
+            padding: 15px 12px;
+            border-bottom: 1px solid var(--line);
+            font-size: 12px
+        }
+
+        .table th {
+            color: #7f8a9d;
+            font-weight: 600
+        }
+
+        .table td {
+            color: #d6dce6
+        }
+
+        .status {
+            display: inline-flex;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: #c5f36313;
+            color: var(--lime);
+            font-size: 10px
+        }
+
+        .status.review {
+            background: #a99aff16;
+            color: #b9aaff
+        }
+
+        .status.rejected {
+            background: #ff797916;
+            color: #ff9a9a
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px
+        }
+
+        .tab {
+            padding: 9px 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: transparent;
+            color: #9ca7b8;
+            font-size: 12px
+        }
+
+        .tab.active {
+            background: #c5f36318;
+            color: var(--lime);
+            border-color: #c5f36355
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .toolbar input {
+            background: #0a101b;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 10px 13px;
+            color: #fff;
+            min-width: 220px
+        }
+
+        .empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted)
+        }
+
+        .agreement {
+            max-width: 800px;
+            margin: auto;
+            background: #f7f6f1;
+            color: #20252b;
+            padding: 55px;
+            border-radius: 4px;
+            box-shadow: 0 20px 70px #0005;
+            font-family: Georgia, serif
+        }
+
+        .agreement h2 {
+            text-align: center;
+            font-size: 22px
+        }
+
+        .agreement p {
+            font-size: 14px;
+            line-height: 1.8
+        }
+
+        .agreement .signrow {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px
+        }
+
+        .signbox {
+            border-top: 1px solid #999;
+            padding-top: 10px;
+            font-size: 12px
+        }
+
+        .device {
+            background: #111a28;
+            border: 1px dashed #65748b;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            color: #9eabba
+        }
+
+        .device .finger {
+            font-size: 38px;
+            color: #6e7b90
+        }
+
+        .device strong {
+            display: block;
+            color: #fff;
+            margin: 10px
+        }
+
+        .modalback {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #000a;
+            z-index: 10;
+            align-items: center;
+            justify-content: center;
+            padding: 20px
+        }
+
+        .modalback.show {
+            display: flex
+        }
+
+        .modal {
+            background: #131b29;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 26px;
+            max-width: 470px;
+            width: 100%
+        }
+
+        .modal h3 {
+            font: 700 21px Manrope
+        }
+
+        .modal p {
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .modalactions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 9px;
+            margin-top: 20px
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #d6f99a;
+            color: #15200b;
+            padding: 13px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 13px;
+            box-shadow: 0 10px 40px #0008;
+            display: none;
+            z-index: 20
+        }
+
+        .toast.show {
+            display: block;
+            animation: up .3s
+        }
+
+        @keyframes up {
+            from {
+                transform: translateY(15px);
+                opacity: 0
+            }
+
+            to {
+                transform: none;
+                opacity: 1
+            }
+        }
+
+        .mobilemenu {
+            display: none
+        }
+
+        @media(max-width:850px) {
+            .navlinks {
+                display: none
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 60px 0;
+                gap: 40px
+            }
+
+            .heroart {
+                height: 350px
+            }
+
+            .grid3 {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .steps {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .formlayout {
+                grid-template-columns: 1fr
+            }
+
+            .progressbox {
+                display: flex;
+                overflow: auto;
+                gap: 14px;
+                padding: 12px
+            }
+
+            .progressstep {
+                white-space: nowrap;
+                padding: 5px
+            }
+
+            .dashgrid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .cta {
+                padding: 32px;
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .sectionhead {
+                display: block
+            }
+
+            .sectionhead p {
+                margin-top: 10px
+            }
+        }
+
+        @media(max-width:560px) {
+            .shell {
+                width: min(100% - 28px, 1180px)
+            }
+
+            .nav {
+                height: 68px
+            }
+
+            .navright .secondary {
+                display: none
+            }
+
+            .hero {
+                min-height: 0;
+                padding: 55px 0
+            }
+
+            .heroactions {
+                flex-direction: column;
+                align-items: stretch
+            }
+
+            .trust {
+                flex-wrap: wrap
+            }
+
+            .heroart {
+                height: 300px
+            }
+
+            .orb {
+                width: 190px;
+                height: 190px
+            }
+
+            .ring {
+                width: 280px
+            }
+
+            .ring.two {
+                width: 300px
+            }
+
+            .floatcard {
+                padding: 10px
+            }
+
+            .fc1 {
+                left: 12px
+            }
+
+            .fc2 {
+                right: 12px
+            }
+
+            .section {
+                padding: 60px 0
+            }
+
+            .grid3,
+            .steps {
+                grid-template-columns: 1fr
+            }
+
+            .dashgrid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .fields {
+                grid-template-columns: 1fr
+            }
+
+            .field.full {
+                grid-column: auto
+            }
+
+            .toolbar {
+                align-items: stretch;
+                flex-direction: column
+            }
+
+            .toolbar input {
+                width: 100%
+            }
+
+            .pagehead h1 {
+                font-size: 34px
+            }
+
+            .agreement {
+                padding: 25px
+            }
+
+            .footer {
+                gap: 15px;
+                flex-direction: column
+            }
+
+            .cta h2 {
+                font-size: 27px
+            }
+        }
+
+        /* ThePhi final workspace extensions */
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px
+        }
+
+        .workspace-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 190px
+        }
+
+        .workspace-card:after {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            right: -50px;
+            bottom: -65px;
+            background: #c5f36312
+        }
+
+        .workspace-card .launch {
+            display: inline-flex;
+            margin-top: 20px;
+            color: var(--lime);
+            font-size: 12px;
+            font-weight: 700
+        }
+
+        .panelhead {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 20px
+        }
+
+        .panelhead p {
+            color: var(--muted);
+            font-size: 13px;
+            margin: 5px 0 0
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 18px
+        }
+
+        .mini-list {
+            display: grid;
+            gap: 10px
+        }
+
+        .mini-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 13px 0;
+            border-bottom: 1px solid var(--line);
+            font-size: 13px
+        }
+
+        .mini-row:last-child {
+            border: 0
+        }
+
+        .progressbar {
+            height: 7px;
+            border-radius: 99px;
+            background: #ffffff12;
+            overflow: hidden;
+            margin-top: 9px
+        }
+
+        .progressbar span {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, var(--lime), var(--cyan));
+            border-radius: 99px
+        }
+
+        .chartbars {
+            height: 180px;
+            display: flex;
+            align-items: end;
+            gap: 12px;
+            padding: 15px 8px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .chartbars span {
+            flex: 1;
+            min-width: 12px;
+            border-radius: 7px 7px 0 0;
+            background: linear-gradient(180deg, var(--lime), #75d9d055);
+            position: relative
+        }
+
+        .chartbars span small {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--muted);
+            font-size: 10px
+        }
+
+        .assistantbox {
+            background: radial-gradient(circle at 90% 0, #a99aff20, transparent 40%), #111827;
+            border: 1px solid #a99aff33;
+            border-radius: 20px;
+            padding: 24px
+        }
+
+        .assistantreply {
+            background: #ffffff08;
+            border: 1px solid var(--line);
+            padding: 15px;
+            border-radius: 14px;
+            color: #cbd4e2;
+            font-size: 13px;
+            line-height: 1.7;
+            margin: 16px 0
+        }
+
+        .assistantinput {
+            display: flex;
+            gap: 10px
+        }
+
+        .assistantinput input {
+            flex: 1;
+            min-width: 0;
+            background: #090e18;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 12px;
+            color: white
+        }
+
+        .checkline {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: #aab4c4;
+            font-size: 12px;
+            margin: 12px 0
+        }
+
+        .checkline input {
+            accent-color: var(--lime);
+            margin-top: 3px
+        }
+
+        .pill {
+            display: inline-flex;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: #75d9d015;
+            color: var(--cyan);
+            font-size: 10px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .page-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .kpi-note {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 6px
+        }
+
+        .security-item {
+            display: flex;
+            gap: 13px;
+            align-items: flex-start;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .security-item:last-child {
+            border: 0
+        }
+
+        .security-icon {
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            background: #c5f36313;
+            color: var(--lime);
+            border-radius: 10px;
+            flex-shrink: 0
+        }
+
+        .security-item strong {
+            font-size: 13px
+        }
+
+        .security-item p {
+            font-size: 12px;
+            color: var(--muted);
+            margin: 4px 0 0
+        }
+
+        .filterinput {
+            background: #0a101b;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 10px 13px;
+            color: #fff
+        }
+
+        .toast {
+            max-width: calc(100% - 30px)
+        }
+
+        @media(max-width:850px) {
+            .workspace-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .split {
+                grid-template-columns: 1fr
+            }
+
+            .navlinks {
+                display: none
+            }
+
+            .dashgrid {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:560px) {
+            .workspace-grid {
+                grid-template-columns: 1fr
+            }
+
+            .panelhead,
+            .toolbar {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .assistantinput {
+                flex-direction: column
+            }
+
+            .pagehead h1 {
+                font-size: 34px
+            }
+
+            .dashgrid {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
 <body>
-<header class="shell nav"><a class="brand" href="#home" onclick="showPage('home')"><span class="brandmark">Φ</span> thephi<span style="color:var(--lime)">.</span></a><nav class="navlinks"><a href="#about" onclick="showPage('home')">About</a><a href="#opportunities" onclick="showPage('home')">Opportunities</a><a href="#process" onclick="showPage('home')">How it works</a></nav><div class="navright"><button class="btn textbtn" onclick="showPage('login')">Workspace</button><button class="btn primary" onclick="showPage('apply')">Apply now <span>↗</span></button></div></header>
-<main id="home" class="shell">
-<section class="hero"><div><span class="eyebrow"><i class="pulse"></i> Careers at ThePhi</span><h1>Build what<br><span class="gradient">moves the future.</span></h1><p>Bring your curiosity. Build meaningful technology. Join a team exploring what becomes possible when people and intelligent systems work together.</p><div class="heroactions"><button class="btn primary" onclick="showPage('apply')">Start your application <span>↗</span></button><a class="btn secondary" href="#opportunities">Explore opportunities ↓</a></div><div class="trust"><div class="avatars"><span></span><span></span><span></span></div><span>A place to learn, contribute and grow.</span></div></div><div class="heroart"><div class="orb"></div><div class="ring"></div><div class="ring two"></div><div class="orbitdot"></div><div class="floatcard fc1"><small>Our focus</small><strong>Ideas → Impact</strong></div><div class="floatcard fc2"><small>Build with purpose</small><strong>Think beyond.</strong></div><div class="artlabel">THE NEXT CHAPTER STARTS HERE · 01 / 04</div></div></section>
-<section class="section" id="about"><div class="sectionhead"><div><span class="kicker">Why ThePhi</span><h2>Good work starts with<br>good people.</h2></div><p>We value thoughtful problem-solvers, clear communication and the courage to turn an early idea into something useful.</p></div><div class="grid3"><article class="card"><div class="icon">✳</div><h3>Meaningful problems</h3><p>Work on ideas and products that solve real problems, with room to question and improve how things are done.</p></article><article class="card"><div class="icon">⌘</div><h3>Learn by building</h3><p>Grow through practical work, shared knowledge, feedback and opportunities to take ownership.</p></article><article class="card"><div class="icon">◉</div><h3>People first</h3><p>Bring your perspective. We want a respectful environment where different strengths can do their best work.</p></article></div></section>
-<section class="section" id="opportunities"><div class="sectionhead"><div><span class="kicker">Find your place</span><h2>Make your next move.</h2></div><p>Explore the areas where you can contribute. Role availability and engagement details are confirmed during review.</p></div><div class="grid3"><article class="card role"><span class="tag">Technology</span><h3>Software & AI</h3><p>Build thoughtful digital experiences, intelligent tools and reliable systems.</p><div class="rolefoot"><span>Engineering · AI · Product</span><button class="textbtn arrow" onclick="showPage('apply','Technology')">↗</button></div></article><article class="card role"><span class="tag">Growth</span><h3>Marketing & Community</h3><p>Shape the story, create useful content and help communities discover ThePhi.</p><div class="rolefoot"><span>Marketing · Content · Growth</span><button class="textbtn arrow" onclick="showPage('apply','Marketing')">↗</button></div></article><article class="card role"><span class="tag">Operations</span><h3>Business & Operations</h3><p>Help teams move from plans to execution through research and coordination.</p><div class="rolefoot"><span>Business · Research · Operations</span><button class="textbtn arrow" onclick="showPage('apply','Operations')">↗</button></div></article></div></section>
-<section class="section" id="process"><div class="sectionhead"><div><span class="kicker">The process</span><h2>Clear steps. No guesswork.</h2></div><p>We keep the application journey transparent, from your first submission to the final agreement.</p></div><div class="steps"><div class="step"><b>01 / APPLY</b><h3>Tell us about you</h3><p>Share your experience, interests and the role you have in mind.</p></div><div class="step"><b>02 / REVIEW</b><h3>We review your profile</h3><p>The team evaluates applications and may request more information.</p></div><div class="step"><b>03 / DECISION</b><h3>Get an update</h3><p>Receive an email when your application status changes.</p></div><div class="step"><b>04 / AGREEMENT</b><h3>Review and sign</h3><p>Approved applicants can review the terms before signing.</p></div></div></section>
-<section class="section"><div class="cta"><div><span class="kicker">Your next chapter</span><h2>Have something to bring<br>to the table?</h2><p>We would like to hear from you. Start with a few details.</p></div><button class="btn primary" onclick="showPage('apply')">Apply to ThePhi ↗</button></div></section>
-<footer class="footer"><div><b>Φ thephi.</b><br>Build what moves the future.</div><div>© 2026 ThePhi. All rights reserved.<br>Privacy · Terms · Contact</div></footer></main>
-<section class="page shell" id="apply"><div class="pagehead"><span class="kicker">Join ThePhi</span><h1>Your application.</h1><p>Take a few minutes to tell us about yourself. Fields marked * are required.</p></div><div class="formlayout"><aside class="progressbox" id="progress"><div class="progressstep current"><span class="num">1</span> Personal</div><div class="progressstep"><span class="num">2</span> Experience</div><div class="progressstep"><span class="num">3</span> Education</div><div class="progressstep"><span class="num">4</span> Availability</div><div class="progressstep"><span class="num">5</span> Documents</div></aside><div class="formbox"><div id="formstep"></div><div class="formactions"><button class="btn secondary" id="backBtn" onclick="changeStep(-1)" style="visibility:hidden">← Back</button><button class="btn primary" id="nextBtn" onclick="changeStep(1)">Continue →</button></div></div></div></section>
-<section class="page shell" id="success"><div class="formbox" style="max-width:650px;margin:60px auto;text-align:center;padding:50px"><div class="icon" style="margin:0 auto 20px;font-size:25px">✓</div><span class="kicker">Application received</span><h1 style="font-size:38px;margin:12px 0">You're on our radar.</h1><p style="color:var(--muted)">Your application has been successfully submitted to ThePhi. Our administration team will review your details. You will receive an email notification regarding the application decision.</p><div class="notice" id="refNumber"></div><button class="btn primary" style="margin-top:25px" onclick="showPage('login')">Go to applicant portal →</button></div></section>
-<section class="page shell" id="login"><div class="pagehead"><span class="kicker">Secure access</span><h1>Welcome back.</h1><p>Choose a demo portal to preview the applicant and admin experience.</p></div><div class="grid3"><div class="card"><div class="icon">◎</div><h3>Applicant portal</h3><p>Track your application, view updates and review agreement status.</p><button class="btn primary" style="margin-top:22px" onclick="showPage('applicant')">Open applicant demo →</button></div><div class="card"><div class="icon">▦</div><h3>Admin workspace</h3><p>Review applications, update decisions and manage the pipeline.</p><button class="btn secondary" style="margin-top:22px" onclick="showPage('admin')">Open admin demo →</button></div><div class="card"><div class="icon">⌑</div><h3>Real account access</h3><p>Production authentication will be enabled after Supabase credentials are configured.</p><span class="status review">Setup required</span></div></div><div style="margin-top:34px"><span class="kicker">More workspaces</span><h2 style="font:750 27px Manrope;margin:10px 0 20px">One platform. Every team.</h2><div class="workspace-grid"><article class="card workspace-card"><div class="icon">◷</div><h3>Interview room</h3><p>Manage interview schedules, feedback, scorecards and candidate evaluations.</p><button class="launch" onclick="showPage('interviews')">Open interviews ↗</button></article><article class="card workspace-card"><div class="icon">▤</div><h3>Employee hub</h3><p>Employee directory, onboarding tasks, leave requests and self-service.</p><button class="launch" onclick="showPage('employee')">Open employee hub ↗</button></article><article class="card workspace-card"><div class="icon">⌁</div><h3>People analytics</h3><p>Recruitment funnel, hiring trends, turnaround time and reports.</p><button class="launch" onclick="showPage('analytics')">View analytics ↗</button></article><article class="card workspace-card"><div class="icon">✦</div><h3>AI intelligence</h3><p>Recruiter copilot for summaries, role matching and structured insights.</p><button class="launch" onclick="showPage('ai')">Open AI center ↗</button></article><article class="card workspace-card"><div class="icon">✍</div><h3>Representative desk</h3><p>Review issued agreements and manage authorized countersigning.</p><button class="launch" onclick="showPage('representative')">Open signing desk ↗</button></article><article class="card workspace-card"><div class="icon">⛨</div><h3>Trust & security</h3><p>Permissions, audit trail, consent records and data retention controls.</p><button class="launch" onclick="showPage('security')">Open security center ↗</button></article></div></div></section>
-<section class="page shell" id="applicant"><div class="pagehead"><span class="kicker">Applicant workspace</span><h1>Your journey, in one place.</h1><p>Demo portal preview. Connect authentication and the database to enable private account data.</p></div><div class="dashgrid"><div class="metric"><small>Application reference</small><strong style="font-size:18px" id="appRef">TPH-DEMO-1042</strong></div><div class="metric"><small>Current status</small><strong style="font-size:19px">Under review</strong><em>● In progress</em></div><div class="metric"><small>Position</small><strong style="font-size:18px">Technology</strong></div><div class="metric"><small>Agreement</small><strong style="font-size:18px">Not issued</strong></div></div><div class="dashcard"><h3>Application timeline</h3><div class="steps" style="margin-top:20px"><div class="step"><b>✓ SUBMITTED</b><h3>Application received</h3><p>Your details are in the system.</p></div><div class="step"><b>● IN PROGRESS</b><h3>Under review</h3><p>The team is reviewing your profile.</p></div><div class="step"><b>03 / DECISION</b><h3>Decision pending</h3><p>We will notify you by email.</p></div><div class="step"><b>04 / AGREEMENT</b><h3>Not started</h3><p>Available after approval.</p></div></div></div></section>
-<section class="page shell" id="admin"><div class="pagehead"><span class="kicker">ThePhi administration</span><h1>Application overview.</h1><p>Review the pipeline and update sample records. Changes in this preview are stored only in this browser session.</p></div><div class="dashgrid"><div class="metric"><small>Total applications</small><strong id="mTotal">24</strong><em>All time</em></div><div class="metric"><small>New applications</small><strong>08</strong><em>Needs attention</em></div><div class="metric"><small>Under review</small><strong>10</strong><em>In progress</em></div><div class="metric"><small>Approved</small><strong>06</strong><em>Ready for next step</em></div></div><div class="page-actions" style="margin-bottom:20px"><button class="btn secondary" onclick="showPage('interviews')">Interview calendar ↗</button><button class="btn secondary" onclick="showPage('analytics')">Reports & analytics ↗</button><button class="btn secondary" onclick="showPage('ai')">AI recruiter ↗</button></div><div class="dashcard"><div class="toolbar"><div><h3 style="margin:0">Applications</h3><small style="color:var(--muted)">Sample records for interface preview</small></div><input id="searchApps" placeholder="Search applicants..." oninput="renderApps()"></div><div class="tabs"><button class="tab active" onclick="filterApps('All',this)">All</button><button class="tab" onclick="filterApps('Submitted',this)">Submitted</button><button class="tab" onclick="filterApps('Under review',this)">Under review</button><button class="tab" onclick="filterApps('Approved',this)">Approved</button><button class="tab" onclick="filterApps('Rejected',this)">Rejected</button></div><div class="tablewrap"><table class="table"><thead><tr><th>APPLICANT</th><th>REFERENCE</th><th>POSITION</th><th>SUBMITTED</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody id="appRows"></tbody></table></div></div></section>
-<section class="page shell" id="interviews"><div class="pagehead"><span class="kicker">Recruitment operations</span><h1>Interview command center.</h1><p>Coordinate interviews, collect structured feedback and keep every candidate informed.</p></div><div class="dashgrid"><div class="metric"><small>Scheduled this week</small><strong>12</strong><em>Across 4 departments</em></div><div class="metric"><small>Feedback pending</small><strong>04</strong><em>Needs interviewer action</em></div><div class="metric"><small>Completed</small><strong>28</strong><em>This month</em></div><div class="metric"><small>Average score</small><strong>4.2/5</strong><em>Structured scorecards</em></div></div><div class="split"><div class="dashcard"><div class="panelhead"><div><h3>Upcoming interviews</h3><p>Sample schedule for workspace preview</p></div><button class="btn primary" onclick="toast('Interview scheduling requires calendar and email integration.')">＋ Schedule interview</button></div><div class="mini-list"><div class="mini-row"><div><b>Riya Sharma</b><div class="muted">Frontend Engineer · Technical round</div></div><span class="pill">Today · 11:30 AM</span></div><div class="mini-row"><div><b>Arjun Rao</b><div class="muted">Growth Associate · Hiring manager</div></div><span class="pill">Today · 2:00 PM</span></div><div class="mini-row"><div><b>Fatima Noor</b><div class="muted">AI Intern · Screening</div></div><span class="pill">02 Nov · 10:00 AM</span></div></div></div><div class="dashcard"><h3>Interview scorecard</h3><p class="muted" style="font-size:12px">Use consistent, job-related criteria.</p><div class="mini-list"><div class="mini-row">Role knowledge <b>4 / 5</b></div><div class="mini-row">Problem solving <b>4 / 5</b></div><div class="mini-row">Communication <b>5 / 5</b></div><div class="mini-row">Relevant experience <b>3 / 5</b></div></div><button class="btn secondary" style="margin-top:15px" onclick="toast('Scorecard saved in demo preview.')">Save sample feedback</button></div></div></section>
-<section class="page shell" id="employee"><div class="pagehead"><span class="kicker">People operations</span><h1>Employee hub.</h1><p>A connected space for onboarding, employee records and everyday people operations.</p></div><div class="dashgrid"><div class="metric"><small>Active employees</small><strong>38</strong><em>Across 5 teams</em></div><div class="metric"><small>Onboarding in progress</small><strong>06</strong><em>3 tasks due this week</em></div><div class="metric"><small>Leave requests</small><strong>03</strong><em>Awaiting approval</em></div><div class="metric"><small>Documents due</small><strong>02</strong><em>Review required</em></div></div><div class="split"><div class="dashcard"><div class="panelhead"><div><h3>Employee directory</h3><p>Illustrative records, not real employee data</p></div><input class="filterinput" id="employeeSearch" placeholder="Search team..." oninput="filterEmployees()"></div><div class="tablewrap"><table class="table"><thead><tr><th>EMPLOYEE</th><th>TEAM</th><th>ROLE</th><th>STATUS</th></tr></thead><tbody id="employeeRows"><tr><td><b>Neha Kapoor</b></td><td>Engineering</td><td>Product Engineer</td><td><span class="status">Active</span></td></tr><tr><td><b>Dev Patel</b></td><td>Marketing</td><td>Growth Associate</td><td><span class="status">Active</span></td></tr><tr><td><b>Imran Ali</b></td><td>AI & Research</td><td>ML Intern</td><td><span class="status review">Onboarding</span></td></tr><tr><td><b>Ananya Sen</b></td><td>Operations</td><td>People Coordinator</td><td><span class="status">Active</span></td></tr></tbody></table></div></div><div class="dashcard"><h3>Onboarding checklist</h3><p class="muted" style="font-size:12px">Example workflow for a new team member.</p><div class="mini-list"><div class="mini-row">Agreement completed <span class="status">Done</span></div><div class="mini-row">Identity and right-to-work checks <span class="status review">Pending</span></div><div class="mini-row">Workspace access <span class="status review">Pending</span></div><div class="mini-row">Manager introduction <span class="status">Done</span></div><div class="mini-row">First-week plan <span class="status review">Pending</span></div></div><button class="btn secondary" style="margin-top:14px" onclick="toast('Onboarding tasks are demo-only until connected to the backend.')">View onboarding tasks</button></div></div></section>
-<section class="page shell" id="analytics"><div class="pagehead"><span class="kicker">People intelligence</span><h1>Recruitment analytics.</h1><p>Understand pipeline health and hiring operations with clear, explainable metrics.</p></div><div class="dashgrid"><div class="metric"><small>Applications this month</small><strong>146</strong><em>↑ 18% vs last month</em></div><div class="metric"><small>Shortlist rate</small><strong>32%</strong><em>46 candidates</em></div><div class="metric"><small>Offer acceptance</small><strong>78%</strong><em>14 of 18 offers</em></div><div class="metric"><small>Median time to hire</small><strong>19 days</strong><em>Target: 21 days</em></div></div><div class="split"><div class="dashcard"><div class="panelhead"><div><h3>Application volume</h3><p>Illustrative monthly trend</p></div><span class="pill">Last 6 months</span></div><div class="chartbars"><span style="height:38%"><small>May</small></span><span style="height:52%"><small>Jun</small></span><span style="height:44%"><small>Jul</small></span><span style="height:67%"><small>Aug</small></span><span style="height:75%"><small>Sep</small></span><span style="height:92%"><small>Oct</small></span></div></div><div class="dashcard"><h3>Pipeline conversion</h3><p class="muted" style="font-size:12px">Sample funnel metrics</p><div style="margin:20px 0"><div class="mini-row"><span>Applied</span><b>146</b></div><div class="progressbar"><span style="width:100%"></span></div></div><div style="margin:20px 0"><div class="mini-row"><span>Shortlisted</span><b>46</b></div><div class="progressbar"><span style="width:32%"></span></div></div><div style="margin:20px 0"><div class="mini-row"><span>Offers</span><b>18</b></div><div class="progressbar"><span style="width:12%"></span></div></div><div style="margin:20px 0"><div class="mini-row"><span>Joined</span><b>14</b></div><div class="progressbar"><span style="width:10%"></span></div></div></div></div><div class="page-actions" style="margin-top:20px"><button class="btn secondary" onclick="toast('Connect reporting backend to export verified CSV/PDF reports.')">Export report</button><button class="btn secondary" onclick="toast('Date range selector will use live database records in production.')">Change date range</button></div><p class="kpi-note">All figures on this preview are illustrative sample data and must not be used for business decisions.</p></section>
-<section class="page shell" id="ai"><div class="pagehead"><span class="kicker">AI-assisted recruitment</span><h1>ThePhi intelligence center.</h1><p>Give recruiters useful assistance while keeping hiring decisions human-led and accountable.</p></div><div class="assistantbox"><span class="pill">AI recruiter copilot · interface preview</span><h2 style="font:750 30px Manrope;margin:18px 0 8px">Ask your recruitment workspace.</h2><p class="muted">Try a sample question. This frontend preview returns a clearly labeled sample response. Connect an approved AI provider and permission-aware API for live answers.</p><div class="assistantreply" id="aiReply">Hello. I can help summarize applications, draft interview questions, explain pipeline metrics and find pending workflow items. What would you like to explore?</div><div class="assistantinput"><input id="aiQuestion" placeholder="e.g. Summarize the open engineering roles"><button class="btn primary" onclick="askAI()">Ask assistant ↗</button></div></div><div class="grid3" style="margin-top:18px"><article class="card"><div class="icon">⌕</div><h3>Resume extraction</h3><p>Extract candidate-provided skills, education and experience with source references.</p></article><article class="card"><div class="icon">◎</div><h3>Role alignment</h3><p>Compare stated qualifications against published role requirements with explainable evidence.</p></article><article class="card"><div class="icon">✎</div><h3>Interview preparation</h3><p>Draft structured, job-related questions and consistent evaluation rubrics.</p></article></div><div class="notice">AI outputs are advisory. Do not use protected traits, inferred personality, facial analysis or opaque scores to make hiring decisions. Recruiters must review evidence and make decisions.</div></section>
-<section class="page shell" id="representative"><div class="pagehead"><span class="kicker">Authorized signing</span><h1>Representative desk.</h1><p>Review agreement versions and signing evidence before an authorized company countersignature.</p></div><div class="dashgrid"><div class="metric"><small>Awaiting review</small><strong>04</strong><em>Representative action</em></div><div class="metric"><small>Applicant signed</small><strong>03</strong><em>Ready for review</em></div><div class="metric"><small>Completed this month</small><strong>11</strong><em>Finalized agreements</em></div><div class="metric"><small>Expiring soon</small><strong>02</strong><em>Renewal review</em></div></div><div class="dashcard"><div class="panelhead"><div><h3>Pending agreements</h3><p>Sample records for interface preview</p></div><span class="status review">No live signing enabled</span></div><div class="tablewrap"><table class="table"><thead><tr><th>AGREEMENT</th><th>APPLICANT</th><th>VERSION</th><th>APPLICANT SIGNATURE</th><th>ACTION</th></tr></thead><tbody><tr><td>TPH-AGR-2026-014</td><td>Riya Sharma</td><td>v1.2</td><td><span class="status">Received</span></td><td><button class="textbtn" onclick="showPage('agreement')">Review ↗</button></td></tr><tr><td>TPH-AGR-2026-013</td><td>Arjun Rao</td><td>v1.0</td><td><span class="status">Received</span></td><td><button class="textbtn" onclick="showPage('agreement')">Review ↗</button></td></tr></tbody></table></div><div class="notice">Countersigning is disabled in this prototype. Production signing must verify the authenticated representative, exact immutable agreement version, signing intent and audit evidence.</div></div></section>
-<section class="page shell" id="security"><div class="pagehead"><span class="kicker">Trust, privacy & governance</span><h1>Security center.</h1><p>Security controls designed around least privilege, privacy and traceable actions.</p></div><div class="split"><div class="dashcard"><h3>Platform controls</h3><div class="security-item"><span class="security-icon">⛨</span><div><strong>Role-based access control</strong><p>Separate applicant, recruiter, HR, representative, auditor and super-admin permissions.</p></div></div><div class="security-item"><span class="security-icon">⌑</span><div><strong>Row-level security</strong><p>Applicants can access only their own records. Privileged access is narrowly scoped.</p></div></div><div class="security-item"><span class="security-icon">✦</span><div><strong>Multi-factor authentication</strong><p>Require stronger authentication for administrators and authorized signatories.</p></div></div><div class="security-item"><span class="security-icon">▣</span><div><strong>Private document storage</strong><p>Use private buckets, expiring links, file validation and access logging.</p></div></div><div class="security-item"><span class="security-icon">◷</span><div><strong>Audit and retention</strong><p>Record critical changes and enforce documented retention and deletion schedules.</p></div></div></div><div class="dashcard"><h3>Biometric privacy controls</h3><p class="muted" style="font-size:12px">Sensitive biometric data requires a separate, explicit workflow.</p><div class="mini-list"><div class="mini-row">Separate informed consent <span class="status">Required</span></div><div class="mini-row">Scanner SDK integration <span class="status review">Not configured</span></div><div class="mini-row">Encrypted restricted storage <span class="status review">Backend required</span></div><div class="mini-row">Retention and deletion policy <span class="status review">Configure</span></div><div class="mini-row">Access audit trail <span class="status review">Backend required</span></div></div><div class="notice">No fingerprint image or biometric template is collected by this prototype. A browser cannot extract a fingerprint from a phone or laptop unlock sensor.</div></div></div></section>
-<section class="page shell" id="agreement"><div class="pagehead"><span class="kicker">Agreement preview</span><h1>Review before you sign.</h1><p>This sample shows the document layout. It is not an issued legal agreement.</p></div><div class="agreement"><h2>THEPHI</h2><h2>ENGAGEMENT AGREEMENT</h2><p style="text-align:center">Reference: TPH-DEMO-0001 · Draft preview</p><hr><p>This agreement preview illustrates the structure of an engagement document between ThePhi and the selected applicant. The final agreement must contain reviewed terms, the correct legal entity details, compensation, duration, responsibilities and applicable policies.</p><p><b>1. Engagement details</b><br>Role: To be confirmed<br>Engagement type: To be confirmed<br>Start date: To be confirmed</p><p><b>2. Responsibilities</b><br>The responsibilities and deliverables will be documented in the final approved agreement.</p><p><b>3. Terms and conditions</b><br>All terms must be reviewed by an authorized representative before issue. This preview does not create an employment relationship or legal obligation.</p><div class="signrow"><div class="signbox">Applicant signature<br><br><br>________________________</div><div class="signbox">Authorized representative<br><br><br>________________________</div></div><p style="margin-top:35px;font-size:11px;color:#6b7077">DRAFT PREVIEW · NOT VALID FOR SIGNING</p></div><div class="device" style="max-width:800px;margin:20px auto"><div class="finger">◎</div><strong>Fingerprint scanner not connected</strong><p>Connect a supported physical fingerprint scanner and configure its official SDK/API to enable real capture. This preview will never simulate a successful biometric scan.</p><span class="status review">Hardware integration required</span></div></section>
-<div class="modalback" id="modal"><div class="modal"><h3 id="modalTitle">Application details</h3><p id="modalText"></p><div class="modalactions"><button class="btn secondary" onclick="closeModal()">Cancel</button><button class="btn primary" id="modalConfirm">Confirm</button></div></div></div><div class="toast" id="toast"></div>
-<script>
-let currentStep=0, formData={}, activeFilter='All', modalAction=null;
-const steps=[
-{title:'Personal information',desc:'How can we reach you?',fields:[['name','Full legal name *','text','e.g. Alex Morgan',1],['email','Email address *','email','you@example.com',1],['phone','Mobile number *','tel','+91 98765 43210',1],['city','Current city *','text','Hyderabad',1],['state','State','text','Telangana',0],['dob','Date of birth (optional)','date','',0]]},
-{title:'Professional information',desc:'Tell us about your experience and strengths.',fields:[['position','Position applying for *','select','',1,['Technology','Marketing','Operations','Business Development','Design']],['department','Department','select','',0,['Engineering','AI & Research','Marketing','Operations','Business']],['experience','Experience level *','select','',1,['Student / Fresher','0–1 years','1–3 years','3–5 years','5+ years']],['employment','Current employment status','select','',0,['Student','Employed','Self-employed','Unemployed']],['skills','Relevant skills *','text','e.g. React, Python, SQL',1],['portfolio','Portfolio URL','url','https://',0],['linkedin','LinkedIn URL','url','https://',0],['github','GitHub URL','url','https://',0]]},
-{title:'Education',desc:'A little about your academic background.',fields:[['qualification','Highest qualification *','select','',1,['High school','Diploma','Bachelor’s degree','Master’s degree','PhD','Other']],['college','College / University *','text','Institution name',1],['graduation','Graduation year','number','2027',0],['certifications','Relevant certifications','textarea','List certifications, if any...',0]]},
-{title:'Role and availability',desc:'Help us understand what working together could look like.',fields:[['engagement','Preferred engagement *','select','',1,['Full-time','Part-time','Internship','Freelance']],['availability','Expected availability *','text','e.g. Immediately / From June',1],['hours','Weekly working hours','select','',0,['Under 10','10–20','20–30','30–40','40+']],['compensation','Expected compensation (optional)','text','e.g. Negotiable',0],['why','Why do you want to work with ThePhi? *','textarea','Tell us what interests you about this opportunity...',1],['extra','Additional information','textarea','Anything else you would like us to know...',0]]},
-{title:'Documents and consent',desc:'One final step before you submit.',fields:[['resume','Resume (PDF) *','file','.pdf',1],['portfolioFile','Portfolio attachment (optional)','file','.pdf,.doc,.docx',0]]}
-];
-function showPage(id,role){document.querySelectorAll('main.shell,.page').forEach(e=>e.style.display='none');document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));if(id==='home'){document.querySelector('main#home').style.display='block';window.scrollTo(0,0);return}let el=document.getElementById(id);if(el){el.style.display='block';el.classList.add('active')}if(id==='apply'){currentStep=0;formData={};renderStep();if(role){setTimeout(()=>{let p=document.querySelector('[name=position]');if(p)p.value=role},0)}}if(id==='admin')renderApps();window.scrollTo(0,0)}
-function fieldHTML(f){let [name,label,type,placeholder,required,opts]=f;let val=formData[name]||'';let html='';if(type==='select')html=`<select name="${name}" ${required?'required':''}><option value="">Select an option</option>${opts.map(o=>`<option ${val===o?'selected':''}>${o}</option>`).join('')}</select>`;else if(type==='textarea')html=`<textarea name="${name}" placeholder="${placeholder}" ${required?'required':''}>${val}</textarea>`;else if(type==='file')html=`<input name="${name}" type="file" accept="${placeholder}" ${required?'required':''}/><small>Accepted: ${placeholder.replaceAll(',',' / ')}. Maximum 5 MB.</small>`;else html=`<input name="${name}" type="${type}" placeholder="${placeholder}" value="${val}" ${required?'required':''}/>`;return `<div class="field ${type==='textarea'?'full':''}"><label>${label}</label>${html}</div>`}
-function renderStep(){let s=steps[currentStep];document.getElementById('formstep').innerHTML=`<span class="kicker">STEP 0${currentStep+1} / 05</span><h2>${s.title}</h2><p>${s.desc}</p><div class="fields">${s.fields.map(fieldHTML).join('')}${currentStep===4?`<div class="field full"><label><input type="checkbox" id="accuracy" style="width:auto;margin-right:8px"> I confirm that the information provided is accurate.</label><label style="margin-top:12px"><input type="checkbox" id="privacy" style="width:auto;margin-right:8px"> I have read and accept the privacy notice and consent to application-related communication.</label></div>`:''}</div>${currentStep===4?'<div class="notice">Your application does not require fingerprint data. Biometric information is requested only later, if an agreement workflow genuinely requires it and you provide separate informed consent.</div>':''}`;document.querySelectorAll('.progressstep').forEach((e,i)=>{e.classList.toggle('current',i===currentStep);e.classList.toggle('done',i<currentStep)});document.getElementById('backBtn').style.visibility=currentStep===0?'hidden':'visible';document.getElementById('nextBtn').textContent=currentStep===4?'Submit application ✓':'Continue →'}
-function collect(){let s=steps[currentStep];for(let f of s.fields){let el=document.querySelector(`[name="${f[0]}"]`);if(!el)continue;if(f[2]==='file'){if(el.files[0]){if(el.files[0].size>5*1024*1024){toast('File must be smaller than 5 MB');return false}if(f[0]==='resume'&&!el.files[0].name.toLowerCase().endsWith('.pdf')){toast('Resume must be a PDF');return false}formData[f[0]]=el.files[0].name}else if(f[4]){toast('Please upload your resume');return false}}else{formData[f[0]]=el.value.trim();if(f[4]&&!formData[f[0]]){el.focus();toast('Please complete: '+f[1].replace(' *',''));return false}if(f[2]==='email'&&formData[f[0]]&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData[f[0]])){el.focus();toast('Enter a valid email address');return false}}}if(currentStep===4&&(!document.getElementById('accuracy').checked||!document.getElementById('privacy').checked)){toast('Please confirm both declarations');return false}return true}
-function changeStep(dir){if(dir===1&&!collect())return;if(currentStep===4){let ref='TPH-'+new Date().getFullYear()+'-'+Math.random().toString(36).slice(2,8).toUpperCase();localStorage.setItem('thephi_demo_application',JSON.stringify({ref,...formData}));document.getElementById('refNumber').textContent='Your reference number: '+ref;document.getElementById('appRef').textContent=ref;showPage('success');toast('Demo application saved in this browser');return}currentStep=Math.max(0,Math.min(4,currentStep+dir));renderStep()}
-let apps=JSON.parse(localStorage.getItem('thephi_demo_apps')||'null')||[{name:'Aarav Mehta',ref:'TPH-2026-1042',role:'Technology',date:'31 Oct 2026',status:'Submitted'},{name:'Sara Khan',ref:'TPH-2026-1041',role:'Marketing',date:'30 Oct 2026',status:'Under review'},{name:'Rohan Das',ref:'TPH-2026-1039',role:'Operations',date:'29 Oct 2026',status:'Approved'},{name:'Maya Iyer',ref:'TPH-2026-1036',role:'Technology',date:'27 Oct 2026',status:'Rejected'}];
-function renderApps(){let q=(document.getElementById('searchApps')?.value||'').toLowerCase();let filtered=apps.filter(a=>(activeFilter==='All'||a.status===activeFilter)&&(a.name.toLowerCase().includes(q)||a.ref.toLowerCase().includes(q)||a.role.toLowerCase().includes(q)));document.getElementById('appRows').innerHTML=filtered.map((a)=>`<tr><td><b>${a.name}</b></td><td>${a.ref}</td><td>${a.role}</td><td>${a.date}</td><td><span class="status ${a.status==='Rejected'?'rejected':a.status==='Under review'?'review':''}">${a.status}</span></td><td><button class="textbtn" onclick="openApp('${a.ref}')">Review ↗</button></td></tr>`).join('')||'<tr><td colspan="6" class="empty">No applications found.</td></tr>'}
-function filterApps(f,el){activeFilter=f;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');renderApps()}
-function openApp(ref){let a=apps.find(x=>x.ref===ref);document.getElementById('modalTitle').textContent=a.name;document.getElementById('modalText').textContent=`${a.ref} · ${a.role} · Current status: ${a.status}. Choose a review decision for this demo record.`;document.getElementById('modalConfirm').textContent='Approve';document.getElementById('modalConfirm').onclick=()=>updateApp(ref,'Approved');document.querySelector('.modalactions').insertAdjacentHTML('afterbegin','<button class="btn secondary" id="rejectBtn">Reject</button>');document.getElementById('rejectBtn').onclick=()=>updateApp(ref,'Rejected');document.getElementById('modal').classList.add('show')}
-function updateApp(ref,status){let a=apps.find(x=>x.ref===ref);a.status=status;localStorage.setItem('thephi_demo_apps',JSON.stringify(apps));closeModal();renderApps();toast(`${a.name}: ${status} (demo only)`)}function closeModal(){document.getElementById('modal').classList.remove('show');document.getElementById('rejectBtn')?.remove()}function toast(t){let e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2800)}
-function askAI(){const q=document.getElementById('aiQuestion').value.trim();if(!q){toast('Enter a question first.');return}const low=q.toLowerCase();let answer='I can help with recruitment workflows, candidate summaries, interview preparation and pipeline reporting. In production, I will retrieve only records your account is authorized to access.';if(low.includes('engineering')||low.includes('role'))answer='Sample insight: The Technology team has active opportunities across software engineering, AI research and product. Connect the live roles database to retrieve current openings and approved requirements.';else if(low.includes('pending')||low.includes('agreement'))answer='Sample insight: The representative desk shows 4 agreements awaiting review. This is illustrative data. A production response will include agreement IDs, assigned signatories and due dates based on your permissions.';else if(low.includes('interview'))answer='Sample insight: 12 interviews are scheduled this week and 4 feedback forms are pending in this preview. Production metrics will be calculated from verified calendar and interview records.';document.getElementById('aiReply').textContent=answer;document.getElementById('aiQuestion').value=''}
-function filterEmployees(){const q=document.getElementById('employeeSearch').value.toLowerCase();document.querySelectorAll('#employeeRows tr').forEach(r=>r.style.display=r.textContent.toLowerCase().includes(q)?'':'none')}
-showPage('home');
-</script></body></html>
+    <header class="shell nav"><a class="brand" href="#home" onclick="showPage('home')"><span class="brandmark">Φ</span>
+            thephi<span style="color:var(--lime)">.</span></a>
+        <nav class="navlinks"><a href="#about" onclick="showPage('home')">About</a><a href="#opportunities"
+                onclick="showPage('home')">Opportunities</a><a href="#process" onclick="showPage('home')">How it
+                works</a></nav>
+        <div class="navright"><button class="btn textbtn" onclick="showPage('login')">Workspace</button><button
+                class="btn primary" onclick="showPage('apply')">Apply now <span>↗</span></button></div>
+    </header>
+    <main id="home" class="shell">
+        <section class="hero">
+            <div><span class="eyebrow"><i class="pulse"></i> Careers at ThePhi</span>
+                <h1>Build what<br><span class="gradient">moves the future.</span></h1>
+                <p>Bring your curiosity. Build meaningful technology. Join a team exploring what becomes possible when
+                    people and intelligent systems work together.</p>
+                <div class="heroactions"><button class="btn primary" onclick="showPage('apply')">Start your application
+                        <span>↗</span></button><a class="btn secondary" href="#opportunities">Explore opportunities
+                        ↓</a></div>
+                <div class="trust">
+                    <div class="avatars"><span></span><span></span><span></span></div><span>A place to learn, contribute
+                        and grow.</span>
+                </div>
+            </div>
+            <div class="heroart">
+                <div class="orb"></div>
+                <div class="ring"></div>
+                <div class="ring two"></div>
+                <div class="orbitdot"></div>
+                <div class="floatcard fc1"><small>Our focus</small><strong>Ideas → Impact</strong></div>
+                <div class="floatcard fc2"><small>Build with purpose</small><strong>Think beyond.</strong></div>
+                <div class="artlabel">THE NEXT CHAPTER STARTS HERE · 01 / 04</div>
+            </div>
+        </section>
+        <section class="section" id="about">
+            <div class="sectionhead">
+                <div><span class="kicker">Why ThePhi</span>
+                    <h2>Good work starts with<br>good people.</h2>
+                </div>
+                <p>We value thoughtful problem-solvers, clear communication and the courage to turn an early idea into
+                    something useful.</p>
+            </div>
+            <div class="grid3">
+                <article class="card">
+                    <div class="icon">✳</div>
+                    <h3>Meaningful problems</h3>
+                    <p>Work on ideas and products that solve real problems, with room to question and improve how things
+                        are done.</p>
+                </article>
+                <article class="card">
+                    <div class="icon">⌘</div>
+                    <h3>Learn by building</h3>
+                    <p>Grow through practical work, shared knowledge, feedback and opportunities to take ownership.</p>
+                </article>
+                <article class="card">
+                    <div class="icon">◉</div>
+                    <h3>People first</h3>
+                    <p>Bring your perspective. We want a respectful environment where different strengths can do their
+                        best work.</p>
+                </article>
+            </div>
+        </section>
+        <section class="section" id="opportunities">
+            <div class="sectionhead">
+                <div><span class="kicker">Find your place</span>
+                    <h2>Make your next move.</h2>
+                </div>
+                <p>Explore the areas where you can contribute. Role availability and engagement details are confirmed
+                    during review.</p>
+            </div>
+            <div class="grid3">
+                <article class="card role"><span class="tag">Technology</span>
+                    <h3>Software & AI</h3>
+                    <p>Build thoughtful digital experiences, intelligent tools and reliable systems.</p>
+                    <div class="rolefoot"><span>Engineering · AI · Product</span><button class="textbtn arrow"
+                            onclick="showPage('apply','Technology')">↗</button></div>
+                </article>
+                <article class="card role"><span class="tag">Growth</span>
+                    <h3>Marketing & Community</h3>
+                    <p>Shape the story, create useful content and help communities discover ThePhi.</p>
+                    <div class="rolefoot"><span>Marketing · Content · Growth</span><button class="textbtn arrow"
+                            onclick="showPage('apply','Marketing')">↗</button></div>
+                </article>
+                <article class="card role"><span class="tag">Operations</span>
+                    <h3>Business & Operations</h3>
+                    <p>Help teams move from plans to execution through research and coordination.</p>
+                    <div class="rolefoot"><span>Business · Research · Operations</span><button class="textbtn arrow"
+                            onclick="showPage('apply','Operations')">↗</button></div>
+                </article>
+            </div>
+        </section>
+        <section class="section" id="process">
+            <div class="sectionhead">
+                <div><span class="kicker">The process</span>
+                    <h2>Clear steps. No guesswork.</h2>
+                </div>
+                <p>We keep the application journey transparent, from your first submission to the final agreement.</p>
+            </div>
+            <div class="steps">
+                <div class="step"><b>01 / APPLY</b>
+                    <h3>Tell us about you</h3>
+                    <p>Share your experience, interests and the role you have in mind.</p>
+                </div>
+                <div class="step"><b>02 / REVIEW</b>
+                    <h3>We review your profile</h3>
+                    <p>The team evaluates applications and may request more information.</p>
+                </div>
+                <div class="step"><b>03 / DECISION</b>
+                    <h3>Get an update</h3>
+                    <p>Receive an email when your application status changes.</p>
+                </div>
+                <div class="step"><b>04 / AGREEMENT</b>
+                    <h3>Review and sign</h3>
+                    <p>Approved applicants can review the terms before signing.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="cta">
+                <div><span class="kicker">Your next chapter</span>
+                    <h2>Have something to bring<br>to the table?</h2>
+                    <p>We would like to hear from you. Start with a few details.</p>
+                </div><button class="btn primary" onclick="showPage('apply')">Apply to ThePhi ↗</button>
+            </div>
+        </section>
+        <footer class="footer">
+            <div><b>Φ thephi.</b><br>Build what moves the future.</div>
+            <div>© 2026 ThePhi. All rights reserved.<br>Privacy · Terms · Contact</div>
+        </footer>
+    </main>
+    <section class="page shell" id="apply">
+        <div class="pagehead"><span class="kicker">Join ThePhi</span>
+            <h1>Your application.</h1>
+            <p>Take a few minutes to tell us about yourself. Fields marked * are required.</p>
+        </div>
+        <div class="formlayout">
+            <aside class="progressbox" id="progress">
+                <div class="progressstep current"><span class="num">1</span> Personal</div>
+                <div class="progressstep"><span class="num">2</span> Experience</div>
+                <div class="progressstep"><span class="num">3</span> Education</div>
+                <div class="progressstep"><span class="num">4</span> Availability</div>
+                <div class="progressstep"><span class="num">5</span> Documents</div>
+            </aside>
+            <div class="formbox">
+                <div id="formstep"></div>
+                <div class="formactions"><button class="btn secondary" id="backBtn" onclick="changeStep(-1)"
+                        style="visibility:hidden">← Back</button><button class="btn primary" id="nextBtn"
+                        onclick="changeStep(1)">Continue →</button></div>
+            </div>
+        </div>
+    </section>
+    <section class="page shell" id="success">
+        <div class="formbox" style="max-width:650px;margin:60px auto;text-align:center;padding:50px">
+            <div class="icon" style="margin:0 auto 20px;font-size:25px">✓</div><span class="kicker">Application
+                received</span>
+            <h1 style="font-size:38px;margin:12px 0">You're on our radar.</h1>
+            <p style="color:var(--muted)">Your application has been successfully submitted to ThePhi. Our administration
+                team will review your details. You will receive an email notification regarding the application
+                decision.</p>
+            <div class="notice" id="refNumber"></div><button class="btn primary" style="margin-top:25px"
+                onclick="showPage('login')">Go to applicant portal →</button>
+        </div>
+    </section>
+    <section class="page shell" id="login">
+        <div class="pagehead"><span class="kicker">Secure access</span>
+            <h1>Welcome back.</h1>
+            <p>Choose a demo portal to preview the applicant and admin experience.</p>
+        </div>
+        <div class="grid3">
+            <div class="card">
+                <div class="icon">◎</div>
+                <h3>Applicant portal</h3>
+                <p>Track your application, view updates and review agreement status.</p><button class="btn primary"
+                    style="margin-top:22px" onclick="showPage('applicant')">Open applicant demo →</button>
+            </div>
+            <div class="card">
+                <div class="icon">▦</div>
+                <h3>Admin workspace</h3>
+                <p>Authorized administrators can securely review applications and manage decisions.</p>
+                <div style="margin-top:20px"><label for="adminEmail"
+                        style="display:block;font-size:12px;color:#c4ccda;margin-bottom:7px">Admin email</label><input
+                        id="adminEmail" type="email" placeholder="Enter admin email" autocomplete="username"
+                        style="width:100%;background:#090e18;border:1px solid #ffffff18;border-radius:10px;padding:12px 13px;color:#f3f5f9;margin-bottom:14px"><label
+                        for="adminPassword"
+                        style="display:block;font-size:12px;color:#c4ccda;margin-bottom:7px">Password</label><input
+                        id="adminPassword" type="password" placeholder="Enter password" autocomplete="current-password"
+                        style="width:100%;background:#090e18;border:1px solid #ffffff18;border-radius:10px;padding:12px 13px;color:#f3f5f9;margin-bottom:14px"><button
+                        class="btn primary" style="width:100%" onclick="adminLogin()">Secure admin login →</button>
+                </div>
+                <p id="adminLoginMessage" style="margin-top:12px;color:#f0c674;font-size:12px"></p>
+            </div>
+            <div class="card">
+                <div class="icon">⌑</div>
+                <h3>Real account access</h3>
+                <p>Production authentication will be enabled after Supabase credentials are configured.</p><span
+                    class="status review">Setup required</span>
+            </div>
+        </div>
+        <div style="margin-top:34px"><span class="kicker">More workspaces</span>
+            <h2 style="font:750 27px Manrope;margin:10px 0 20px">One platform. Every team.</h2>
+            <div class="workspace-grid">
+                <article class="card workspace-card">
+                    <div class="icon">◷</div>
+                    <h3>Interview room</h3>
+                    <p>Manage interview schedules, feedback, scorecards and candidate evaluations.</p><button
+                        class="launch" onclick="showPage('interviews')">Open interviews ↗</button>
+                </article>
+                <article class="card workspace-card">
+                    <div class="icon">▤</div>
+                    <h3>Employee hub</h3>
+                    <p>Employee directory, onboarding tasks, leave requests and self-service.</p><button class="launch"
+                        onclick="showPage('employee')">Open employee hub ↗</button>
+                </article>
+                <article class="card workspace-card">
+                    <div class="icon">⌁</div>
+                    <h3>People analytics</h3>
+                    <p>Recruitment funnel, hiring trends, turnaround time and reports.</p><button class="launch"
+                        onclick="showPage('analytics')">View analytics ↗</button>
+                </article>
+                <article class="card workspace-card">
+                    <div class="icon">✦</div>
+                    <h3>AI intelligence</h3>
+                    <p>Recruiter copilot for summaries, role matching and structured insights.</p><button class="launch"
+                        onclick="showPage('ai')">Open AI center ↗</button>
+                </article>
+                <article class="card workspace-card">
+                    <div class="icon">✍</div>
+                    <h3>Representative desk</h3>
+                    <p>Review issued agreements and manage authorized countersigning.</p><button class="launch"
+                        onclick="showPage('representative')">Open signing desk ↗</button>
+                </article>
+                <article class="card workspace-card">
+                    <div class="icon">⛨</div>
+                    <h3>Trust & security</h3>
+                    <p>Permissions, audit trail, consent records and data retention controls.</p><button class="launch"
+                        onclick="showPage('security')">Open security center ↗</button>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="page shell" id="applicant">
+        <div class="pagehead"><span class="kicker">Applicant workspace</span>
+            <h1>Your journey, in one place.</h1>
+            <p>Demo portal preview. Connect authentication and the database to enable private account data.</p>
+        </div>
+        <div class="dashgrid">
+            <div class="metric"><small>Application reference</small><strong style="font-size:18px"
+                    id="appRef">TPH-DEMO-1042</strong></div>
+            <div class="metric"><small>Current status</small><strong style="font-size:19px">Under review</strong><em>●
+                    In progress</em></div>
+            <div class="metric"><small>Position</small><strong style="font-size:18px">Technology</strong></div>
+            <div class="metric"><small>Agreement</small><strong style="font-size:18px">Not issued</strong></div>
+        </div>
+        <div class="dashcard">
+            <h3>Application timeline</h3>
+            <div class="steps" style="margin-top:20px">
+                <div class="step"><b>✓ SUBMITTED</b>
+                    <h3>Application received</h3>
+                    <p>Your details are in the system.</p>
+                </div>
+                <div class="step"><b>● IN PROGRESS</b>
+                    <h3>Under review</h3>
+                    <p>The team is reviewing your profile.</p>
+                </div>
+                <div class="step"><b>03 / DECISION</b>
+                    <h3>Decision pending</h3>
+                    <p>We will notify you by email.</p>
+                </div>
+                <div class="step"><b>04 / AGREEMENT</b>
+                    <h3>Not started</h3>
+                    <p>Available after approval.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page shell" id="admin">
+        <div class="pagehead"><span class="kicker">ThePhi administration</span>
+            <h1>Application overview.</h1>
+            <p>Live applications retrieved securely from your ThePhi database.</p>
+        </div>
+        <div class="page-actions" style="justify-content:flex-end;margin-bottom:16px"><button class="btn secondary"
+                onclick="loadApplicants()">Refresh applications ↻</button><button class="btn secondary"
+                onclick="adminLogout()">Log out</button></div>
+        <div class="dashgrid">
+            <div class="metric"><small>Total applications</small><strong id="mTotal">0</strong><em>Live database</em>
+            </div>
+            <div class="metric"><small>Pending</small><strong id="mPending">0</strong><em>Awaiting review</em></div>
+            <div class="metric"><small>Under review</small><strong id="mReviewing">0</strong><em>In progress</em></div>
+            <div class="metric"><small>Approved</small><strong id="mApproved">0</strong><em>Approved applicants</em>
+            </div>
+        </div>
+        <div class="page-actions" style="margin-bottom:20px"><button class="btn secondary"
+                onclick="showPage('interviews')">Interview calendar ↗</button><button class="btn secondary"
+                onclick="showPage('analytics')">Reports & analytics ↗</button><button class="btn secondary"
+                onclick="showPage('ai')">AI recruiter ↗</button></div>
+        <div class="dashcard">
+            <div class="toolbar">
+                <div>
+                    <h3 style="margin:0">Applications</h3><small style="color:var(--muted)">Real applicant records from
+                        Supabase</small>
+                </div><input id="searchApps" placeholder="Search applicants..." oninput="renderApps()">
+            </div>
+            <div class="tabs"><button class="tab active" onclick="filterApps('all',this)">All</button><button
+                    class="tab" onclick="filterApps('pending',this)">Pending</button><button class="tab"
+                    onclick="filterApps('reviewing',this)">Reviewing</button><button class="tab"
+                    onclick="filterApps('shortlisted',this)">Shortlisted</button><button class="tab"
+                    onclick="filterApps('approved',this)">Approved</button><button class="tab"
+                    onclick="filterApps('rejected',this)">Rejected</button></div>
+            <div class="tablewrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>APPLICANT</th>
+                            <th>REFERENCE</th>
+                            <th>POSITION</th>
+                            <th>SUBMITTED</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appRows">
+                        <tr>
+                            <td colspan="6" class="empty">Sign in to load applications.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="page shell" id="interviews">
+        <div class="pagehead"><span class="kicker">Recruitment operations</span>
+            <h1>Interview command center.</h1>
+            <p>Coordinate interviews, collect structured feedback and keep every candidate informed.</p>
+        </div>
+        <div class="dashgrid">
+            <div class="metric"><small>Scheduled this week</small><strong>12</strong><em>Across 4 departments</em></div>
+            <div class="metric"><small>Feedback pending</small><strong>04</strong><em>Needs interviewer action</em>
+            </div>
+            <div class="metric"><small>Completed</small><strong>28</strong><em>This month</em></div>
+            <div class="metric"><small>Average score</small><strong>4.2/5</strong><em>Structured scorecards</em></div>
+        </div>
+        <div class="split">
+            <div class="dashcard">
+                <div class="panelhead">
+                    <div>
+                        <h3>Upcoming interviews</h3>
+                        <p>Sample schedule for workspace preview</p>
+                    </div><button class="btn primary"
+                        onclick="toast('Interview scheduling requires calendar and email integration.')">＋ Schedule
+                        interview</button>
+                </div>
+                <div class="mini-list">
+                    <div class="mini-row">
+                        <div><b>Riya Sharma</b>
+                            <div class="muted">Frontend Engineer · Technical round</div>
+                        </div><span class="pill">Today · 11:30 AM</span>
+                    </div>
+                    <div class="mini-row">
+                        <div><b>Arjun Rao</b>
+                            <div class="muted">Growth Associate · Hiring manager</div>
+                        </div><span class="pill">Today · 2:00 PM</span>
+                    </div>
+                    <div class="mini-row">
+                        <div><b>Fatima Noor</b>
+                            <div class="muted">AI Intern · Screening</div>
+                        </div><span class="pill">02 Nov · 10:00 AM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dashcard">
+                <h3>Interview scorecard</h3>
+                <p class="muted" style="font-size:12px">Use consistent, job-related criteria.</p>
+                <div class="mini-list">
+                    <div class="mini-row">Role knowledge <b>4 / 5</b></div>
+                    <div class="mini-row">Problem solving <b>4 / 5</b></div>
+                    <div class="mini-row">Communication <b>5 / 5</b></div>
+                    <div class="mini-row">Relevant experience <b>3 / 5</b></div>
+                </div><button class="btn secondary" style="margin-top:15px"
+                    onclick="toast('Scorecard saved in demo preview.')">Save sample feedback</button>
+            </div>
+        </div>
+    </section>
+    <section class="page shell" id="employee">
+        <div class="pagehead"><span class="kicker">People operations</span>
+            <h1>Employee hub.</h1>
+            <p>A connected space for onboarding, employee records and everyday people operations.</p>
+        </div>
+        <div class="dashgrid">
+            <div class="metric"><small>Active employees</small><strong>38</strong><em>Across 5 teams</em></div>
+            <div class="metric"><small>Onboarding in progress</small><strong>06</strong><em>3 tasks due this week</em>
+            </div>
+            <div class="metric"><small>Leave requests</small><strong>03</strong><em>Awaiting approval</em></div>
+            <div class="metric"><small>Documents due</small><strong>02</strong><em>Review required</em></div>
+        </div>
+        <div class="split">
+            <div class="dashcard">
+                <div class="panelhead">
+                    <div>
+                        <h3>Employee directory</h3>
+                        <p>Illustrative records, not real employee data</p>
+                    </div><input class="filterinput" id="employeeSearch" placeholder="Search team..."
+                        oninput="filterEmployees()">
+                </div>
+                <div class="tablewrap">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>EMPLOYEE</th>
+                                <th>TEAM</th>
+                                <th>ROLE</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeRows">
+                            <tr>
+                                <td><b>Neha Kapoor</b></td>
+                                <td>Engineering</td>
+                                <td>Product Engineer</td>
+                                <td><span class="status">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td><b>Dev Patel</b></td>
+                                <td>Marketing</td>
+                                <td>Growth Associate</td>
+                                <td><span class="status">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td><b>Imran Ali</b></td>
+                                <td>AI & Research</td>
+                                <td>ML Intern</td>
+                                <td><span class="status review">Onboarding</span></td>
+                            </tr>
+                            <tr>
+                                <td><b>Ananya Sen</b></td>
+                                <td>Operations</td>
+                                <td>People Coordinator</td>
+                                <td><span class="status">Active</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dashcard">
+                <h3>Onboarding checklist</h3>
+                <p class="muted" style="font-size:12px">Example workflow for a new team member.</p>
+                <div class="mini-list">
+                    <div class="mini-row">Agreement completed <span class="status">Done</span></div>
+                    <div class="mini-row">Identity and right-to-work checks <span class="status review">Pending</span>
+                    </div>
+                    <div class="mini-row">Workspace access <span class="status review">Pending</span></div>
+                    <div class="mini-row">Manager introduction <span class="status">Done</span></div>
+                    <div class="mini-row">First-week plan <span class="status review">Pending</span></div>
+                </div><button class="btn secondary" style="margin-top:14px"
+                    onclick="toast('Onboarding tasks are demo-only until connected to the backend.')">View onboarding
+                    tasks</button>
+            </div>
+        </div>
+    </section>
+    <section class="page shell" id="analytics">
+        <div class="pagehead"><span class="kicker">People intelligence</span>
+            <h1>Recruitment analytics.</h1>
+            <p>Understand pipeline health and hiring operations with clear, explainable metrics.</p>
+        </div>
+        <div class="dashgrid">
+            <div class="metric"><small>Applications this month</small><strong>146</strong><em>↑ 18% vs last month</em>
+            </div>
+            <div class="metric"><small>Shortlist rate</small><strong>32%</strong><em>46 candidates</em></div>
+            <div class="metric"><small>Offer acceptance</small><strong>78%</strong><em>14 of 18 offers</em></div>
+            <div class="metric"><small>Median time to hire</small><strong>19 days</strong><em>Target: 21 days</em></div>
+        </div>
+        <div class="split">
+            <div class="dashcard">
+                <div class="panelhead">
+                    <div>
+                        <h3>Application volume</h3>
+                        <p>Illustrative monthly trend</p>
+                    </div><span class="pill">Last 6 months</span>
+                </div>
+                <div class="chartbars"><span style="height:38%"><small>May</small></span><span
+                        style="height:52%"><small>Jun</small></span><span
+                        style="height:44%"><small>Jul</small></span><span
+                        style="height:67%"><small>Aug</small></span><span
+                        style="height:75%"><small>Sep</small></span><span style="height:92%"><small>Oct</small></span>
+                </div>
+            </div>
+            <div class="dashcard">
+                <h3>Pipeline conversion</h3>
+                <p class="muted" style="font-size:12px">Sample funnel metrics</p>
+                <div style="margin:20px 0">
+                    <div class="mini-row"><span>Applied</span><b>146</b></div>
+                    <div class="progressbar"><span style="width:100%"></span></div>
+                </div>
+                <div style="margin:20px 0">
+                    <div class="mini-row"><span>Shortlisted</span><b>46</b></div>
+                    <div class="progressbar"><span style="width:32%"></span></div>
+                </div>
+                <div style="margin:20px 0">
+                    <div class="mini-row"><span>Offers</span><b>18</b></div>
+                    <div class="progressbar"><span style="width:12%"></span></div>
+                </div>
+                <div style="margin:20px 0">
+                    <div class="mini-row"><span>Joined</span><b>14</b></div>
+                    <div class="progressbar"><span style="width:10%"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="page-actions" style="margin-top:20px"><button class="btn secondary"
+                onclick="toast('Connect reporting backend to export verified CSV/PDF reports.')">Export
+                report</button><button class="btn secondary"
+                onclick="toast('Date range selector will use live database records in production.')">Change date
+                range</button></div>
+        <p class="kpi-note">All figures on this preview are illustrative sample data and must not be used for business
+            decisions.</p>
+    </section>
+    <section class="page shell" id="ai">
+        <div class="pagehead"><span class="kicker">AI-assisted recruitment</span>
+            <h1>ThePhi intelligence center.</h1>
+            <p>Give recruiters useful assistance while keeping hiring decisions human-led and accountable.</p>
+        </div>
+        <div class="assistantbox"><span class="pill">AI recruiter copilot · interface preview</span>
+            <h2 style="font:750 30px Manrope;margin:18px 0 8px">Ask your recruitment workspace.</h2>
+            <p class="muted">Try a sample question. This frontend preview returns a clearly labeled sample response.
+                Connect an approved AI provider and permission-aware API for live answers.</p>
+            <div class="assistantreply" id="aiReply">Hello. I can help summarize applications, draft interview
+                questions, explain pipeline metrics and find pending workflow items. What would you like to explore?
+            </div>
+            <div class="assistantinput"><input id="aiQuestion"
+                    placeholder="e.g. Summarize the open engineering roles"><button class="btn primary"
+                    onclick="askAI()">Ask assistant ↗</button></div>
+        </div>
+        <div class="grid3" style="margin-top:18px">
+            <article class="card">
+                <div class="icon">⌕</div>
+                <h3>Resume extraction</h3>
+                <p>Extract candidate-provided skills, education and experience with source references.</p>
+            </article>
+            <article class="card">
+                <div class="icon">◎</div>
+                <h3>Role alignment</h3>
+                <p>Compare stated qualifications against published role requirements with explainable evidence.</p>
+            </article>
+            <article class="card">
+                <div class="icon">✎</div>
+                <h3>Interview preparation</h3>
+                <p>Draft structured, job-related questions and consistent evaluation rubrics.</p>
+            </article>
+        </div>
+        <div class="notice">AI outputs are advisory. Do not use protected traits, inferred personality, facial analysis
+            or opaque scores to make hiring decisions. Recruiters must review evidence and make decisions.</div>
+    </section>
+    <section class="page shell" id="representative">
+        <div class="pagehead"><span class="kicker">Authorized signing</span>
+            <h1>Representative desk.</h1>
+            <p>Review agreement versions and signing evidence before an authorized company countersignature.</p>
+        </div>
+        <div class="dashgrid">
+            <div class="metric"><small>Awaiting review</small><strong>04</strong><em>Representative action</em></div>
+            <div class="metric"><small>Applicant signed</small><strong>03</strong><em>Ready for review</em></div>
+            <div class="metric"><small>Completed this month</small><strong>11</strong><em>Finalized agreements</em>
+            </div>
+            <div class="metric"><small>Expiring soon</small><strong>02</strong><em>Renewal review</em></div>
+        </div>
+        <div class="dashcard">
+            <div class="panelhead">
+                <div>
+                    <h3>Pending agreements</h3>
+                    <p>Sample records for interface preview</p>
+                </div><span class="status review">No live signing enabled</span>
+            </div>
+            <div class="tablewrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>AGREEMENT</th>
+                            <th>APPLICANT</th>
+                            <th>VERSION</th>
+                            <th>APPLICANT SIGNATURE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TPH-AGR-2026-014</td>
+                            <td>Riya Sharma</td>
+                            <td>v1.2</td>
+                            <td><span class="status">Received</span></td>
+                            <td><button class="textbtn" onclick="showPage('agreement')">Review ↗</button></td>
+                        </tr>
+                        <tr>
+                            <td>TPH-AGR-2026-013</td>
+                            <td>Arjun Rao</td>
+                            <td>v1.0</td>
+                            <td><span class="status">Received</span></td>
+                            <td><button class="textbtn" onclick="showPage('agreement')">Review ↗</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="notice">Countersigning is disabled in this prototype. Production signing must verify the
+                authenticated representative, exact immutable agreement version, signing intent and audit evidence.
+            </div>
+        </div>
+    </section>
+    <section class="page shell" id="security">
+        <div class="pagehead"><span class="kicker">Trust, privacy & governance</span>
+            <h1>Security center.</h1>
+            <p>Security controls designed around least privilege, privacy and traceable actions.</p>
+        </div>
+        <div class="split">
+            <div class="dashcard">
+                <h3>Platform controls</h3>
+                <div class="security-item"><span class="security-icon">⛨</span>
+                    <div><strong>Role-based access control</strong>
+                        <p>Separate applicant, recruiter, HR, representative, auditor and super-admin permissions.</p>
+                    </div>
+                </div>
+                <div class="security-item"><span class="security-icon">⌑</span>
+                    <div><strong>Row-level security</strong>
+                        <p>Applicants can access only their own records. Privileged access is narrowly scoped.</p>
+                    </div>
+                </div>
+                <div class="security-item"><span class="security-icon">✦</span>
+                    <div><strong>Multi-factor authentication</strong>
+                        <p>Require stronger authentication for administrators and authorized signatories.</p>
+                    </div>
+                </div>
+                <div class="security-item"><span class="security-icon">▣</span>
+                    <div><strong>Private document storage</strong>
+                        <p>Use private buckets, expiring links, file validation and access logging.</p>
+                    </div>
+                </div>
+                <div class="security-item"><span class="security-icon">◷</span>
+                    <div><strong>Audit and retention</strong>
+                        <p>Record critical changes and enforce documented retention and deletion schedules.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dashcard">
+                <h3>Biometric privacy controls</h3>
+                <p class="muted" style="font-size:12px">Sensitive biometric data requires a separate, explicit workflow.
+                </p>
+                <div class="mini-list">
+                    <div class="mini-row">Separate informed consent <span class="status">Required</span></div>
+                    <div class="mini-row">Scanner SDK integration <span class="status review">Not configured</span>
+                    </div>
+                    <div class="mini-row">Encrypted restricted storage <span class="status review">Backend
+                            required</span></div>
+                    <div class="mini-row">Retention and deletion policy <span class="status review">Configure</span>
+                    </div>
+                    <div class="mini-row">Access audit trail <span class="status review">Backend required</span></div>
+                </div>
+                <div class="notice">No fingerprint image or biometric template is collected by this prototype. A browser
+                    cannot extract a fingerprint from a phone or laptop unlock sensor.</div>
+            </div>
+        </div>
+    </section>
+    <section class="page shell" id="agreement">
+        <div class="pagehead"><span class="kicker">Agreement preview</span>
+            <h1>Review before you sign.</h1>
+            <p>This sample shows the document layout. It is not an issued legal agreement.</p>
+        </div>
+        <div class="agreement">
+            <h2>THEPHI</h2>
+            <h2>ENGAGEMENT AGREEMENT</h2>
+            <p style="text-align:center">Reference: TPH-DEMO-0001 · Draft preview</p>
+            <hr>
+            <p>This agreement preview illustrates the structure of an engagement document between ThePhi and the
+                selected applicant. The final agreement must contain reviewed terms, the correct legal entity details,
+                compensation, duration, responsibilities and applicable policies.</p>
+            <p><b>1. Engagement details</b><br>Role: To be confirmed<br>Engagement type: To be confirmed<br>Start date:
+                To be confirmed</p>
+            <p><b>2. Responsibilities</b><br>The responsibilities and deliverables will be documented in the final
+                approved agreement.</p>
+            <p><b>3. Terms and conditions</b><br>All terms must be reviewed by an authorized representative before
+                issue. This preview does not create an employment relationship or legal obligation.</p>
+            <div class="signrow">
+                <div class="signbox">Applicant signature<br><br><br>________________________</div>
+                <div class="signbox">Authorized representative<br><br><br>________________________</div>
+            </div>
+            <p style="margin-top:35px;font-size:11px;color:#6b7077">DRAFT PREVIEW · NOT VALID FOR SIGNING</p>
+        </div>
+        <div class="device" style="max-width:800px;margin:20px auto">
+            <div class="finger">◎</div><strong>Fingerprint scanner not connected</strong>
+            <p>Connect a supported physical fingerprint scanner and configure its official SDK/API to enable real
+                capture. This preview will never simulate a successful biometric scan.</p><span
+                class="status review">Hardware integration required</span>
+        </div>
+    </section>
+    <div class="modalback" id="modal">
+        <div class="modal">
+            <h3 id="modalTitle">Application details</h3>
+            <p id="modalText"></p>
+            <div class="field" style="margin-top:16px"><label for="applicantStatus">Update application
+                    status</label><select id="applicantStatus"
+                    style="width:100%;background:#090e18;border:1px solid #ffffff18;border-radius:10px;padding:12px;color:#f3f5f9">
+                    <option value="pending">Pending</option>
+                    <option value="reviewing">Reviewing</option>
+                    <option value="shortlisted">Shortlisted</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                </select></div>
+            <div class="modalactions" style="justify-content:space-between"><button class="btn secondary"
+                    onclick="openApplicantResume()">View resume ↗</button><span><button class="btn secondary"
+                        onclick="closeModal()">Cancel</button> <button class="btn primary" id="modalConfirm"
+                        onclick="saveApplicantStatus()">Save status</button></span></div>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script>
+        let currentStep = 0, formData = {}, modalAction = null;
+        const API_BASE_URL = 'https://thephi-backend.onrender.com';
+
+        const SUPABASE_URL = 'https://kkwjovtlruohobmxkvfq.supabase.co';
+
+        const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_MpyLDlmUtL9iMt-xQ2uKDQ_NVS-NkRx';
+
+        const supabaseClient = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+        const selectedFiles = {};
+        let isSubmitting = false;
+        const steps = [
+            { title: 'Personal information', desc: 'How can we reach you?', fields: [['name', 'Full legal name *', 'text', 'e.g. Alex Morgan', 1], ['email', 'Email address *', 'email', 'you@example.com', 1], ['phone', 'Mobile number *', 'tel', '+91 98765 43210', 1], ['city', 'Current city *', 'text', 'Hyderabad', 1], ['state', 'State', 'text', 'Telangana', 0], ['dob', 'Date of birth (optional)', 'date', '', 0]] },
+            { title: 'Professional information', desc: 'Tell us about your experience and strengths.', fields: [['position', 'Position applying for *', 'select', '', 1, ['Technology', 'Marketing', 'Operations', 'Business Development', 'Design']], ['department', 'Department', 'select', '', 0, ['Engineering', 'AI & Research', 'Marketing', 'Operations', 'Business']], ['experience', 'Experience level *', 'select', '', 1, ['Student / Fresher', '0–1 years', '1–3 years', '3–5 years', '5+ years']], ['employment', 'Current employment status', 'select', '', 0, ['Student', 'Employed', 'Self-employed', 'Unemployed']], ['skills', 'Relevant skills *', 'text', 'e.g. React, Python, SQL', 1], ['portfolio', 'Portfolio URL', 'url', 'https://', 0], ['linkedin', 'LinkedIn URL', 'url', 'https://', 0], ['github', 'GitHub URL', 'url', 'https://', 0]] },
+            { title: 'Education', desc: 'A little about your academic background.', fields: [['qualification', 'Highest qualification *', 'select', '', 1, ['High school', 'Diploma', 'Bachelor’s degree', 'Master’s degree', 'PhD', 'Other']], ['college', 'College / University *', 'text', 'Institution name', 1], ['graduation', 'Graduation year', 'number', '2027', 0], ['certifications', 'Relevant certifications', 'textarea', 'List certifications, if any...', 0]] },
+            { title: 'Role and availability', desc: 'Help us understand what working together could look like.', fields: [['engagement', 'Preferred engagement *', 'select', '', 1, ['Full-time', 'Part-time', 'Internship', 'Freelance']], ['availability', 'Expected availability *', 'text', 'e.g. Immediately / From June', 1], ['hours', 'Weekly working hours', 'select', '', 0, ['Under 10', '10–20', '20–30', '30–40', '40+']], ['compensation', 'Expected compensation (optional)', 'text', 'e.g. Negotiable', 0], ['why', 'Why do you want to work with ThePhi? *', 'textarea', 'Tell us what interests you about this opportunity...', 1], ['extra', 'Additional information', 'textarea', 'Anything else you would like us to know...', 0]] },
+            { title: 'Documents and consent', desc: 'One final step before you submit.', fields: [['resume', 'Resume (PDF) *', 'file', '.pdf', 1], ['portfolioFile', 'Portfolio attachment (optional)', 'file', '.pdf', 0]] }
+        ];
+        function showPage(id, role) { document.querySelectorAll('main.shell,.page').forEach(e => e.style.display = 'none'); document.querySelectorAll('.page').forEach(e => e.classList.remove('active')); if (id === 'home') { document.querySelector('main#home').style.display = 'block'; window.scrollTo(0, 0); return } let el = document.getElementById(id); if (el) { el.style.display = 'block'; el.classList.add('active') } if (id === 'apply') { currentStep = 0; formData = {}; Object.keys(selectedFiles).forEach(k => delete selectedFiles[k]); renderStep(); if (role) { setTimeout(() => { let p = document.querySelector('[name=position]'); if (p) p.value = role }, 0) } } if (id === 'admin') renderApps(); window.scrollTo(0, 0) }
+        function fieldHTML(f) { let [name, label, type, placeholder, required, opts] = f; let val = formData[name] || ''; let html = ''; if (type === 'select') html = `<select name="${name}" ${required ? 'required' : ''}><option value="">Select an option</option>${opts.map(o => `<option ${val === o ? 'selected' : ''}>${o}</option>`).join('')}</select>`; else if (type === 'textarea') html = `<textarea name="${name}" placeholder="${placeholder}" ${required ? 'required' : ''}>${val}</textarea>`; else if (type === 'file') html = `<input name="${name}" type="file" accept="${placeholder}" ${required ? 'required' : ''}/><small>Accepted: ${placeholder.replaceAll(',', ' / ')}. Maximum 5 MB.</small>`; else html = `<input name="${name}" type="${type}" placeholder="${placeholder}" value="${val}" ${required ? 'required' : ''}/>`; return `<div class="field ${type === 'textarea' ? 'full' : ''}"><label>${label}</label>${html}</div>` }
+        function renderStep() { let s = steps[currentStep]; document.getElementById('formstep').innerHTML = `<span class="kicker">STEP 0${currentStep + 1} / 05</span><h2>${s.title}</h2><p>${s.desc}</p><div class="fields">${s.fields.map(fieldHTML).join('')}${currentStep === 4 ? `<div class="field full"><label><input type="checkbox" id="accuracy" style="width:auto;margin-right:8px"> I confirm that the information provided is accurate.</label><label style="margin-top:12px"><input type="checkbox" id="privacy" style="width:auto;margin-right:8px"> I have read and accept the privacy notice and consent to application-related communication.</label></div>` : ''}</div>${currentStep === 4 ? '<div class="notice">Your application does not require fingerprint data. Biometric information is requested only later, if an agreement workflow genuinely requires it and you provide separate informed consent.</div>' : ''}`; document.querySelectorAll('.progressstep').forEach((e, i) => { e.classList.toggle('current', i === currentStep); e.classList.toggle('done', i < currentStep) }); document.getElementById('backBtn').style.visibility = currentStep === 0 ? 'hidden' : 'visible'; document.getElementById('nextBtn').textContent = currentStep === 4 ? 'Submit application ✓' : 'Continue →' }
+        function collect() {
+            const s = steps[currentStep];
+            for (const f of s.fields) {
+                const el = document.querySelector(`[name="${f[0]}"]`);
+                if (!el) continue;
+                if (f[2] === 'file') {
+                    const file = el.files && el.files[0];
+                    if (file) {
+                        if (file.size > 5 * 1024 * 1024) {
+                            toast('File must be smaller than 5 MB');
+                            return false;
+                        }
+                        if (file.type !== 'application/pdf' || !file.name.toLowerCase().endsWith('.pdf')) {
+                            toast('Please upload a PDF file');
+                            return false;
+                        }
+                        selectedFiles[f[0]] = file;
+                        formData[f[0]] = file.name;
+                    } else if (f[4] && !selectedFiles[f[0]]) {
+                        toast('Please upload your resume');
+                        return false;
+                    }
+                } else {
+                    formData[f[0]] = el.value.trim();
+                    if (f[4] && !formData[f[0]]) {
+                        el.focus();
+                        toast('Please complete: ' + f[1].replace(' *', ''));
+                        return false;
+                    }
+                    if (f[2] === 'email' && formData[f[0]] && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData[f[0]])) {
+                        el.focus();
+                        toast('Enter a valid email address');
+                        return false;
+                    }
+                }
+            }
+            if (currentStep === 4 && (!document.getElementById('accuracy').checked || !document.getElementById('privacy').checked)) {
+                toast('Please confirm both declarations');
+                return false;
+            }
+            return true;
+        }
+
+        async function changeStep(dir) {
+            if (isSubmitting) return;
+            if (dir === 1 && !collect()) return;
+
+            if (currentStep === 4 && dir === 1) {
+                const nextBtn = document.getElementById('nextBtn');
+                const originalText = nextBtn.textContent;
+                const payload = new FormData();
+
+                Object.entries(formData).forEach(([key, value]) => {
+                    if (key !== 'name' && key !== 'resume' && key !== 'portfolioFile') {
+                        payload.append(key, value ?? '');
+                    }
+                });
+                payload.append('full_name', formData.name || '');
+                payload.append('accuracy', 'true');
+                payload.append('privacy', 'true');
+                if (selectedFiles.resume) payload.append('resume', selectedFiles.resume);
+                if (selectedFiles.portfolioFile) payload.append('portfolioFile', selectedFiles.portfolioFile);
+
+                try {
+                    isSubmitting = true;
+                    nextBtn.disabled = true;
+                    nextBtn.textContent = 'Submitting...';
+
+                    const response = await fetch(`${API_BASE_URL}/api/applicants`, {
+                        method: 'POST',
+                        body: payload
+                    });
+                    const result = await response.json().catch(() => ({}));
+
+                    if (!response.ok || !result.success) {
+                        throw new Error(result.message || `Submission failed (${response.status})`);
+                    }
+
+                    const reference = result.reference_number;
+                    document.getElementById('refNumber').textContent = 'Your reference number: ' + reference;
+                    document.getElementById('appRef').textContent = reference;
+                    showPage('success');
+                    toast('Application submitted successfully');
+                } catch (error) {
+                    console.error('Application submission failed:', error);
+                    toast(error.message || 'Unable to submit application. Please try again.');
+                } finally {
+                    isSubmitting = false;
+                    nextBtn.disabled = false;
+                    nextBtn.textContent = originalText;
+                }
+                return;
+            }
+
+            currentStep = Math.max(0, Math.min(4, currentStep + dir));
+            renderStep();
+        }
+
+        let apps = [];
+        let currentApplicant = null;
+        let adminAccessToken = null;
+        let activeFilter = 'all';
+
+        function escapeHtml(value) {
+            return String(value ?? '').replace(/[&<>"']/g, character => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[character]));
+        }
+        async function getAdminSession() {
+            const { data, error } = await supabaseClient.auth.getSession();
+            if (error) throw error;
+            return data.session;
+        }
+        async function adminLogin() {
+            const email = document.getElementById('adminEmail').value.trim();
+            const password = document.getElementById('adminPassword').value;
+            const message = document.getElementById('adminLoginMessage');
+            const button = document.querySelector('#login button[onclick="adminLogin()"]');
+            message.textContent = '';
+            if (!email || !password) { message.textContent = 'Enter both your admin email and password.'; return; }
+            try {
+                if (button) { button.disabled = true; button.textContent = 'Signing in...'; }
+                const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+                if (error) throw error;
+                if (!data.session) throw new Error('No login session was returned.');
+                adminAccessToken = data.session.access_token;
+                const response = await fetch(`${API_BASE_URL}/api/applicants`, { headers: { Authorization: `Bearer ${adminAccessToken}` } });
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok || !result.success) {
+                    await supabaseClient.auth.signOut();
+                    adminAccessToken = null;
+                    throw new Error(result.message || 'This account is not authorized. Check ADMIN_EMAILS in the backend.');
+                }
+                apps = Array.isArray(result.applicants) ? result.applicants : [];
+                showPage('admin');
+                toast('Admin login successful');
+            } catch (error) {
+                console.error('Admin login error:', error);
+                message.textContent = error.message || 'Unable to sign in. Please try again.';
+            } finally {
+                if (button) { button.disabled = false; button.textContent = 'Secure admin login →'; }
+            }
+        }
+        async function adminLogout() {
+            try { await supabaseClient.auth.signOut(); } catch (error) { console.error(error); }
+            adminAccessToken = null; apps = []; currentApplicant = null;
+            showPage('login'); toast('You have been logged out');
+        }
+        async function ensureAdminSession() {
+            try {
+                const session = await getAdminSession();
+                if (!session) { adminAccessToken = null; showPage('login'); toast('Please sign in with your admin account'); return false; }
+                adminAccessToken = session.access_token;
+                return true;
+            } catch (error) { console.error(error); showPage('login'); return false; }
+        }
+        async function loadApplicants() {
+            if (!await ensureAdminSession()) return;
+            const rows = document.getElementById('appRows');
+            rows.innerHTML = '<tr><td colspan="6" class="empty">Loading applications...</td></tr>';
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/applicants`, { headers: { Authorization: `Bearer ${adminAccessToken}` } });
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok || !result.success) throw new Error(result.message || `Unable to load applications (${response.status})`);
+                apps = Array.isArray(result.applicants) ? result.applicants : [];
+                renderApps();
+            } catch (error) {
+                console.error(error);
+                rows.innerHTML = `<tr><td colspan="6" class="empty">${escapeHtml(error.message)}</td></tr>`;
+                toast(error.message || 'Unable to load applications');
+            }
+        }
+        function updateAdminMetrics() {
+            const count = status => apps.filter(app => (app.status || 'pending').toLowerCase() === status).length;
+            document.getElementById('mTotal').textContent = apps.length;
+            document.getElementById('mPending').textContent = count('pending');
+            document.getElementById('mReviewing').textContent = count('reviewing');
+            document.getElementById('mApproved').textContent = count('approved');
+        }
+        function applicantName(app) { return app.full_name || app.name || 'Unnamed applicant'; }
+        function applicantReference(app) { return app.reference_number || app.ref || 'Not assigned'; }
+        function applicantPosition(app) { return app.position || app.department || 'Not specified'; }
+        function applicantDate(app) {
+            if (!app.created_at) return 'Not available';
+            const date = new Date(app.created_at);
+            return Number.isNaN(date.getTime()) ? 'Not available' : date.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+        function renderApps() {
+            const rows = document.getElementById('appRows');
+            if (!rows) return;
+            const query = (document.getElementById('searchApps')?.value || '').toLowerCase();
+            const filtered = apps.filter(app => {
+                const status = (app.status || 'pending').toLowerCase();
+                const matchesFilter = activeFilter === 'all' || status === activeFilter;
+                const searchable = `${applicantName(app)} ${applicantReference(app)} ${applicantPosition(app)} ${app.email || ''}`.toLowerCase();
+                return matchesFilter && searchable.includes(query);
+            });
+            rows.innerHTML = filtered.map(app => {
+                const status = (app.status || 'pending').toLowerCase();
+                const statusClass = status === 'rejected' ? 'rejected' : (status === 'reviewing' || status === 'shortlisted' ? 'review' : '');
+                return `<tr><td><b>${escapeHtml(applicantName(app))}</b><br><small>${escapeHtml(app.email || '')}</small></td><td>${escapeHtml(applicantReference(app))}</td><td>${escapeHtml(applicantPosition(app))}</td><td>${escapeHtml(applicantDate(app))}</td><td><span class="status ${statusClass}">${escapeHtml(status)}</span></td><td><button class="textbtn" onclick="openApp('${escapeHtml(app.id)}')">Review ↗</button></td></tr>`;
+            }).join('') || '<tr><td colspan="6" class="empty">No applications found.</td></tr>';
+            updateAdminMetrics();
+        }
+        function filterApps(filter, element) {
+            activeFilter = filter;
+            document.querySelectorAll('#admin .tab').forEach(tab => tab.classList.remove('active'));
+            if (element) element.classList.add('active');
+            renderApps();
+        }
+        function openApp(id) {
+            const app = apps.find(item => String(item.id) === String(id));
+            if (!app) { toast('Applicant record not found. Refresh the list.'); return; }
+            currentApplicant = app;
+            document.getElementById('modalTitle').textContent = applicantName(app);
+            document.getElementById('modalText').textContent = [
+                `Reference: ${applicantReference(app)}`, `Position: ${applicantPosition(app)}`,
+                `Email: ${app.email || 'Not provided'}`, `Phone: ${app.phone || 'Not provided'}`,
+                `City: ${app.city || 'Not provided'}`, `Current status: ${app.status || 'pending'}`
+            ].join('\n');
+            document.getElementById('modalText').style.whiteSpace = 'pre-line';
+            document.getElementById('applicantStatus').value = (app.status || 'pending').toLowerCase();
+            document.getElementById('modal').classList.add('show');
+        }
+        async function saveApplicantStatus() {
+            if (!currentApplicant || !currentApplicant.id) return;
+            const status = document.getElementById('applicantStatus').value;
+            const button = document.getElementById('modalConfirm');
+            try {
+                button.disabled = true; button.textContent = 'Saving...';
+                const response = await fetch(`${API_BASE_URL}/api/applicants/${encodeURIComponent(currentApplicant.id)}/status`, {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${adminAccessToken}` },
+                    body: JSON.stringify({ status })
+                });
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok || !result.success) throw new Error(result.message || 'Unable to update applicant status.');
+                const updated = result.applicant || { ...currentApplicant, status };
+                apps = apps.map(app => String(app.id) === String(currentApplicant.id) ? updated : app);
+                closeModal(); renderApps(); toast(`Application status updated to ${status}`);
+            } catch (error) { console.error(error); toast(error.message || 'Unable to update status'); }
+            finally { button.disabled = false; button.textContent = 'Save status'; }
+        }
+        async function openApplicantResume() {
+            if (!currentApplicant || !currentApplicant.id) return;
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/applicants/${encodeURIComponent(currentApplicant.id)}/resume`, {
+                    headers: { Authorization: `Bearer ${adminAccessToken}` }
+                });
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok || !result.success || !result.resumeUrl) throw new Error(result.message || 'Resume is not available.');
+                window.open(result.resumeUrl, '_blank', 'noopener,noreferrer');
+            } catch (error) { console.error(error); toast(error.message || 'Unable to open resume'); }
+        }
+        function closeModal() { document.getElementById('modal').classList.remove('show'); currentApplicant = null; }
+        function showPage(id, role) {
+            if (id === 'admin') {
+                ensureAdminSession().then(isAdmin => {
+                    if (!isAdmin) return;
+                    document.querySelectorAll('main.shell,.page').forEach(element => element.style.display = 'none');
+                    document.querySelectorAll('.page').forEach(element => element.classList.remove('active'));
+                    const page = document.getElementById('admin');
+                    page.style.display = 'block'; page.classList.add('active');
+                    window.scrollTo(0, 0); loadApplicants();
+                });
+                return;
+            }
+            document.querySelectorAll('main.shell,.page').forEach(element => element.style.display = 'none');
+            document.querySelectorAll('.page').forEach(element => element.classList.remove('active'));
+            if (id === 'home') { document.querySelector('main#home').style.display = 'block'; window.scrollTo(0, 0); return; }
+            const page = document.getElementById(id);
+            if (page) { page.style.display = 'block'; page.classList.add('active'); }
+            if (id === 'apply') {
+                currentStep = 0; formData = {};
+                Object.keys(selectedFiles).forEach(key => delete selectedFiles[key]);
+                renderStep();
+                if (role) setTimeout(() => { const position = document.querySelector('[name=position]'); if (position) position.value = role; }, 0);
+            }
+            window.scrollTo(0, 0);
+        }
+        function toast(message) {
+            const element = document.getElementById('toast');
+            element.textContent = message; element.classList.add('show');
+            setTimeout(() => element.classList.remove('show'), 2800);
+        }
+        function askAI() { const q = document.getElementById('aiQuestion').value.trim(); if (!q) { toast('Enter a question first.'); return } const low = q.toLowerCase(); let answer = 'I can help with recruitment workflows, candidate summaries, interview preparation and pipeline reporting. In production, I will retrieve only records your account is authorized to access.'; if (low.includes('engineering') || low.includes('role')) answer = 'Sample insight: The Technology team has active opportunities across software engineering, AI research and product. Connect the live roles database to retrieve current openings and approved requirements.'; else if (low.includes('pending') || low.includes('agreement')) answer = 'Sample insight: The representative desk shows 4 agreements awaiting review. This is illustrative data. A production response will include agreement IDs, assigned signatories and due dates based on your permissions.'; else if (low.includes('interview')) answer = 'Sample insight: 12 interviews are scheduled this week and 4 feedback forms are pending in this preview. Production metrics will be calculated from verified calendar and interview records.'; document.getElementById('aiReply').textContent = answer; document.getElementById('aiQuestion').value = '' }
+        function filterEmployees() { const q = document.getElementById('employeeSearch').value.toLowerCase(); document.querySelectorAll('#employeeRows tr').forEach(r => r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none') }
+        showPage('home');
+    </script>
+</body>
+
+</html>
