@@ -953,50 +953,352 @@
             gap: 14px;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 992px) {
-            .hero-section {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                padding: 40px 0;
+        /* Comprehensive Responsive Breakpoints (320px - 1440px+) */
+        
+        /* Global Responsive Utilities */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        img, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive Breakpoint: Large Screens & Desktops (>= 1024px) */
+        @media (min-width: 1024px) {
+            .mobile-toggle {
+                display: none !important;
             }
-            .grid-3 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .step-cards {
-                grid-template-columns: 1fr;
-            }
-            .metrics-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
+            .mobile-menu {
+                display: none !important;
             }
         }
 
-        @media (max-width: 768px) {
-            nav.nav-links, .nav-actions .btn-workspace {
-                display: none;
+        /* Responsive Breakpoint: Tablets & Small Desktops (<= 1023px) */
+        @media (max-width: 1023px) {
+            header.nav-header {
+                height: 70px;
+            }
+            nav.nav-links {
+                display: none !important;
+            }
+            .nav-actions .btn-workspace {
+                display: none !important;
             }
             .mobile-toggle {
-                display: block;
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+                min-width: 44px;
+                min-height: 44px;
+                cursor: pointer;
+            }
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 0 30px;
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .footer-grid {
+                grid-template-columns: 1.5fr 1fr 1fr;
+                gap: 32px;
+            }
+        }
+
+        /* Responsive Breakpoint: Tablets & Phablets (<= 768px) */
+        @media (max-width: 768px) {
+            .ambient-glow {
+                display: none !important;
+            }
+            :root {
+                --shell: min(100% - 32px, 720px);
+            }
+            .page-view {
+                padding: 24px 0 60px;
+            }
+            .hero-title {
+                font-size: clamp(30px, 6.5vw, 40px);
+                line-height: 1.2;
+            }
+            .hero-description {
+                font-size: 15.5px;
+                line-height: 1.6;
+                margin-bottom: 26px;
             }
             .grid-3, .grid-2 {
                 grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .step-cards {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            #timelineSteps {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
             }
             .field-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-title {
-                font-size: 34px;
+                grid-template-columns: 1fr !important;
+                gap: 14px;
             }
             .form-shell {
-                padding: 24px;
+                padding: 22px 18px;
+                border-radius: var(--radius-md);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
+            .hero-trust-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                padding-top: 20px;
+            }
+            .hero-actions {
+                gap: 12px;
+            }
+        }
+
+        /* Responsive Breakpoint: Mobile Devices (<= 600px) */
+        @media (max-width: 600px) {
+            :root {
+                --shell: calc(100% - 24px);
+            }
+            header.nav-header {
+                height: 64px;
+            }
+            .brand-link {
+                font-size: 18px;
+                gap: 8px;
+            }
+            .brand-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+            .brand-tag {
+                font-size: 9px;
+                padding: 2px 5px;
+            }
+            .nav-actions .btn-nav-apply {
+                display: none !important;
+            }
+            .hero-section {
+                padding: 24px 0 20px;
+                gap: 30px;
+            }
+            .hero-title {
+                font-size: clamp(26px, 7.8vw, 34px);
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                gap: 12px;
+            }
+            .hero-actions .btn {
+                width: 100%;
+                min-height: 46px;
+                justify-content: center;
+                font-size: 14.5px;
+            }
+            .hero-card-preview {
+                padding: 20px 16px;
+            }
+            .hero-card-preview .grid-2,
+            .hero-card-preview div[style*="grid-template-columns:1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 10px !important;
+            }
+            .form-nav-actions {
+                flex-direction: column-reverse;
+                gap: 12px;
+                align-items: stretch;
+            }
+            .form-nav-actions .btn {
+                width: 100%;
+                min-height: 46px;
+                justify-content: center;
+            }
+            .table-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 14px;
+                padding: 14px 16px;
+            }
+            .table-toolbar input#adminSearchInput {
+                max-width: 100% !important;
+                width: 100%;
+            }
+            .filter-tabs {
+                width: 100%;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 6px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .filter-tab {
+                flex-shrink: 0;
+            }
+            .job-item {
+                padding: 20px 16px !important;
+            }
+            .job-item .btn {
+                width: 100%;
+                min-height: 44px;
+                justify-content: center;
             }
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .modal-overlay {
+                padding: 12px;
+            }
+            .modal-box {
+                padding: 20px 16px;
+                max-height: 94vh;
+                border-radius: var(--radius-md);
+            }
+            .modal-box .btn {
+                width: 100%;
+                min-height: 44px;
+                justify-content: center;
+            }
+            .stepper-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .stepper-progress {
+                gap: 4px;
+                margin-bottom: 22px;
             }
         }
+
+        /* Responsive Breakpoint: Small Mobile (320px - 374px) */
+        @media (max-width: 374px) {
+            :root {
+                --shell: calc(100% - 16px);
+            }
+            .hero-title {
+                font-size: 24px;
+            }
+            .pill-badge {
+                font-size: 10.5px;
+                padding: 4px 10px;
+            }
+            .card {
+                padding: 18px 14px;
+            }
+            .metrics-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            #timelineSteps {
+                grid-template-columns: 1fr !important;
+                gap: 8px !important;
+            }
+            .file-dropzone {
+                padding: 16px 12px;
+            }
+            .input-control {
+                padding: 9px 12px;
+                font-size: 15px;
+            }
+            .btn {
+                padding: 9px 14px;
+                font-size: 13px;
+            }
+            .toast-box {
+                left: 12px;
+                right: 12px;
+                bottom: 12px;
+                font-size: 12.5px;
+            }
+        }
+
+        /* Touch-Friendly Global Sizing */
+        .btn, .filter-tab, .mobile-toggle, .mobile-menu a {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            min-height: 44px;
+        }
+
+        .input-control {
+            min-height: 44px;
+            font-size: 16px; /* Prevents auto-zoom in iOS Safari */
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(9, 10, 13, 0.98);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            padding: 24px 20px;
+            z-index: 999;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+        }
+        .mobile-menu.active {
+            display: flex;
+            animation: fadeIn 0.25s ease-out;
+        }
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .mobile-menu a {
+            display: flex;
+            align-items: center;
+            min-height: 48px;
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 15.5px;
+            font-weight: 600;
+            color: var(--plat);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.2s ease;
+        }
+        .mobile-menu a:hover, .mobile-menu a:active {
+            background: rgba(255, 255, 255, 0.08);
+            color: #FFFFFF;
+            border-color: var(--silver);
+        }
+        .mobile-menu-cta {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        
     </style>
 </head>
 <body>
@@ -1005,6 +1307,7 @@
     <div class="ambient-glow glow-1"></div>
     <div class="ambient-glow glow-2"></div>
 
+    <!-- Navigation Header -->
     <!-- Navigation Header -->
     <header class="nav-header">
         <div class="shell nav-container">
@@ -1023,15 +1326,15 @@
             </nav>
 
             <div class="nav-actions">
-                <button type="button" class="btn btn-outline btn-sm btn-workspace" onclick="showPage('login')">
+                <button type="button" class="btn btn-outline btn-sm btn-workspace" id="btnWorkspaceDesktop" onclick="showPage('admin')" style="display:none;" title="Restricted to verified administrators">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
                     Workspace
                 </button>
-                <button type="button" class="btn btn-primary btn-sm" onclick="showPage('apply')">
+                <button type="button" class="btn btn-primary btn-sm btn-nav-apply" onclick="showPage('apply')">
                     Apply Now →
                 </button>
-                <button type="button" class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <button type="button" class="mobile-toggle" id="mobileToggleBtn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                 </button>
             </div>
         </div>
@@ -1039,16 +1342,24 @@
 
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="javascript:void(0)" onclick="showPage('home'); toggleMobileMenu();">Home</a>
-        <a href="javascript:void(0)" onclick="showPage('about'); toggleMobileMenu();">About Us</a>
-        <a href="javascript:void(0)" onclick="showPage('opportunities'); toggleMobileMenu();">Opportunities</a>
-        <a href="javascript:void(0)" onclick="showPage('how-it-works'); toggleMobileMenu();">How It Works</a>
-        <a href="javascript:void(0)" onclick="showPage('status'); toggleMobileMenu();">Track Application</a>
-        <a href="javascript:void(0)" onclick="showPage('login'); toggleMobileMenu();">Recruiter & Admin Workspace</a>
-        <button type="button" class="btn btn-primary" onclick="showPage('apply'); toggleMobileMenu();" style="width:100%; margin-top:8px;">Apply Now →</button>
+        <div class="mobile-menu-links">
+            <a href="javascript:void(0)" onclick="showPage('home'); closeMobileMenu();" id="mob-nav-home">Home</a>
+            <a href="javascript:void(0)" onclick="showPage('about'); closeMobileMenu();" id="mob-nav-about">About Us</a>
+            <a href="javascript:void(0)" onclick="showPage('opportunities'); closeMobileMenu();" id="mob-nav-opportunities">Opportunities</a>
+            <a href="javascript:void(0)" onclick="showPage('how-it-works'); closeMobileMenu();" id="mob-nav-how-it-works">How It Works</a>
+            <a href="javascript:void(0)" onclick="showPage('status'); closeMobileMenu();" id="mob-nav-status">Track Application</a>
+            <a href="javascript:void(0)" id="linkWorkspaceMobile" onclick="showPage('admin'); closeMobileMenu();" style="display:none; color:var(--status-reviewing);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:8px;"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
+                Admin Workspace
+            </a>
+        </div>
+        <div class="mobile-menu-cta">
+            <button type="button" class="btn btn-primary" onclick="showPage('apply'); closeMobileMenu();" style="width:100%; min-height:46px;">
+                Apply Now →
+            </button>
+        </div>
     </div>
 
-    <!-- MAIN PAGE CONTAINER -->
     <main>
 
         <!-- =========================================================
@@ -2070,7 +2381,7 @@
                 <div class="footer-col">
                     <h4>Operations</h4>
                     <ul>
-                        <li><a href="javascript:void(0)" onclick="showPage('login')">Recruiter Workspace</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('login')">Administrator Access</a></li>
                         <li><a href="javascript:void(0)" onclick="showPage('privacy')">Privacy Policy</a></li>
                         <li><a href="javascript:void(0)" onclick="showPage('terms')">Terms & Conditions</a></li>
                     </ul>
@@ -2110,6 +2421,7 @@
         let formData = {};
         let selectedFiles = {};
         let isSubmitting = false;
+        let isAdmin = false;
 
         let apps = [];
         let currentApplicant = null;
@@ -2217,10 +2529,67 @@
             }
         ];
 
+        
+        // Admin Access Control Engine
+        async function verifyAdminSession(token) {
+            if (!token) {
+                isAdmin = false;
+                adminAccessToken = null;
+                updateWorkspaceVisibility();
+                return false;
+            }
+            try {
+                const res = await fetch(API_BASE_URL + '/api/admin/verify', {
+                    headers: { Authorization: 'Bearer ' + token }
+                });
+                const body = await res.json().catch(() => ({}));
+                if (res.ok && body.success && body.isAdmin) {
+                    isAdmin = true;
+                    adminAccessToken = token;
+                    updateWorkspaceVisibility();
+                    return true;
+                } else {
+                    isAdmin = false;
+                    adminAccessToken = null;
+                    updateWorkspaceVisibility();
+                    return false;
+                }
+            } catch (e) {
+                console.error("Admin verification error:", e);
+                isAdmin = false;
+                adminAccessToken = null;
+                updateWorkspaceVisibility();
+                return false;
+            }
+        }
+
+        function updateWorkspaceVisibility() {
+            const deskBtn = document.getElementById('btnWorkspaceDesktop');
+            const mobLink = document.getElementById('linkWorkspaceMobile');
+            
+            if (isAdmin) {
+                if (deskBtn) deskBtn.style.display = 'inline-flex';
+                if (mobLink) mobLink.style.display = 'flex';
+            } else {
+                if (deskBtn) deskBtn.style.display = 'none';
+                if (mobLink) mobLink.style.display = 'none';
+            }
+        }
+
         // Page Navigation Router
         function showPage(pageId, extraParam) {
+            // Guard: Restrict admin view strictly to authorized administrators
+            if (pageId === 'admin') {
+                if (!isAdmin) {
+                    showToast("Access Denied: Administrator authentication required.");
+                    showPage('home');
+                    return;
+                }
+            }
+
             document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
             document.querySelectorAll('nav.nav-links a').forEach(a => a.classList.remove('active'));
+            document.querySelectorAll('.mobile-menu-links a').forEach(a => a.classList.remove('active'));
 
             const targetPage = document.getElementById('page-' + pageId);
             if (targetPage) {
@@ -2230,6 +2599,10 @@
             const activeNav = document.getElementById('nav-' + pageId);
             if (activeNav) {
                 activeNav.classList.add('active');
+            }
+            const activeMobNav = document.getElementById('mob-nav-' + pageId);
+            if (activeMobNav) {
+                activeMobNav.classList.add('active');
             }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2244,7 +2617,7 @@
                     }, 50);
                 }
             } else if (pageId === 'admin') {
-                checkAndLoadAdmin();
+                fetchLiveApplications();
             } else if (pageId === 'status') {
                 // If there is recent submission, auto-populate
                 const stored = localStorage.getItem('thephi_latest_application');
@@ -2263,7 +2636,18 @@
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
+            if (menu) {
+                menu.classList.toggle('active');
+                document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         }
 
         // Stepper Form Engine
@@ -2596,27 +2980,19 @@
                 if (error) throw error;
                 if (!data.session) throw new Error("No session returned from authentication server.");
 
-                adminAccessToken = data.session.access_token;
-
-                // Validate with backend admin list
-                const res = await fetch(API_BASE_URL + '/api/applicants', {
-                    headers: { Authorization: 'Bearer ' + adminAccessToken }
-                });
-                const body = await res.json().catch(() => ({}));
-
-                if (!res.ok || !body.success) {
+                const verified = await verifyAdminSession(data.session.access_token);
+                if (!verified) {
                     await supabaseClient.auth.signOut();
-                    adminAccessToken = null;
-                    throw new Error(body.message || "This email is not authorized as an administrator.");
+                    throw new Error("Access Denied: This email is not authorized as an administrator.");
                 }
 
-                apps = Array.isArray(body.applicants) ? body.applicants : [];
                 showPage('admin');
                 showToast("Welcome to the Recruiter Workspace.");
 
             } catch (err) {
                 console.error("Admin signin failed:", err);
                 errorMsg.textContent = err.message || "Invalid authentication credentials.";
+                updateWorkspaceVisibility();
             } finally {
                 btn.disabled = false;
                 btn.textContent = "Authenticate Access →";
@@ -2624,22 +3000,15 @@
         }
 
         async function checkAndLoadAdmin() {
-            try {
-                const { data, error } = await supabaseClient.auth.getSession();
-                if (error || !data.session) {
-                    adminAccessToken = null;
-                    showPage('login');
-                    return;
-                }
-                adminAccessToken = data.session.access_token;
-                await fetchLiveApplications();
-            } catch (e) {
+            if (!isAdmin || !adminAccessToken) {
                 showPage('login');
+                return;
             }
+            await fetchLiveApplications();
         }
 
         async function fetchLiveApplications() {
-            if (!adminAccessToken) return;
+            if (!adminAccessToken || !isAdmin) return;
             const tbody = document.getElementById('adminTableBody');
             tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:30px; color:var(--muted);">Refreshing live records from Supabase...</td></tr>';
 
@@ -2663,177 +3032,17 @@
             }
         }
 
-        function updateAdminKPIs() {
-            const countByStatus = s => apps.filter(a => (a.status || 'pending').toLowerCase() === s).length;
-            document.getElementById('kpiTotal').textContent = apps.length;
-            document.getElementById('kpiPending').textContent = countByStatus('pending');
-            document.getElementById('kpiReviewing').textContent = countByStatus('reviewing');
-            document.getElementById('kpiApproved').textContent = countByStatus('shortlisted') + countByStatus('approved');
-        }
-
-        function filterAdminTable(filter, btn) {
-            activeAdminFilter = filter;
-            document.querySelectorAll('.filter-tabs .filter-tab').forEach(b => b.classList.remove('active'));
-            if (btn) btn.classList.add('active');
-            renderAdminTable();
-        }
-
-        function renderAdminTable() {
-            const tbody = document.getElementById('adminTableBody');
-            if (!tbody) return;
-
-            const q = (document.getElementById('adminSearchInput')?.value || '').toLowerCase();
-            const filtered = apps.filter(a => {
-                const status = (a.status || 'pending').toLowerCase();
-                const matchesFilter = activeAdminFilter === 'all' || status === activeAdminFilter;
-                const searchStr = ((a.full_name || '') + ' ' + (a.email || '') + ' ' + (a.reference_number || '') + ' ' + (a.position || '')).toLowerCase();
-                return matchesFilter && searchStr.includes(q);
-            });
-
-            if (filtered.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:30px; color:var(--muted);">No matching applicant dossiers found.</td></tr>';
-                return;
-            }
-
-            tbody.innerHTML = filtered.map(app => {
-                const status = (app.status || 'pending').toLowerCase();
-                let pillClass = 'status-pending';
-                if (status === 'approved') pillClass = 'status-approved';
-                else if (status === 'reviewing') pillClass = 'status-reviewing';
-                else if (status === 'shortlisted') pillClass = 'status-shortlisted';
-                else if (status === 'rejected') pillClass = 'status-rejected';
-
-                const dateStr = app.created_at ? new Date(app.created_at).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' }) : 'N/A';
-
-                return '<tr>' +
-                    '<td><strong style="color:#FFF;">' + escapeHtml(app.full_name || 'Unnamed') + '</strong><br><span style="font-size:12px; color:var(--muted);">' + escapeHtml(app.email || '') + '</span></td>' +
-                    '<td><span class="font-mono" style="font-size:12.5px; color:var(--silver);">' + escapeHtml(app.reference_number || 'N/A') + '</span></td>' +
-                    '<td>' + escapeHtml(app.position || 'General') + '</td>' +
-                    '<td><span style="font-size:12.5px; color:var(--muted);">' + dateStr + '</span></td>' +
-                    '<td><span class="status-pill ' + pillClass + '">' + status + '</span></td>' +
-                    '<td><button type="button" class="btn btn-outline btn-sm" onclick="openApplicantModal(\'' + app.id + '\')">Review Dossier →</button></td>' +
-                    '</tr>';
-            }).join('');
-        }
-
-        function openApplicantModal(appId) {
-            currentApplicant = apps.find(a => a.id === appId);
-            if (!currentApplicant) return;
-
-            document.getElementById('modalCandidateName').textContent = currentApplicant.full_name || 'Candidate';
-            document.getElementById('modalCandidateRef').textContent = 'Reference: ' + (currentApplicant.reference_number || 'N/A') + ' • Status: ' + (currentApplicant.status || 'pending').toUpperCase();
-            document.getElementById('modalStatusSelect').value = (currentApplicant.status || 'pending').toLowerCase();
-
-            const body = document.getElementById('modalDetailsBody');
-            body.innerHTML = 
-                '<div class="grid-2" style="background:var(--bg); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border);">' +
-                '<div><span style="color:var(--muted); font-size:12px;">Contact Phone</span><br><strong>' + escapeHtml(currentApplicant.phone || 'N/A') + '</strong></div>' +
-                '<div><span style="color:var(--muted); font-size:12px;">Location Nexus</span><br><strong>' + escapeHtml(currentApplicant.city || 'N/A') + ', ' + escapeHtml(currentApplicant.state || '') + '</strong></div>' +
-                '<div><span style="color:var(--muted); font-size:12px;">Target Position</span><br><strong>' + escapeHtml(currentApplicant.position || 'N/A') + '</strong></div>' +
-                '<div><span style="color:var(--muted); font-size:12px;">Experience Level</span><br><strong>' + escapeHtml(currentApplicant.experience || 'N/A') + '</strong></div>' +
-                '</div>' +
-                '<div class="grid-2" style="background:var(--bg); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border);">' +
-                '<div><span style="color:var(--muted); font-size:12px;">Highest Academic Degree</span><br><strong>' + escapeHtml(currentApplicant.qualification || 'N/A') + '</strong></div>' +
-                '<div><span style="color:var(--muted); font-size:12px;">Institution / College</span><br><strong>' + escapeHtml(currentApplicant.college || 'N/A') + '</strong></div>' +
-                '<div><span style="color:var(--muted); font-size:12px;">Preferred Engagement</span><br><strong>' + escapeHtml(currentApplicant.engagement || 'N/A') + '</strong></div>' +
-                '<div><span style="color:var(--muted); font-size:12px;">Availability Notice</span><br><strong>' + escapeHtml(currentApplicant.availability || 'N/A') + '</strong></div>' +
-                '</div>' +
-                (currentApplicant.skills ? 
-                '<div style="background:var(--bg); padding:14px; border-radius:var(--radius-sm); border:1px solid var(--border);">' +
-                '<span style="color:var(--muted); font-size:12px; display:block; margin-bottom:4px;">Core Competencies & Skills:</span>' +
-                '<strong class="font-mono" style="font-size:13px; color:#FFF;">' + escapeHtml(currentApplicant.skills) + '</strong>' +
-                '</div>' : '') +
-                (currentApplicant.why ? 
-                '<div style="background:var(--bg); padding:14px; border-radius:var(--radius-sm); border:1px solid var(--border);">' +
-                '<span style="color:var(--muted); font-size:12px; display:block; margin-bottom:4px;">Statement on Why ThePhi:</span>' +
-                '<p style="color:var(--plat); font-size:13px; line-height:1.6;">' + escapeHtml(currentApplicant.why) + '</p>' +
-                '</div>' : '') +
-                '<div style="display:flex; gap:16px; font-size:13px;">' +
-                (currentApplicant.linkedin ? '<a href="' + escapeHtml(currentApplicant.linkedin) + '" target="_blank" style="color:#38BDF8; text-decoration:underline;">LinkedIn Profile ↗</a>' : '') +
-                (currentApplicant.github ? '<a href="' + escapeHtml(currentApplicant.github) + '" target="_blank" style="color:#38BDF8; text-decoration:underline;">GitHub / Portfolio ↗</a>' : '') +
-                '</div>';
-
-            document.getElementById('applicantModal').classList.add('active');
-        }
-
-        function closeApplicantModal() {
-            document.getElementById('applicantModal').classList.remove('active');
-            currentApplicant = null;
-        }
-
-        async function openSecureResume() {
-            if (!currentApplicant || !currentApplicant.id) return;
-
-            const resumeWin = window.open('about:blank', '_blank');
-            if (!resumeWin) {
-                showToast("Please allow pop-ups for this website to view resumes.");
-                return;
-            }
-
-            try {
-                const res = await fetch(API_BASE_URL + '/api/applicants/' + encodeURIComponent(currentApplicant.id) + '/resume', {
-                    headers: { Authorization: 'Bearer ' + adminAccessToken }
-                });
-                const body = await res.json().catch(() => ({}));
-
-                if (!res.ok || !body.success || !body.resumeUrl) {
-                    throw new Error(body.message || "Resume signed URL could not be generated.");
-                }
-
-                resumeWin.location.href = body.resumeUrl;
-            } catch (err) {
-                console.error(err);
-                resumeWin.close();
-                showToast(err.message || "Unable to access resume document.");
-            }
-        }
-
-        async function saveStatusUpdate() {
-            if (!currentApplicant || !currentApplicant.id) return;
-            const newStatus = document.getElementById('modalStatusSelect').value;
-            const btn = document.getElementById('saveStatusBtn');
-
-            try {
-                btn.disabled = true;
-                btn.textContent = "Updating...";
-
-                const res = await fetch(API_BASE_URL + '/api/applicants/' + encodeURIComponent(currentApplicant.id) + '/status', {
-                    method: 'PATCH',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: 'Bearer ' + adminAccessToken
-                    },
-                    body: JSON.stringify({ status: newStatus })
-                });
-
-                const body = await res.json().catch(() => ({}));
-                if (!res.ok || !body.success) {
-                    throw new Error(body.message || "Failed to update status.");
-                }
-
-                currentApplicant.status = newStatus;
-                renderAdminTable();
-                updateAdminKPIs();
-                closeApplicantModal();
-                showToast('Status updated to ' + newStatus.toUpperCase());
-            } catch (err) {
-                console.error(err);
-                showToast(err.message || "Failed to update status.");
-            } finally {
-                btn.disabled = false;
-                btn.textContent = "Save Status";
-            }
-        }
-
         async function handleAdminLogout() {
             try {
                 await supabaseClient.auth.signOut();
             } catch (e) {}
             adminAccessToken = null;
+            isAdmin = false;
             apps = [];
             currentApplicant = null;
-            showPage('login');
-            showToast("Logged out of workspace.");
+            updateWorkspaceVisibility();
+            showPage('home');
+            showToast("Logged out of administrator workspace.");
         }
 
         // Job Filter on Opportunities View
@@ -2878,8 +3087,30 @@
         }
 
         // Initialize Home View on Load
-        document.addEventListener('DOMContentLoaded', () => {
-            showPage('home');
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Hide workspace buttons by default for public visitors
+            updateWorkspaceVisibility();
+
+            // Check if user has an existing Supabase session
+            try {
+                const { data, error } = await supabaseClient.auth.getSession();
+                if (!error && data && data.session) {
+                    await verifyAdminSession(data.session.access_token);
+                }
+            } catch (e) {
+                isAdmin = false;
+                updateWorkspaceVisibility();
+            }
+
+            // Router based on hash or default to home
+            const hash = window.location.hash.replace('#', '').trim();
+            if (hash === 'admin' && !isAdmin) {
+                showPage('home');
+            } else if (hash && document.getElementById('page-' + hash)) {
+                showPage(hash);
+            } else {
+                showPage('home');
+            }
         });
     </script>
 
