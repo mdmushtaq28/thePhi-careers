@@ -1,0 +1,18 @@
+{
+  "name": "thephi-frontend",
+  "version": "1.0.0",
+  "description": "ThePhi Careers Platform - Production Web Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "thephi",
+    "careers",
+    "recruitment",
+    "platform"
+  ],
+  "author": "ThePhi",
+  "license": "ISC"
+}
