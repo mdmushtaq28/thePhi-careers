@@ -3032,6 +3032,173 @@
             }
         }
 
+        
+        function updateAdminKPIs() {
+            const countByStatus = s => apps.filter(a => (a.status || 'pending').toLowerCase() === s).length;
+            const totalEl = document.getElementById('kpiTotal');
+            const pendEl = document.getElementById('kpiPending');
+            const revEl = document.getElementById('kpiReviewing');
+            const appEl = document.getElementById('kpiApproved');
+            if (totalEl) totalEl.textContent = apps.length;
+            if (pendEl) pendEl.textContent = countByStatus('pending');
+            if (revEl) revEl.textContent = countByStatus('reviewing');
+            if (appEl) appEl.textContent = countByStatus('shortlisted') + countByStatus('approved');
+        }
+
+        function filterAdminTable(filter, btn) {
+            activeAdminFilter = filter;
+            document.querySelectorAll('.filter-tabs .filter-tab').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderAdminTable();
+        }
+
+        function renderAdminTable() {
+            const tbody = document.getElementById('adminTableBody');
+            if (!tbody) return;
+
+            const q = (document.getElementById('adminSearchInput')?.value || '').toLowerCase();
+            const filtered = apps.filter(a => {
+                const status = (a.status || 'pending').toLowerCase();
+                const matchesFilter = activeAdminFilter === 'all' || status === activeAdminFilter;
+                const searchStr = ((a.full_name || '') + ' ' + (a.email || '') + ' ' + (a.reference_number || '') + ' ' + (a.position || '')).toLowerCase();
+                return matchesFilter && searchStr.includes(q);
+            });
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:30px; color:var(--muted);">No matching applicant dossiers found.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(app => {
+                const status = (app.status || 'pending').toLowerCase();
+                let pillClass = 'status-pending';
+                if (status === 'approved') pillClass = 'status-approved';
+                else if (status === 'reviewing') pillClass = 'status-reviewing';
+                else if (status === 'shortlisted') pillClass = 'status-shortlisted';
+                else if (status === 'rejected') pillClass = 'status-rejected';
+
+                const dateStr = app.created_at ? new Date(app.created_at).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' }) : 'N/A';
+
+                return '<tr>' +
+                    '<td><strong style="color:#FFF;">' + escapeHtml(app.full_name || 'Unnamed') + '</strong><br><span style="font-size:12px; color:var(--muted);">' + escapeHtml(app.email || '') + '</span></td>' +
+                    '<td><span class="font-mono" style="font-size:12.5px; color:var(--silver);">' + escapeHtml(app.reference_number || 'N/A') + '</span></td>' +
+                    '<td>' + escapeHtml(app.position || 'General') + '</td>' +
+                    '<td><span style="font-size:12.5px; color:var(--muted);">' + dateStr + '</span></td>' +
+                    '<td><span class="status-pill ' + pillClass + '">' + status + '</span></td>' +
+                    '<td><button type="button" class="btn btn-outline btn-sm" onclick="openApplicantModal(\'' + app.id + '\')">Review Dossier →</button></td>' +
+                    '</tr>';
+            }).join('');
+        }
+
+        function openApplicantModal(appId) {
+            currentApplicant = apps.find(a => a.id === appId);
+            if (!currentApplicant) return;
+
+            document.getElementById('modalCandidateName').textContent = currentApplicant.full_name || 'Candidate';
+            document.getElementById('modalCandidateRef').textContent = 'Reference: ' + (currentApplicant.reference_number || 'N/A') + ' • Status: ' + (currentApplicant.status || 'pending').toUpperCase();
+            document.getElementById('modalStatusSelect').value = (currentApplicant.status || 'pending').toLowerCase();
+
+            const body = document.getElementById('modalDetailsBody');
+            body.innerHTML = 
+                '<div class="grid-2" style="background:var(--bg); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border);">' +
+                '<div><span style="color:var(--muted); font-size:12px;">Contact Phone</span><br><strong>' + escapeHtml(currentApplicant.phone || 'N/A') + '</strong></div>' +
+                '<div><span style="color:var(--muted); font-size:12px;">Location Nexus</span><br><strong>' + escapeHtml(currentApplicant.city || 'N/A') + ', ' + escapeHtml(currentApplicant.state || '') + '</strong></div>' +
+                '<div><span style="color:var(--muted); font-size:12px;">Target Position</span><br><strong>' + escapeHtml(currentApplicant.position || 'N/A') + '</strong></div>' +
+                '<div><span style="color:var(--muted); font-size:12px;">Experience Level</span><br><strong>' + escapeHtml(currentApplicant.experience || 'N/A') + '</strong></div>' +
+                '</div>' +
+                '<div class="grid-2" style="background:var(--bg); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border);">' +
+                '<div><span style="color:var(--muted); font-size:12px;">Highest Academic Degree</span><br><strong>' + escapeHtml(currentApplicant.qualification || 'N/A') + '</strong></div>' +
+                '<div><span style="color:var(--muted); font-size:12px;">Institution / College</span><br><strong>' + escapeHtml(currentApplicant.college || 'N/A') + '</strong></div>' +
+                '<div><span style="color:var(--muted); font-size:12px;">Preferred Engagement</span><br><strong>' + escapeHtml(currentApplicant.engagement || 'N/A') + '</strong></div>' +
+                '<div><span style="color:var(--muted); font-size:12px;">Availability Notice</span><br><strong>' + escapeHtml(currentApplicant.availability || 'N/A') + '</strong></div>' +
+                '</div>' +
+                (currentApplicant.skills ? 
+                '<div style="background:var(--bg); padding:14px; border-radius:var(--radius-sm); border:1px solid var(--border);">' +
+                '<span style="color:var(--muted); font-size:12px; display:block; margin-bottom:4px;">Core Competencies & Skills:</span>' +
+                '<strong class="font-mono" style="font-size:13px; color:#FFF;">' + escapeHtml(currentApplicant.skills) + '</strong>' +
+                '</div>' : '') +
+                (currentApplicant.why ? 
+                '<div style="background:var(--bg); padding:14px; border-radius:var(--radius-sm); border:1px solid var(--border);">' +
+                '<span style="color:var(--muted); font-size:12px; display:block; margin-bottom:4px;">Statement on Why ThePhi:</span>' +
+                '<p style="color:var(--plat); font-size:13px; line-height:1.6;">' + escapeHtml(currentApplicant.why) + '</p>' +
+                '</div>' : '') +
+                '<div style="display:flex; gap:16px; font-size:13px; flex-wrap:wrap;">' +
+                (currentApplicant.linkedin ? '<a href="' + escapeHtml(currentApplicant.linkedin) + '" target="_blank" style="color:#38BDF8; text-decoration:underline;">LinkedIn Profile ↗</a>' : '') +
+                (currentApplicant.github ? '<a href="' + escapeHtml(currentApplicant.github) + '" target="_blank" style="color:#38BDF8; text-decoration:underline;">GitHub / Portfolio ↗</a>' : '') +
+                '</div>';
+
+            document.getElementById('applicantModal').classList.add('active');
+        }
+
+        function closeApplicantModal() {
+            document.getElementById('applicantModal').classList.remove('active');
+            currentApplicant = null;
+        }
+
+        async function openSecureResume() {
+            if (!currentApplicant || !currentApplicant.id) return;
+
+            const resumeWin = window.open('about:blank', '_blank');
+            if (!resumeWin) {
+                showToast("Please allow pop-ups for this website to view resumes.");
+                return;
+            }
+
+            try {
+                const res = await fetch(API_BASE_URL + '/api/applicants/' + encodeURIComponent(currentApplicant.id) + '/resume', {
+                    headers: { Authorization: 'Bearer ' + adminAccessToken }
+                });
+                const body = await res.json().catch(() => ({}));
+
+                if (!res.ok || !body.success || !body.resumeUrl) {
+                    throw new Error(body.message || "Resume signed URL could not be generated.");
+                }
+
+                resumeWin.location.href = body.resumeUrl;
+            } catch (err) {
+                console.error(err);
+                resumeWin.close();
+                showToast(err.message || "Unable to access resume document.");
+            }
+        }
+
+        async function saveStatusUpdate() {
+            if (!currentApplicant || !currentApplicant.id) return;
+            const newStatus = document.getElementById('modalStatusSelect').value;
+            const btn = document.getElementById('saveStatusBtn');
+
+            try {
+                btn.disabled = true;
+                btn.textContent = "Updating...";
+
+                const res = await fetch(API_BASE_URL + '/api/applicants/' + encodeURIComponent(currentApplicant.id) + '/status', {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: 'Bearer ' + adminAccessToken
+                    },
+                    body: JSON.stringify({ status: newStatus })
+                });
+
+                const body = await res.json().catch(() => ({}));
+                if (!res.ok || !body.success) {
+                    throw new Error(body.message || "Failed to update status.");
+                }
+
+                currentApplicant.status = newStatus;
+                renderAdminTable();
+                updateAdminKPIs();
+                closeApplicantModal();
+                showToast('Status updated to ' + newStatus.toUpperCase());
+            } catch (err) {
+                console.error(err);
+                showToast(err.message || "Failed to update status.");
+            } finally {
+                btn.disabled = false;
+                btn.textContent = "Save Status";
+            }
+        }
+
         async function handleAdminLogout() {
             try {
                 await supabaseClient.auth.signOut();
