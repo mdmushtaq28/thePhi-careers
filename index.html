@@ -1299,6 +1299,49 @@
             border-top: 1px solid var(--border);
         }
         
+    
+        /* Applicant Dashboard & Editing Period Styles */
+        .dashboard-banner {
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            border: 1px solid var(--border);
+        }
+        .banner-editable {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(9, 10, 13, 0.8) 100%);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+        .banner-locked {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(9, 10, 13, 0.8) 100%);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+        .banner-shortlisted {
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.12) 0%, rgba(9, 10, 13, 0.8) 100%);
+            border-color: rgba(52, 211, 153, 0.35);
+        }
+        .countdown-ticker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            color: #38BDF8;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .interview-deck-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            margin-top: 18px;
+        }
+
     </style>
 </head>
 <body>
@@ -2042,24 +2085,59 @@
 
                 <!-- Status Result Container (Loaded via Real Data) -->
                 <div id="statusResultBox" style="display:none;">
-                    <div class="card" style="padding:36px; border-color:var(--border-light);">
+                    <div class="card" style="padding:32px; border-color:var(--border-light); margin-bottom:28px;">
                         
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid var(--border); padding-bottom:20px; margin-bottom:24px; flex-wrap:wrap; gap:14px;">
+                        <!-- Dashboard Top Bar -->
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid var(--border); padding-bottom:20px; margin-bottom:22px; flex-wrap:wrap; gap:14px;">
                             <div>
-                                <span class="font-mono" style="font-size:12px; color:var(--muted); text-transform:uppercase;">Applicant Record</span>
-                                <h2 style="font-size:24px; color:#FFFFFF; margin-top:2px;" id="statusApplicantName">Candidate Name</h2>
-                                <p style="font-size:13.5px; color:var(--silver);" id="statusPositionLine">Position Applying For</p>
+                                <span class="font-mono" style="font-size:11.5px; color:var(--muted); text-transform:uppercase;">Applicant Portal</span>
+                                <h2 style="font-size:26px; color:#FFFFFF; margin-top:2px;" id="statusApplicantName">Candidate Name</h2>
+                                <p style="font-size:14px; color:var(--silver);" id="statusPositionLine">Position Applying For</p>
                             </div>
                             <div style="text-align:right;">
                                 <div id="statusPillContainer"></div>
-                                <span class="font-mono" style="font-size:12px; color:var(--muted); display:block; margin-top:6px;" id="statusRefTag">TPH-XXXX</span>
+                                <span class="font-mono" style="font-size:12.5px; color:var(--muted); display:block; margin-top:6px;" id="statusRefTag">TPH-XXXX</span>
                             </div>
                         </div>
 
+                        <!-- 24-Hour Limited Editing Period Banner -->
+                        <div id="editingPeriodBanner" class="dashboard-banner banner-editable">
+                            <div>
+                                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                                    <span class="status-pill status-reviewing" id="editingStatusPill">EDITING ACTIVE</span>
+                                    <span class="countdown-ticker" id="editingCountdownClock">24h 00m 00s</span>
+                                </div>
+                                <p id="editingDeadlineText" style="font-size:13.5px; color:var(--plat); margin:0;">
+                                    Your application can be edited until <strong id="editingDeadlineVal">--</strong> IST.
+                                </p>
+                                <span id="lastUpdatedNotice" style="font-size:12px; color:var(--muted); display:block; margin-top:4px;"></span>
+                            </div>
+                            <div id="editingBtnContainer">
+                                <button type="button" class="btn btn-primary btn-sm" id="btnOpenEditApp" onclick="openApplicantEditModal()">
+                                    Edit Application ✎
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Document Vault Card -->
+                        <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-sm); padding:18px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+                            <div style="display:flex; align-items:center; gap:12px;">
+                                <div style="width:38px; height:38px; border-radius:8px; background:rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center; color:var(--silver);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size:14px; color:#FFF; margin:0;" id="statusResumeTitle">Official Resume PDF</h4>
+                                    <span style="font-size:12px; color:var(--muted);" id="statusResumeSub">Verified & encrypted in private vault</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-outline btn-sm" onclick="applicantViewResume()">
+                                View Submitted Resume PDF ↗
+                            </button>
+                        </div>
+
                         <!-- Progress Milestones -->
-                        <div style="margin-bottom:32px;">
-                            <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:16px;">Application Timeline</h4>
-                            
+                        <div style="margin-bottom:28px;">
+                            <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:14px;">Application Lifecycle Timeline</h4>
                             <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:12px;" id="timelineSteps">
                                 <div class="step-card" id="time-step-1" style="padding:16px;">
                                     <span class="font-mono" style="font-size:11px; color:#34D399; font-weight:700;">✓ STAGE 01</span>
@@ -2084,19 +2162,41 @@
                             </div>
                         </div>
 
+                        <!-- SECTION: MY INTERVIEWS -->
+                        <div style="margin-bottom:28px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                                <h3 style="font-size:18px; color:#FFF;">My Interviews</h3>
+                                <span class="font-mono" style="font-size:11.5px; color:var(--muted);">OFFICIAL SCHEDULE</span>
+                            </div>
+                            <div id="applicantInterviewContainer">
+                                <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-sm); padding:24px; text-align:center; color:var(--muted); font-size:13.5px;">
+                                    No interviews scheduled yet. Once our hiring team reviews and shortlists your application, scheduled interview slots will appear here with your official meeting link.
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Details Grid -->
-                        <div class="grid-2" style="background:var(--bg); padding:20px; border-radius:var(--radius-sm); border:1px solid var(--border); font-size:13.5px;">
+                        <div class="grid-2" id="applicantDetailsGrid" style="background:var(--bg); padding:20px; border-radius:var(--radius-sm); border:1px solid var(--border); font-size:13.5px; gap:16px;">
                             <div>
-                                <span style="color:var(--muted); display:block; font-size:12px;">Submission Timestamp</span>
-                                <strong id="statusDate" style="color:#FFF;">--</strong>
+                                <span style="color:var(--muted); display:block; font-size:12px;">Contact Phone</span>
+                                <strong id="dashPhone" style="color:#FFF;">--</strong>
                             </div>
                             <div>
-                                <span style="color:var(--muted); display:block; font-size:12px;">Resume File Status</span>
-                                <strong id="statusResume" style="color:#34D399;">✓ Attached & Secured</strong>
+                                <span style="color:var(--muted); display:block; font-size:12px;">Current Location</span>
+                                <strong id="dashLocation" style="color:#FFF;">--</strong>
+                            </div>
+                            <div>
+                                <span style="color:var(--muted); display:block; font-size:12px;">Experience Level</span>
+                                <strong id="dashExperience" style="color:#FFF;">--</strong>
+                            </div>
+                            <div>
+                                <span style="color:var(--muted); display:block; font-size:12px;">Highest Qualification</span>
+                                <strong id="dashQualification" style="color:#FFF;">--</strong>
                             </div>
                         </div>
 
                     </div>
+                </div>
                 </div>
 
             </div>
@@ -2338,6 +2438,310 @@
     <!-- =========================================================
          13. TOAST NOTIFICATION CONTAINER
          ========================================================= -->
+    
+    <!-- =========================================================
+         MODAL: APPLICANT APPLICATION EDITING (LIMITED WINDOW)
+         ========================================================= -->
+    <div class="modal-overlay" id="applicantEditModal">
+        <div class="modal-box" style="max-width:740px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid var(--border); padding-bottom:18px; margin-bottom:20px;">
+                <div>
+                    <span class="font-mono" style="font-size:11px; color:var(--status-reviewing); text-transform:uppercase;">Limited Editing Window</span>
+                    <h3 style="font-size:22px; margin-top:2px;">Edit Application Dossier</h3>
+                    <p style="font-size:13px; color:var(--silver);" id="editModalRefTag">Reference: TPH-XXXX</p>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm" onclick="closeApplicantEditModal()">✕ Close</button>
+            </div>
+
+            <form id="applicantEditForm" onsubmit="handleApplicantEditSubmit(event)">
+                <div style="max-height:60vh; overflow-y:auto; padding-right:8px; display:flex; flex-direction:column; gap:18px;">
+                    
+                    <div style="background:rgba(56, 189, 248, 0.08); border:1px solid rgba(56, 189, 248, 0.25); border-radius:var(--radius-sm); padding:12px 16px; font-size:12.5px; color:var(--silver);">
+                        Notice: You can update your contact coordinates, profile links, experience, and upload replacement documents. Reference code and submission timestamps are permanent.
+                    </div>
+
+                    <!-- Personal Info -->
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">Legal Full Name <span class="req">*</span></label>
+                            <input type="text" class="input-control" id="editFullName" required>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Mobile Phone Number <span class="req">*</span></label>
+                            <input type="tel" class="input-control" id="editPhone" required>
+                        </div>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">Current City</label>
+                            <input type="text" class="input-control" id="editCity">
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">State / Province</label>
+                            <input type="text" class="input-control" id="editState">
+                        </div>
+                    </div>
+
+                    <!-- Professional Architecture -->
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">Target Position <span class="req">*</span></label>
+                            <select class="input-control" id="editPosition" required>
+                                <option value="Technology">Technology</option>
+                                <option value="Design">Design</option>
+                                <option value="Operations">Operations</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Business Development">Business Development</option>
+                                <option value="General Application">General Application</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Experience Level <span class="req">*</span></label>
+                            <select class="input-control" id="editExperience" required>
+                                <option value="0-1 years (Junior)">0-1 years (Junior)</option>
+                                <option value="1-3 years (Associate)">1-3 years (Associate)</option>
+                                <option value="3-6 years (Mid-Senior)">3-6 years (Mid-Senior)</option>
+                                <option value="6-10 years (Staff)">6-10 years (Staff)</option>
+                                <option value="10+ years (Principal)">10+ years (Principal)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label">Core Skills / Technologies <span class="req">*</span></label>
+                        <input type="text" class="input-control" id="editSkills" required>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">LinkedIn Profile URL</label>
+                            <input type="url" class="input-control" id="editLinkedin">
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">GitHub or Portfolio URL</label>
+                            <input type="url" class="input-control" id="editGithub">
+                        </div>
+                    </div>
+
+                    <!-- Academic -->
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">Highest Qualification</label>
+                            <select class="input-control" id="editQualification">
+                                <option value="Bachelor's Degree (B.Tech / B.E. / B.S.)">Bachelor's Degree (B.Tech / B.E. / B.S.)</option>
+                                <option value="Master's Degree (M.Tech / M.S. / M.C.A.)">Master's Degree (M.Tech / M.S. / M.C.A.)</option>
+                                <option value="Doctoral / PhD">Doctoral / PhD</option>
+                                <option value="Diploma / Polytech">Diploma / Polytech</option>
+                                <option value="Self-Taught / Industry Practitioner">Self-Taught / Industry Practitioner</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">College / University</label>
+                            <input type="text" class="input-control" id="editCollege">
+                        </div>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">Availability / Notice Period</label>
+                            <select class="input-control" id="editAvailability">
+                                <option value="Immediate (Within 7 Days)">Immediate (Within 7 Days)</option>
+                                <option value="15 Days">15 Days</option>
+                                <option value="30 Days">30 Days</option>
+                                <option value="60+ Days">60+ Days</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Expected Engagement</label>
+                            <select class="input-control" id="editEngagement">
+                                <option value="Full-Time Permanent">Full-Time Permanent</option>
+                                <option value="Contract / Project-Based">Contract / Project-Based</option>
+                                <option value="Part-Time / Advisory">Part-Time / Advisory</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Replacement Document Uploads -->
+                    <div class="field-group">
+                        <label class="field-label">Replace Resume PDF (Optional - leave blank to keep existing)</label>
+                        <div class="file-dropzone" onclick="document.getElementById('editResumeFile').click()">
+                            <p style="font-size:13px; color:var(--muted); margin:0;" id="editResumeDropText">
+                                Click or drag a new PDF here to replace your resume (≤ 5MB)
+                            </p>
+                            <input type="file" id="editResumeFile" accept=".pdf" onchange="handleEditFileSelected(this, 'editResumeDropText')">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label">Replace Work Portfolio PDF (Optional)</label>
+                        <div class="file-dropzone" onclick="document.getElementById('editPortfolioFile').click()">
+                            <p style="font-size:13px; color:var(--muted); margin:0;" id="editPortfolioDropText">
+                                Click or drag a new PDF here to replace your portfolio (≤ 5MB)
+                            </p>
+                            <input type="file" id="editPortfolioFile" accept=".pdf" onchange="handleEditFileSelected(this, 'editPortfolioDropText')">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="margin-top:20px; padding-top:18px; border-top:1px solid var(--border); display:flex; justify-content:flex-end; gap:12px;">
+                    <button type="button" class="btn btn-outline" onclick="closeApplicantEditModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="saveApplicantEditBtn">Save Changes →</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- =========================================================
+         MODAL: ADMIN INTERVIEW SCHEDULING
+         ========================================================= -->
+    <div class="modal-overlay" id="adminScheduleModal">
+        <div class="modal-box" style="max-width:620px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid var(--border); padding-bottom:16px; margin-bottom:20px;">
+                <div>
+                    <span class="font-mono" style="font-size:11px; color:#34D399; text-transform:uppercase;">Recruitment Command</span>
+                    <h3 style="font-size:22px; margin-top:2px;">Schedule Candidate Interview</h3>
+                    <p style="font-size:13px; color:var(--silver);" id="schedCandidateRef">Candidate Name</p>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm" onclick="closeScheduleModal()">✕</button>
+            </div>
+
+            <form id="adminScheduleForm" onsubmit="handleAdminScheduleSubmit(event)">
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                    
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">Interview Date (IST) <span class="req">*</span></label>
+                            <input type="date" class="input-control" id="schedDate" required>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Interview Time (IST) <span class="req">*</span></label>
+                            <input type="time" class="input-control" id="schedTime" required>
+                        </div>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">Duration <span class="req">*</span></label>
+                            <select class="input-control" id="schedDuration" required>
+                                <option value="15">15 Minutes</option>
+                                <option value="30" selected>30 Minutes</option>
+                                <option value="45">45 Minutes</option>
+                                <option value="60">60 Minutes</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Interview Type <span class="req">*</span></label>
+                            <select class="input-control" id="schedType" onchange="toggleInterviewTypeFields(this.value)" required>
+                                <option value="Online">Online Video (Google Meet / Zoom)</option>
+                                <option value="Phone">Phone Call</option>
+                                <option value="In-person">In-person</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field-group" id="schedLinkGroup">
+                        <label class="field-label">Meeting Link (URL) <span class="req">*</span></label>
+                        <input type="url" class="input-control" id="schedMeetingLink" placeholder="https://meet.google.com/xyz-abcd-efg" required>
+                    </div>
+
+                    <div class="field-group" id="schedLocationGroup" style="display:none;">
+                        <label class="field-label">Physical Office Location / Address <span class="req">*</span></label>
+                        <input type="text" class="input-control" id="schedLocation" placeholder="ThePhi Headquarters, Hitec City, Hyderabad">
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label">Interviewer Name / Panel <span class="req">*</span></label>
+                        <input type="text" class="input-control" id="schedInterviewer" value="ThePhi Technical Hiring Panel" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label">Candidate Preparation Instructions</label>
+                        <textarea class="input-control" id="schedInstructions" placeholder="e.g. Please join from a quiet location with a stable internet connection. Be ready to review previous system architecture." rows="3"></textarea>
+                    </div>
+
+                    <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; font-size:12.5px; color:var(--muted);">
+                        ✓ Upon confirmation, the interview is stored in Supabase and the official branded invitation email is dispatched to the applicant automatically.
+                    </div>
+                </div>
+
+                <div style="margin-top:22px; padding-top:16px; border-top:1px solid var(--border); display:flex; justify-content:flex-end; gap:12px;">
+                    <button type="button" class="btn btn-outline" onclick="closeScheduleModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="confirmScheduleBtn">Confirm & Dispatch Invitation →</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- =========================================================
+         MODAL: ADMIN RESCHEDULE INTERVIEW
+         ========================================================= -->
+    <div class="modal-overlay" id="adminRescheduleModal">
+        <div class="modal-box" style="max-width:560px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:16px; margin-bottom:18px;">
+                <h3 style="font-size:20px;">Reschedule Interview</h3>
+                <button type="button" class="btn btn-outline btn-sm" onclick="closeRescheduleModal()">✕</button>
+            </div>
+            <form id="adminRescheduleForm" onsubmit="handleRescheduleSubmit(event)">
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">New Date <span class="req">*</span></label>
+                            <input type="date" class="input-control" id="reschedDate" required>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">New Time (IST) <span class="req">*</span></label>
+                            <input type="time" class="input-control" id="reschedTime" required>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Meeting Link</label>
+                        <input type="url" class="input-control" id="reschedMeetingLink">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Updated Instructions (Optional)</label>
+                        <textarea class="input-control" id="reschedInstructions" rows="2"></textarea>
+                    </div>
+                </div>
+                <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border); display:flex; justify-content:flex-end; gap:12px;">
+                    <button type="button" class="btn btn-outline" onclick="closeRescheduleModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="confirmRescheduleBtn">Confirm New Schedule →</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- =========================================================
+         MODAL: ADMIN CANCEL INTERVIEW
+         ========================================================= -->
+    <div class="modal-overlay" id="adminCancelModal">
+        <div class="modal-box" style="max-width:500px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:16px; margin-bottom:18px;">
+                <h3 style="font-size:20px; color:var(--status-rejected);">Cancel Scheduled Interview</h3>
+                <button type="button" class="btn btn-outline btn-sm" onclick="closeCancelModal()">✕</button>
+            </div>
+            <form id="adminCancelForm" onsubmit="handleCancelSubmit(event)">
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                    <p style="font-size:13.5px; color:var(--silver); line-height:1.6; margin:0;">
+                        Are you sure you want to cancel this interview? The candidate will be notified via email that their current schedule has been cancelled.
+                    </p>
+                    <div class="field-group">
+                        <label class="field-label">Reason for Cancellation</label>
+                        <textarea class="input-control" id="cancelReason" placeholder="e.g. Panel availability conflict. We will coordinate a revised schedule shortly." rows="3"></textarea>
+                    </div>
+                </div>
+                <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border); display:flex; justify-content:flex-end; gap:12px;">
+                    <button type="button" class="btn btn-outline" onclick="closeCancelModal()">Keep Interview</button>
+                    <button type="submit" class="btn btn-primary" style="background:#EF4444; border-color:#EF4444; color:#FFF;" id="confirmCancelBtn">Confirm Cancellation</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="toast-box" id="toastBox">
         <span id="toastMessage">Notification message</span>
     </div>
@@ -2425,6 +2829,9 @@
 
         let apps = [];
         let currentApplicant = null;
+        let currentTrackedApplicant = null;
+        let editingTimerInterval = null;
+        let currentApplicantInterview = null;
         let adminAccessToken = null;
         let activeAdminFilter = 'all';
 
@@ -2881,46 +3288,33 @@
         // Candidate Application Tracking
         async function handleTrackSubmit(e) {
             e.preventDefault();
-            const ref = document.getElementById('trackRefInput').value.trim().toUpperCase();
-            const email = document.getElementById('trackEmailInput').value.trim().toLowerCase();
+            const ref = document.getElementById('trackRefInput').value.trim();
+            const email = document.getElementById('trackEmailInput').value.trim();
             const btn = document.getElementById('trackSubmitBtn');
 
-            if (!ref || !email) {
-                showToast("Please provide both reference code and email.");
-                return;
-            }
+            btn.disabled = true;
+            btn.textContent = "Retrieving Dossier...";
 
             try {
-                btn.disabled = true;
-                btn.textContent = "Checking...";
-
-                const response = await fetch(API_BASE_URL + '/api/applicants/track', {
+                const res = await fetch(API_BASE_URL + '/api/applicants/track', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ reference_number: ref, email: email })
+                    body: JSON.stringify({ reference_number: ref, email })
                 });
 
-                const result = await response.json().catch(() => ({}));
-
-                if (response.ok && result.success && result.applicant) {
-                    displayTrackResult(result.applicant);
-                    showToast("Application record loaded.");
-                } else {
-                    // Check local cache if recently submitted
-                    const cached = localStorage.getItem('thephi_latest_application');
-                    if (cached) {
-                        const parsed = JSON.parse(cached);
-                        if (parsed.reference_number && parsed.reference_number.toUpperCase() === ref && parsed.email && parsed.email.toLowerCase() === email) {
-                            displayTrackResult(parsed);
-                            showToast("Loaded recent application record.");
-                            return;
-                        }
-                    }
-                    throw new Error(result.message || "No application record found for that reference number and email.");
+                const body = await res.json().catch(() => ({}));
+                if (!res.ok || !body.success) {
+                    throw new Error(body.message || "No application record found for this reference code and email.");
                 }
+
+                currentTrackedApplicant = body.applicant;
+                displayTrackResult(body.applicant);
+                showToast("Application dossier retrieved.");
+
             } catch (err) {
-                console.error("Track error:", err);
-                showToast(err.message || "Unable to find matching application.");
+                console.error(err);
+                document.getElementById('statusResultBox').style.display = 'none';
+                showToast(err.message || "Failed to locate application.");
             } finally {
                 btn.disabled = false;
                 btn.textContent = "Check Status →";
@@ -2932,24 +3326,21 @@
             box.style.display = 'block';
 
             document.getElementById('statusApplicantName').textContent = app.full_name || 'Candidate';
-            document.getElementById('statusPositionLine').textContent = (app.position || 'Technology') + ' • ' + (app.department || 'Operations');
+            document.getElementById('statusPositionLine').textContent = (app.position || 'Technology') + (app.department ? ' • ' + app.department : '');
             document.getElementById('statusRefTag').textContent = app.reference_number || '';
-            
-            const dateStr = app.created_at ? new Date(app.created_at).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' }) : 'Verified';
-            document.getElementById('statusDate').textContent = dateStr;
 
+            // Update Status Pill
             const status = (app.status || 'pending').toLowerCase();
             const pillContainer = document.getElementById('statusPillContainer');
-
             let pillClass = 'status-pending';
             if (status === 'approved') pillClass = 'status-approved';
             else if (status === 'reviewing') pillClass = 'status-reviewing';
             else if (status === 'shortlisted') pillClass = 'status-shortlisted';
             else if (status === 'rejected') pillClass = 'status-rejected';
 
-            pillContainer.innerHTML = '<span class="status-pill ' + pillClass + '">' + status + '</span>';
+            pillContainer.innerHTML = '<span class="status-pill ' + pillClass + '">' + status.toUpperCase() + '</span>';
 
-            // Update Timeline
+            // Lifecycle Milestones
             const s1 = document.getElementById('time-step-1');
             const s2 = document.getElementById('time-step-2');
             const s3 = document.getElementById('time-step-3');
@@ -2960,7 +3351,289 @@
             s3.style.borderColor = (status === 'shortlisted' || status === 'approved') ? '#818CF8' : 'var(--border)';
             s4.style.borderColor = (status === 'approved') ? '#34D399' : (status === 'rejected' ? '#F87171' : 'var(--border)');
 
+            // Coordinates Grid
+            if (document.getElementById('dashPhone')) document.getElementById('dashPhone').textContent = app.phone || 'N/A';
+            if (document.getElementById('dashLocation')) document.getElementById('dashLocation').textContent = (app.city || 'N/A') + (app.state ? ', ' + app.state : '');
+            if (document.getElementById('dashExperience')) document.getElementById('dashExperience').textContent = app.experience || 'N/A';
+            if (document.getElementById('dashQualification')) document.getElementById('dashQualification').textContent = app.qualification || 'N/A';
+
+            // Document Status
+            if (document.getElementById('statusResumeTitle')) {
+                document.getElementById('statusResumeTitle').textContent = app.has_resume ? 'Official Resume Attached (PDF)' : 'No Resume Document';
+            }
+
+            // Last Updated Notice
+            const lastUpdatedNotice = document.getElementById('lastUpdatedNotice');
+            if (lastUpdatedNotice) {
+                if (app.last_edited_at) {
+                    const editDateStr = new Date(app.last_edited_at).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' });
+                    lastUpdatedNotice.textContent = 'Last updated: ' + editDateStr + ' IST';
+                } else {
+                    lastUpdatedNotice.textContent = '';
+                }
+            }
+
+            // Setup Editing Period & Countdown Banner
+            setupEditingPeriodBanner(app);
+
+            // Render My Interviews Deck
+            renderApplicantInterviews(app.interviews || []);
+
             box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function setupEditingPeriodBanner(app) {
+            const banner = document.getElementById('editingPeriodBanner');
+            const statusPill = document.getElementById('editingStatusPill');
+            const clock = document.getElementById('editingCountdownClock');
+            const deadlineText = document.getElementById('editingDeadlineText');
+            const deadlineVal = document.getElementById('editingDeadlineVal');
+            const btnContainer = document.getElementById('editingBtnContainer');
+
+            if (editingTimerInterval) {
+                clearInterval(editingTimerInterval);
+                editingTimerInterval = null;
+            }
+
+            const deadlineDate = new Date(app.editing_deadline || (new Date(app.created_at).getTime() + 24 * 3600 * 1000));
+            const formattedDeadline = deadlineDate.toLocaleString('en-IN', {
+                timeZone: 'Asia/Kolkata',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+
+            deadlineVal.textContent = formattedDeadline;
+
+            if (app.is_editable) {
+                banner.className = 'dashboard-banner banner-editable';
+                statusPill.className = 'status-pill status-reviewing';
+                statusPill.textContent = 'EDITING ACTIVE';
+                deadlineText.innerHTML = 'Your application can be edited until <strong style="color:#FFF;">' + formattedDeadline + '</strong> IST.';
+                btnContainer.style.display = 'block';
+
+                // Start Live Countdown
+                const updateClock = () => {
+                    const now = new Date().getTime();
+                    const diff = Math.max(0, Math.floor((deadlineDate.getTime() - now) / 1000));
+
+                    if (diff <= 0) {
+                        clearInterval(editingTimerInterval);
+                        app.is_editable = false;
+                        app.lock_reason = 'DEADLINE_EXPIRED';
+                        setupEditingPeriodBanner(app);
+                        return;
+                    }
+
+                    const hours = Math.floor(diff / 3600);
+                    const mins = Math.floor((diff % 3600) / 60);
+                    const secs = diff % 60;
+                    clock.textContent = String(hours).padStart(2, '0') + 'h ' + String(mins).padStart(2, '0') + 'm ' + String(secs).padStart(2, '0') + 's';
+                };
+
+                updateClock();
+                editingTimerInterval = setInterval(updateClock, 1000);
+
+            } else {
+                btnContainer.style.display = 'none';
+                clock.textContent = 'LOCKED';
+
+                if (app.lock_reason === 'STATUS_LOCKED') {
+                    banner.className = 'dashboard-banner banner-shortlisted';
+                    statusPill.className = 'status-pill status-approved';
+                    statusPill.textContent = 'SHORTLISTED & LOCKED';
+                    deadlineText.innerHTML = 'Your application has been shortlisted for interview consideration. Submitted information and documents are now <strong style="color:#FFF;">permanently locked</strong>.';
+                } else {
+                    banner.className = 'dashboard-banner banner-locked';
+                    statusPill.className = 'status-pill status-pending';
+                    statusPill.textContent = 'EDITING CLOSED';
+                    deadlineText.innerHTML = 'Your 24-hour application editing period has ended. Your submitted application is now <strong style="color:#FFF;">locked</strong>.';
+                }
+            }
+        }
+
+        function renderApplicantInterviews(interviews) {
+            const container = document.getElementById('applicantInterviewContainer');
+            if (!container) return;
+
+            if (!interviews || interviews.length === 0) {
+                container.innerHTML = '<div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-sm); padding:24px; text-align:center; color:var(--muted); font-size:13.5px;">No interviews scheduled yet. Once our hiring team reviews and shortlists your application, scheduled interview slots will appear here with your official meeting link.</div>';
+                return;
+            }
+
+            container.innerHTML = interviews.map(item => {
+                const isOnline = item.interview_type === 'Online';
+                const hasLink = isOnline && item.meeting_link && item.meeting_link.startsWith('http');
+                const isCancelled = item.status === 'Cancelled';
+
+                let pillColor = '#34D399';
+                if (item.status === 'Rescheduled') pillColor = '#F59E0B';
+                if (item.status === 'Cancelled') pillColor = '#EF4444';
+
+                return '<div class="interview-deck-card">' +
+                    '<div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; flex-wrap:wrap; gap:10px;">' +
+                    '<div>' +
+                    '<span class="status-pill" style="background:rgba(255,255,255,0.06); color:' + pillColor + '; border:1px solid ' + pillColor + ';">' + item.status.toUpperCase() + '</span>' +
+                    '<h4 style="font-size:17px; color:#FFF; margin-top:6px;">' + escapeHtml(item.position) + ' Interview</h4>' +
+                    '</div>' +
+                    (hasLink && !isCancelled ? '<a href="' + escapeHtml(item.meeting_link) + '" target="_blank" class="btn btn-primary btn-sm" style="min-height:38px;">Join Interview Room ↗</a>' : '') +
+                    '</div>' +
+                    '<div class="grid-2" style="font-size:13.5px; gap:12px; margin-bottom:12px;">' +
+                    '<div><span style="color:var(--muted); font-size:12px;">Date & Time:</span><br><strong style="color:#FFF;">' + escapeHtml(item.interview_date) + ' at ' + escapeHtml(item.interview_time) + ' (' + (item.timezone || 'Asia/Kolkata') + ')</strong></div>' +
+                    '<div><span style="color:var(--muted); font-size:12px;">Duration & Format:</span><br><strong style="color:#FFF;">' + item.interview_duration + ' Mins • ' + escapeHtml(item.interview_type) + '</strong></div>' +
+                    '<div><span style="color:var(--muted); font-size:12px;">Interviewer / Panel:</span><br><strong style="color:#FFF;">' + escapeHtml(item.interviewer_name) + '</strong></div>' +
+                    '<div><span style="color:var(--muted); font-size:12px;">Meeting / Location:</span><br>' + (isOnline ? (hasLink ? '<a href="' + escapeHtml(item.meeting_link) + '" target="_blank" style="color:#38BDF8; font-family:monospace; text-decoration:underline;">' + escapeHtml(item.meeting_link) + '</a>' : 'Online Call') : '<strong style="color:#FFF;">' + escapeHtml(item.location || 'Phone Call') + '</strong>') + '</div>' +
+                    '</div>' +
+                    (item.instructions ? '<div style="background:rgba(255,255,255,0.02); border-left:3px solid #38BDF8; padding:10px 14px; font-size:12.5px; color:var(--silver);"><strong style="color:#FFF; display:block; margin-bottom:2px;">Instructions:</strong>' + escapeHtml(item.instructions) + '</div>' : '') +
+                    (item.additional_notes ? '<div style="margin-top:8px; font-size:12px; color:var(--status-rejected);">' + escapeHtml(item.additional_notes) + '</div>' : '') +
+                    '</div>';
+            }).join('');
+        }
+
+        async function applicantViewResume() {
+            if (!currentTrackedApplicant) return;
+
+            const win = window.open('about:blank', '_blank');
+            try {
+                const res = await fetch(API_BASE_URL + '/api/applicants/' + encodeURIComponent(currentTrackedApplicant.id) + '/resume/view', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        reference_number: currentTrackedApplicant.reference_number,
+                        email: currentTrackedApplicant.email
+                    })
+                });
+                const body = await res.json().catch(() => ({}));
+                if (!res.ok || !body.success || !body.resumeUrl) {
+                    throw new Error(body.message || "Unable to generate resume signed URL.");
+                }
+                win.location.href = body.resumeUrl;
+            } catch (err) {
+                console.error(err);
+                if (win) win.close();
+                showToast(err.message || "Failed to access resume document.");
+            }
+        }
+
+        
+        // Applicant Application Edit Controls
+        function openApplicantEditModal() {
+            if (!currentTrackedApplicant) return;
+
+            document.getElementById('editModalRefTag').textContent = 'Reference: ' + (currentTrackedApplicant.reference_number || 'N/A');
+            document.getElementById('editFullName').value = currentTrackedApplicant.full_name || '';
+            document.getElementById('editPhone').value = currentTrackedApplicant.phone || '';
+            document.getElementById('editCity').value = currentTrackedApplicant.city || '';
+            document.getElementById('editState').value = currentTrackedApplicant.state || '';
+            document.getElementById('editPosition').value = currentTrackedApplicant.position || 'Technology';
+            document.getElementById('editExperience').value = currentTrackedApplicant.experience || '1-3 years (Associate)';
+            document.getElementById('editSkills').value = currentTrackedApplicant.skills || '';
+            document.getElementById('editLinkedin').value = currentTrackedApplicant.linkedin || '';
+            document.getElementById('editGithub').value = currentTrackedApplicant.github || '';
+            document.getElementById('editQualification').value = currentTrackedApplicant.qualification || "Bachelor's Degree (B.Tech / B.E. / B.S.)";
+            document.getElementById('editCollege').value = currentTrackedApplicant.college || '';
+            document.getElementById('editAvailability').value = currentTrackedApplicant.availability || 'Immediate (Within 7 Days)';
+            document.getElementById('editEngagement').value = currentTrackedApplicant.engagement || 'Full-Time Permanent';
+
+            document.getElementById('editResumeDropText').textContent = 'Click or drag a new PDF here to replace your resume (≤ 5MB)';
+            document.getElementById('editPortfolioDropText').textContent = 'Click or drag a new PDF here to replace your portfolio (≤ 5MB)';
+            document.getElementById('editResumeFile').value = '';
+            document.getElementById('editPortfolioFile').value = '';
+
+            document.getElementById('applicantEditModal').classList.add('active');
+        }
+
+        function closeApplicantEditModal() {
+            document.getElementById('applicantEditModal').classList.remove('active');
+        }
+
+        function handleEditFileSelected(input, textId) {
+            const file = input.files[0];
+            const textEl = document.getElementById(textId);
+            if (!file) return;
+
+            if (file.type !== 'application/pdf') {
+                showToast("Only PDF documents are accepted.");
+                input.value = '';
+                return;
+            }
+            if (file.size > 5 * 1024 * 1024) {
+                showToast("File size exceeds 5MB limit.");
+                input.value = '';
+                return;
+            }
+            textEl.innerHTML = '<span style="color:#34D399; font-weight:700;">✓ Selected:</span> ' + escapeHtml(file.name) + ' (' + (file.size / 1024 / 1024).toFixed(2) + ' MB)';
+        }
+
+        async function handleApplicantEditSubmit(e) {
+            e.preventDefault();
+            if (!currentTrackedApplicant) return;
+
+            const btn = document.getElementById('saveApplicantEditBtn');
+            btn.disabled = true;
+            btn.textContent = "Saving Changes...";
+
+            try {
+                const fd = new FormData();
+                fd.append('reference_number', currentTrackedApplicant.reference_number);
+                fd.append('email', currentTrackedApplicant.email);
+
+                fd.append('full_name', document.getElementById('editFullName').value.trim());
+                fd.append('phone', document.getElementById('editPhone').value.trim());
+                fd.append('city', document.getElementById('editCity').value.trim());
+                fd.append('state', document.getElementById('editState').value.trim());
+                fd.append('position', document.getElementById('editPosition').value);
+                fd.append('experience', document.getElementById('editExperience').value);
+                fd.append('skills', document.getElementById('editSkills').value.trim());
+                fd.append('linkedin', document.getElementById('editLinkedin').value.trim());
+                fd.append('github', document.getElementById('editGithub').value.trim());
+                fd.append('qualification', document.getElementById('editQualification').value);
+                fd.append('college', document.getElementById('editCollege').value.trim());
+                fd.append('availability', document.getElementById('editAvailability').value);
+                fd.append('engagement', document.getElementById('editEngagement').value);
+
+                const resumeFile = document.getElementById('editResumeFile').files[0];
+                if (resumeFile) fd.append('resume', resumeFile);
+
+                const portfolioFile = document.getElementById('editPortfolioFile').files[0];
+                if (portfolioFile) fd.append('portfolioFile', portfolioFile);
+
+                const res = await fetch(API_BASE_URL + '/api/applicants/' + encodeURIComponent(currentTrackedApplicant.id) + '/edit', {
+                    method: 'PUT',
+                    body: fd
+                });
+
+                const body = await res.json().catch(() => ({}));
+                if (!res.ok || !body.success) {
+                    if (body.locked) {
+                        currentTrackedApplicant.is_editable = false;
+                        currentTrackedApplicant.lock_reason = body.reason;
+                        setupEditingPeriodBanner(currentTrackedApplicant);
+                        closeApplicantEditModal();
+                    }
+                    throw new Error(body.message || "Failed to update application.");
+                }
+
+                currentTrackedApplicant = {
+                    ...currentTrackedApplicant,
+                    ...body.applicant,
+                    last_edited_at: body.last_edited_at
+                };
+
+                displayTrackResult(currentTrackedApplicant);
+                closeApplicantEditModal();
+                showToast("Application updated successfully!");
+
+            } catch (err) {
+                console.error(err);
+                showToast(err.message || "Unable to save changes.");
+            } finally {
+                btn.disabled = false;
+                btn.textContent = "Save Changes →";
+            }
         }
 
         // Admin Authentication & Operations
@@ -3090,7 +3763,7 @@
             }).join('');
         }
 
-        function openApplicantModal(appId) {
+        async function openApplicantModal(appId) {
             currentApplicant = apps.find(a => a.id === appId);
             if (!currentApplicant) return;
 
@@ -3098,8 +3771,58 @@
             document.getElementById('modalCandidateRef').textContent = 'Reference: ' + (currentApplicant.reference_number || 'N/A') + ' • Status: ' + (currentApplicant.status || 'pending').toUpperCase();
             document.getElementById('modalStatusSelect').value = (currentApplicant.status || 'pending').toLowerCase();
 
+            // Fetch any scheduled interviews for this applicant
+            let applicantInterviews = [];
+            try {
+                const res = await fetch(API_BASE_URL + '/api/admin/interviews?application_id=' + encodeURIComponent(appId), {
+                    headers: { Authorization: 'Bearer ' + adminAccessToken }
+                });
+                const body = await res.json().catch(() => ({}));
+                if (res.ok && body.success && body.interviews) {
+                    applicantInterviews = body.interviews;
+                }
+            } catch (e) {}
+
+            currentApplicantInterview = applicantInterviews.length > 0 ? applicantInterviews[0] : null;
+
+            const isShortlisted = (currentApplicant.status || '').toLowerCase() === 'shortlisted';
+
+            // Interview operations section HTML
+            let interviewOpsHtml = '';
+            if (currentApplicantInterview) {
+                const isOnline = currentApplicantInterview.interview_type === 'Online';
+                const hasLink = isOnline && currentApplicantInterview.meeting_link;
+
+                interviewOpsHtml = 
+                    '<div style="background:rgba(56, 189, 248, 0.06); border:1px solid rgba(56, 189, 248, 0.3); border-radius:var(--radius-sm); padding:16px; margin-top:4px;">' +
+                    '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:8px;">' +
+                    '<strong style="color:#38BDF8; font-size:13.5px;">Scheduled Interview (' + currentApplicantInterview.status + ')</strong>' +
+                    '<div style="display:flex; gap:8px;">' +
+                    (currentApplicantInterview.status !== 'Cancelled' ? '<button type="button" class="btn btn-outline btn-sm" onclick="openRescheduleModal()">↻ Reschedule</button>' : '') +
+                    (currentApplicantInterview.status !== 'Cancelled' ? '<button type="button" class="btn btn-outline btn-sm" style="color:#EF4444; border-color:#EF4444;" onclick="openCancelModal()">✕ Cancel</button>' : '') +
+                    '</div>' +
+                    '</div>' +
+                    '<div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:12.5px;">' +
+                    '<div><span style="color:var(--muted)">Date & Time:</span> <strong style="color:#FFF;">' + escapeHtml(currentApplicantInterview.interview_date) + ' ' + escapeHtml(currentApplicantInterview.interview_time) + ' IST</strong></div>' +
+                    '<div><span style="color:var(--muted)">Format & Duration:</span> <strong style="color:#FFF;">' + currentApplicantInterview.interview_duration + ' Mins • ' + escapeHtml(currentApplicantInterview.interview_type) + '</strong></div>' +
+                    '<div><span style="color:var(--muted)">Interviewer:</span> <strong style="color:#FFF;">' + escapeHtml(currentApplicantInterview.interviewer_name) + '</strong></div>' +
+                    '<div><span style="color:var(--muted)">Link/Location:</span> ' + (hasLink ? '<a href="' + escapeHtml(currentApplicantInterview.meeting_link) + '" target="_blank" style="color:#38BDF8; text-decoration:underline;">Meeting Link ↗</a>' : escapeHtml(currentApplicantInterview.location || 'Phone')) + '</div>' +
+                    '</div>' +
+                    '</div>';
+            } else if (isShortlisted) {
+                interviewOpsHtml = 
+                    '<div style="background:rgba(52, 211, 153, 0.08); border:1px solid rgba(52, 211, 153, 0.25); border-radius:var(--radius-sm); padding:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:4px;">' +
+                    '<div>' +
+                    '<strong style="color:#34D399; font-size:13.5px; display:block;">Candidate Shortlisted for Interview</strong>' +
+                    '<span style="color:var(--muted); font-size:12px;">Candidate application is locked. Set up official interview details below.</span>' +
+                    '</div>' +
+                    '<button type="button" class="btn btn-primary btn-sm" onclick="openScheduleModal()">📅 Schedule Interview</button>' +
+                    '</div>';
+            }
+
             const body = document.getElementById('modalDetailsBody');
             body.innerHTML = 
+                interviewOpsHtml +
                 '<div class="grid-2" style="background:var(--bg); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border);">' +
                 '<div><span style="color:var(--muted); font-size:12px;">Contact Phone</span><br><strong>' + escapeHtml(currentApplicant.phone || 'N/A') + '</strong></div>' +
                 '<div><span style="color:var(--muted); font-size:12px;">Location Nexus</span><br><strong>' + escapeHtml(currentApplicant.city || 'N/A') + ', ' + escapeHtml(currentApplicant.state || '') + '</strong></div>' +
@@ -3210,6 +3933,221 @@
             updateWorkspaceVisibility();
             showPage('home');
             showToast("Logged out of administrator workspace.");
+        }
+
+        
+        // Admin Interview Modal Controls
+        function openScheduleModal() {
+            if (!currentApplicant) return;
+
+            document.getElementById('schedCandidateRef').textContent = (currentApplicant.full_name || 'Candidate') + ' • ' + (currentApplicant.reference_number || '');
+            
+            // Set min date to today
+            const todayStr = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('schedDate');
+            dateInput.min = todayStr;
+            dateInput.value = todayStr;
+
+            document.getElementById('schedTime').value = '11:00';
+            document.getElementById('schedType').value = 'Online';
+            toggleInterviewTypeFields('Online');
+            document.getElementById('schedMeetingLink').value = '';
+            document.getElementById('schedLocation').value = '';
+
+            document.getElementById('adminScheduleModal').classList.add('active');
+        }
+
+        function closeScheduleModal() {
+            document.getElementById('adminScheduleModal').classList.remove('active');
+        }
+
+        function toggleInterviewTypeFields(type) {
+            const linkGroup = document.getElementById('schedLinkGroup');
+            const locGroup = document.getElementById('schedLocationGroup');
+            const linkInput = document.getElementById('schedMeetingLink');
+            const locInput = document.getElementById('schedLocation');
+
+            if (type === 'Online') {
+                linkGroup.style.display = 'block';
+                locGroup.style.display = 'none';
+                linkInput.required = true;
+                locInput.required = false;
+            } else if (type === 'In-person') {
+                linkGroup.style.display = 'none';
+                locGroup.style.display = 'block';
+                linkInput.required = false;
+                locInput.required = true;
+            } else {
+                linkGroup.style.display = 'none';
+                locGroup.style.display = 'none';
+                linkInput.required = false;
+                locInput.required = false;
+            }
+        }
+
+        async function handleAdminScheduleSubmit(e) {
+            e.preventDefault();
+            if (!currentApplicant) return;
+
+            const btn = document.getElementById('confirmScheduleBtn');
+            btn.disabled = true;
+            btn.textContent = "Scheduling & Dispatching Email...";
+
+            try {
+                const dateVal = document.getElementById('schedDate').value;
+                const timeVal = document.getElementById('schedTime').value;
+                const durationVal = document.getElementById('schedDuration').value;
+                const typeVal = document.getElementById('schedType').value;
+                const linkVal = document.getElementById('schedMeetingLink').value.trim();
+                const locVal = document.getElementById('schedLocation').value.trim();
+                const interviewerVal = document.getElementById('schedInterviewer').value.trim();
+                const instructionsVal = document.getElementById('schedInstructions').value.trim();
+
+                const payload = {
+                    application_id: currentApplicant.id,
+                    interview_date: dateVal,
+                    interview_time: timeVal,
+                    interview_duration: parseInt(durationVal, 10),
+                    interview_type: typeVal,
+                    meeting_link: typeVal === 'Online' ? linkVal : null,
+                    location: typeVal === 'In-person' ? locVal : null,
+                    interviewer_name: interviewerVal,
+                    instructions: instructionsVal
+                };
+
+                const res = await fetch(API_BASE_URL + '/api/admin/interviews', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: 'Bearer ' + adminAccessToken
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const body = await res.json().catch(() => ({}));
+                if (!res.ok || !body.success) {
+                    throw new Error(body.message || "Failed to schedule interview.");
+                }
+
+                currentApplicantInterview = body.interview;
+                closeScheduleModal();
+                openApplicantModal(currentApplicant.id); // re-render modal with interview operations
+                showToast("Interview scheduled and invitation email sent!");
+
+            } catch (err) {
+                console.error(err);
+                showToast(err.message || "Error scheduling interview.");
+            } finally {
+                btn.disabled = false;
+                btn.textContent = "Confirm & Dispatch Invitation →";
+            }
+        }
+
+        function openRescheduleModal() {
+            if (!currentApplicantInterview) return;
+            const todayStr = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('reschedDate');
+            dateInput.min = todayStr;
+            dateInput.value = currentApplicantInterview.interview_date || todayStr;
+            document.getElementById('reschedTime').value = currentApplicantInterview.interview_time || '11:00';
+            document.getElementById('reschedMeetingLink').value = currentApplicantInterview.meeting_link || '';
+            document.getElementById('reschedInstructions').value = currentApplicantInterview.instructions || '';
+
+            document.getElementById('adminRescheduleModal').classList.add('active');
+        }
+
+        function closeRescheduleModal() {
+            document.getElementById('adminRescheduleModal').classList.remove('active');
+        }
+
+        async function handleRescheduleSubmit(e) {
+            e.preventDefault();
+            if (!currentApplicantInterview) return;
+
+            const btn = document.getElementById('confirmRescheduleBtn');
+            btn.disabled = true;
+            btn.textContent = "Updating Schedule...";
+
+            try {
+                const res = await fetch(API_BASE_URL + '/api/admin/interviews/' + encodeURIComponent(currentApplicantInterview.id) + '/reschedule', {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: 'Bearer ' + adminAccessToken
+                    },
+                    body: JSON.stringify({
+                        interview_date: document.getElementById('reschedDate').value,
+                        interview_time: document.getElementById('reschedTime').value,
+                        meeting_link: document.getElementById('reschedMeetingLink').value.trim(),
+                        instructions: document.getElementById('reschedInstructions').value.trim()
+                    })
+                });
+
+                const body = await res.json().catch(() => ({}));
+                if (!res.ok || !body.success) {
+                    throw new Error(body.message || "Failed to reschedule interview.");
+                }
+
+                currentApplicantInterview = body.interview;
+                closeRescheduleModal();
+                openApplicantModal(currentApplicant.id);
+                showToast("Interview rescheduled and updated invitation dispatched!");
+
+            } catch (err) {
+                console.error(err);
+                showToast(err.message || "Error rescheduling.");
+            } finally {
+                btn.disabled = false;
+                btn.textContent = "Confirm New Schedule →";
+            }
+        }
+
+        function openCancelModal() {
+            if (!currentApplicantInterview) return;
+            document.getElementById('cancelReason').value = '';
+            document.getElementById('adminCancelModal').classList.add('active');
+        }
+
+        function closeCancelModal() {
+            document.getElementById('adminCancelModal').classList.remove('active');
+        }
+
+        async function handleCancelSubmit(e) {
+            e.preventDefault();
+            if (!currentApplicantInterview) return;
+
+            const btn = document.getElementById('confirmCancelBtn');
+            btn.disabled = true;
+            btn.textContent = "Cancelling...";
+
+            try {
+                const reason = document.getElementById('cancelReason').value.trim();
+                const res = await fetch(API_BASE_URL + '/api/admin/interviews/' + encodeURIComponent(currentApplicantInterview.id) + '/cancel', {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: 'Bearer ' + adminAccessToken
+                    },
+                    body: JSON.stringify({ reason })
+                });
+
+                const body = await res.json().catch(() => ({}));
+                if (!res.ok || !body.success) {
+                    throw new Error(body.message || "Failed to cancel interview.");
+                }
+
+                currentApplicantInterview.status = 'Cancelled';
+                closeCancelModal();
+                openApplicantModal(currentApplicant.id);
+                showToast("Interview cancelled and notice dispatched.");
+
+            } catch (err) {
+                console.error(err);
+                showToast(err.message || "Error cancelling interview.");
+            } finally {
+                btn.disabled = false;
+                btn.textContent = "Confirm Cancellation";
+            }
         }
 
         // Job Filter on Opportunities View
